@@ -4,11 +4,11 @@ import { ScriptLoaderService } from "../../../_services/script-loader.service";
 
 @Component({
     selector:
-        ".m-grid__item.m-grid__item--fluid.m-grid.m-grid--ver-desktop.m-grid--desktop.m-body",
+    ".m-grid__item.m-grid__item--fluid.m-grid.m-grid--ver-desktop.m-grid--desktop.m-body",
     templateUrl: "./dashboard.component.html",
     encapsulation: ViewEncapsulation.None
 })
 export class DashboardComponent implements OnInit {
-    constructor() {}
-    ngOnInit() {}
+    constructor() { }
+    ngOnInit() { }
 }

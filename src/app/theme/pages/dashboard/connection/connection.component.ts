@@ -19,7 +19,7 @@ export class ConnectionComponent implements OnInit, AfterViewInit {
     constructor(
         private _script: ScriptLoaderService,
         private dataService: DataService
-    ) {}
+    ) { }
 
     ngOnInit() {
         this.dataService.getData().subscribe(data => {

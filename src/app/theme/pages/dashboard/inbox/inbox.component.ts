@@ -17,7 +17,7 @@ export class InboxComponent implements OnInit, AfterViewInit {
     constructor(
         private _script: ScriptLoaderService,
         private dataService: DataService
-    ) {}
+    ) { }
 
     data: any;
 

@@ -22,4 +22,4 @@ const routes: Routes = [
     exports: [RouterModule],
     declarations: [InboxComponent]
 })
-export class InboxModule {}
+export class InboxModule { }

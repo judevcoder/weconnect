@@ -26,4 +26,4 @@ import { AuthModule } from "./auth/auth.module";
     providers: [ScriptLoaderService, DataService],
     bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

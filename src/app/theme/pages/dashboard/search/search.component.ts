@@ -15,9 +15,9 @@ import { ScriptLoaderService } from "../../../../_services/script-loader.service
 export class SearchComponent implements OnInit, AfterViewInit {
     data: any;
 
-    constructor(private _script: ScriptLoaderService) {}
+    constructor(private _script: ScriptLoaderService) { }
 
-    ngOnInit() {}
+    ngOnInit() { }
 
     ngAfterViewInit() {
         this._script.loadScripts("app-connection", [

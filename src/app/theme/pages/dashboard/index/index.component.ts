@@ -13,8 +13,8 @@ import { ScriptLoaderService } from "../../../../_services/script-loader.service
     encapsulation: ViewEncapsulation.None
 })
 export class IndexComponent implements OnInit, AfterViewInit {
-    constructor(private _script: ScriptLoaderService) {}
-    ngOnInit() {}
+    constructor(private _script: ScriptLoaderService) { }
+    ngOnInit() { }
     ngAfterViewInit() {
         this._script.loadScripts("app-index", ["assets/app/js/dashboard.js"]);
     }

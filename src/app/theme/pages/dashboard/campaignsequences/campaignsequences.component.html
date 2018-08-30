@@ -1,0 +1,190 @@
+<div class="col-lg-12 col-sm-12 col-md-12 campaign-detail-section">
+    <div class="m-portlet">
+        <div class="m-portlet">
+            <div class="m-portlet__head">
+                <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text">
+                  Campaign Name
+                  <small>Active</small>
+                </h3>
+                    </div>
+                </div>
+                <div class="m-portlet__head-tools">
+                    <ul class="m-portlet__nav">
+                        <li class="m-portlet__nav-item">
+                            <a href="" data-toggle="m-tooltip" class="m-portlet__nav-link m-portlet__nav-link--icon" data-direction="left" data-width="auto" title="Get help with filling up this form">
+                                <i class="flaticon-info m--icon-font-size-lg3"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--end: Portlet Head-->
+
+            <!--begin: Form Wizard-->
+            <div class="m-wizard m-wizard--5 m-wizard--success" id="m_wizard">
+
+                <!--begin: Message container -->
+                <div class="m-portlet__padding-x">
+                    <!-- Here you can put a message or alert -->
+                </div>
+                <!--end: Message container -->
+
+                <!--begin: Form Wizard Head -->
+                <div class="m-wizard__head m-portlet__padding-x">
+                    <div class="row">
+                        <div class="col-xl-10 offset-xl-1">
+                            <!--begin: Form Wizard Nav -->
+                            <div class="m-wizard__nav">
+                                <div class="m-wizard__steps">
+                                    <div class="m-wizard__step" m-wizard-target="m_wizard_form_step_1">
+                                        <div class="m-wizard__step-info">
+                                            <a href="/campaign/overview" class="m-wizard__step-number">
+                                                <span class="m-wizard__step-label">
+                              Overview
+                            </span>
+                                                <span class="m-wizard__step-icon"><i class="la la-check"></i></span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="m-wizard__step" m-wizard-target="m_wizard_form_step_2">
+                                        <div class="m-wizard__step-info">
+                                            <a href="/campaign/contacts" class="m-wizard__step-number">
+                                                <span class="m-wizard__step-label">
+                              Contacts
+                            </span>
+                                                <span class="m-wizard__step-icon"><i class="la la-check"></i></span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="m-wizard__step m-wizard__step--current" m-wizard-target="m_wizard_form_step_3">
+                                        <div class="m-wizard__step-info">
+                                            <a href="/campaign/sequences" class="m-wizard__step-number">
+                                                <span class="m-wizard__step-label">
+                              Sequences
+                            </span>
+                                                <span class="m-wizard__step-icon"><i class="la la-check"></i></span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="m-wizard__step" m-wizard-target="m_wizard_form_step_4">
+                                        <div class="m-wizard__step-info">
+                                            <a href="/campaign/settings" class="m-wizard__step-number">
+                                                <span class="m-wizard__step-label">
+                              Settings
+                            </span>
+                                                <span class="m-wizard__step-icon"><i class="la la-check"></i></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end: Form Wizard Nav -->
+                        </div>
+                    </div>
+                </div>
+                <!--end: Form Wizard Head -->
+
+                <!--begin: Form Wizard Form-->
+                <div class="m-wizard__form">
+                    <!--
+                1) Use m-form--label-align-left class to alight the form input lables to the right
+                2) Use m-form--state class to highlight input control borders on form validation
+              -->
+                    <form class="m-form m-form--label-align-left- m-form--state-" id="m_form">
+                        <!--begin: Form Body -->
+                        <div class="m-portlet__body">
+
+                            <!--begin: Form Wizard Step 3-->
+                            <div class="m-wizard__form-step m-wizard__form-step--current" id="m_wizard_form_step_3">
+                                <div class="row m-accordion m-accordion--default">
+                                    <div class="col-xl-10 offset-xl-1">
+                                        <div class="tab-content  m--padding-30 m-accordion m-accordion--toggle-arrow">
+                                            <div class="row sequences-accodion">
+                                                <div class="m-accordion__item">
+                                                    <div class="m-accordion__item-head collapsed" role="tab" id="m_accordion_2_item_1_head" data-toggle="collapse" href="#m_accordion_2_item_1_body" aria-expanded="    false">
+                                                        <span class="m-accordion__item-icon"><i class="fa  flaticon-chat-1"></i></span>
+                                                        <span class="m-accordion__item-title sub-accordion-title" style="color: #000;">Connection Message</span>
+                                                        <span class="m-accordion__item-mode"></span>
+                                                    </div>
+                                                    <div class="m-accordion__item-body collapse" id="m_accordion_2_item_1_body" class=" " role="tabpanel" aria-labelledby="m_accordion_2_item_1_head" data-parent="#m_accordion_2_item_1_head">
+                                                        <div class="tab-content  m--padding-30">
+                                                            Hi Nick, I am John and I was wondering if there are any synergies between our companies. I would be delighted to connect with you and take this conversion forward.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row sequences-accodion">
+                                                <div class="m-accordion__item">
+                                                    <div class="m-accordion__item-head collapsed" role="tab" id="m_accordion_2_item_2_head" data-toggle="collapse" href="#m_accordion_2_item_2_body" aria-expanded="false">
+                                                        <span class="m-accordion__item-icon"><i class="fa  flaticon-chat-1"></i></span>
+                                                        <span class="m-accordion__item-title sub-accordion-title" style="color: #000;">Message after Connection</span>
+                                                        <span class="m-accordion__item-mode"></span>
+                                                    </div>
+                                                    <div class="m-accordion__item-body collapse" id="m_accordion_2_item_2_body" class=" " role="tabpanel" aria-labelledby="m_accordion_2_item_2_head" data-parent="#m_accordion_2_item_1_head">
+                                                        <div class="tab-content  m--padding-30">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row sequences-accodion">
+                                                <a href="" class="btn btn-outline-success m-btn m-btn--icon m-btn--outline-2x">
+                                                    <span>
+                                <i class="la la-plus"></i>
+                                <span>Add Step</span>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end: Form Wizard Step 3-->
+
+                            <!--end: Form Body -->
+                        </div>
+
+                        <!--begin: Form Actions -->
+                        <div class="m-portlet__foot--fit">
+                            <div class="m-form__actions campaign-detail-action">
+                                <div class="row">
+                                    <div class="col-lg-1"></div>
+                                    <div class="col-lg-4 m--align-left">
+                                        <a href="" class="btn btn-secondary m-btn m-btn--custom m-btn--icon" data-wizard-action="prev">
+                                            <span>
+                            <i class="la la-arrow-left"></i>&nbsp;&nbsp;
+                            <span>Back</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-6 m--align-right" style="margin-left: 53px;">
+                                        <a href="" class="btn btn-primary m-btn m-btn--custom m-btn--icon" data-wizard-action="submit">
+                                            <span>
+                            <i class="la la-check"></i>&nbsp;&nbsp;
+                            <span>Submit</span>
+                                            </span>
+                                        </a>
+                                        <a href="/outreach/campaigns" class="btn btn-info m-btn m-btn--custom m-btn--icon mr25" data-wizard-action="next">
+                                            <span>
+                            <i class="la la-times-circle"></i>
+                            <span>Close</span>&nbsp;&nbsp;
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-1"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end: Form Actions -->
+                    </form>
+                </div>
+                <!--end: Form Wizard Form-->
+            </div>
+        </div>
+    </div>
+</div>

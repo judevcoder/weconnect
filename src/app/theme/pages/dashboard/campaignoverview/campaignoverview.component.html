@@ -1,0 +1,284 @@
+<div class="col-lg-12 col-sm-12 col-md-12 campaign-detail-section">
+    <div class="m-portlet">
+        <div class="m-portlet">
+            <div class="m-portlet__head">
+                <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text">
+                  Campaign Name
+                  <small>Active</small>
+                </h3>
+                    </div>
+                </div>
+                <div class="m-portlet__head-tools">
+                    <ul class="m-portlet__nav">
+                        <li class="m-portlet__nav-item">
+                            <a href="" data-toggle="m-tooltip" class="m-portlet__nav-link m-portlet__nav-link--icon" data-direction="left" data-width="auto" title="Get help with filling up this form">
+                                <i class="flaticon-info m--icon-font-size-lg3"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--end: Portlet Head-->
+
+            <!--begin: Form Wizard-->
+            <div class="m-wizard m-wizard--5 m-wizard--success" id="m_wizard">
+
+                <!--begin: Message container -->
+                <div class="m-portlet__padding-x">
+                    <!-- Here you can put a message or alert -->
+                </div>
+                <!--end: Message container -->
+
+                <!--begin: Form Wizard Head -->
+                <div class="m-wizard__head m-portlet__padding-x">
+                    <div class="row">
+                        <div class="col-xl-10 offset-xl-1">
+                            <!--begin: Form Wizard Nav -->
+                            <div class="m-wizard__nav">
+                                <div class="m-wizard__steps">
+                                    <div class="m-wizard__step m-wizard__step--current" m-wizard-target="m_wizard_form_step_1">
+                                        <div class="m-wizard__step-info">
+                                            <a href="" class="m-wizard__step-number">
+                                                <span class="m-wizard__step-label">
+                              Overview
+                            </span>
+                                                <span class="m-wizard__step-icon"><i class="la la-check"></i></span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="m-wizard__step" m-wizard-target="m_wizard_form_step_2">
+                                        <div class="m-wizard__step-info">
+                                            <a href="/campaign/contacts" class="m-wizard__step-number">
+                                                <span class="m-wizard__step-label">
+                              Contacts
+                            </span>
+                                                <span class="m-wizard__step-icon"><i class="la la-check"></i></span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="m-wizard__step" m-wizard-target="m_wizard_form_step_3">
+                                        <div class="m-wizard__step-info">
+                                            <a href="/campaign/sequences" class="m-wizard__step-number">
+                                                <span class="m-wizard__step-label">
+                              Sequences
+                            </span>
+                                                <span class="m-wizard__step-icon"><i class="la la-check"></i></span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="m-wizard__step" m-wizard-target="m_wizard_form_step_4">
+                                        <div class="m-wizard__step-info">
+                                            <a href="/campaign/settings" class="m-wizard__step-number">
+                                                <span class="m-wizard__step-label">
+                              Settings
+                            </span>
+                                                <span class="m-wizard__step-icon"><i class="la la-check"></i></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end: Form Wizard Nav -->
+                        </div>
+                    </div>
+                </div>
+                <!--end: Form Wizard Head -->
+
+                <!--begin: Form Wizard Form-->
+                <div class="m-wizard__form">
+                    <!--
+                1) Use m-form--label-align-left class to alight the form input lables to the right
+                2) Use m-form--state class to highlight input control borders on form validation
+              -->
+                    <form class="m-form m-form--label-align-left- m-form--state-" id="m_form">
+                        <!--begin: Form Body -->
+                        <div class="m-portlet__body">
+
+                            <!--begin: Form Wizard Step 1-->
+                            <div class="m-wizard__form-step m-wizard__form-step--current" id="m_wizard_form_step_1">
+                                <div class="col-xl-10 offset-xl-1">
+                                    <div class="m-subheader m-campaign-detail">
+                                        <div class="d-flex align-items-center">
+                                            <div class="mr-auto">
+                                            </div>
+                                            <div>
+                                                <span class="m-subheader__daterange m-campaign-detail-daterangepicker" id="m_dashboard_daterangepicker">
+                              <span class="m-subheader__daterange-label">
+                                <span class="m-subheader__daterange-title">Today:</span>
+                                                <span class="m-subheader__daterange-date m--font-brand">Aug 16</span>
+                                                </span>
+                                                <a href="" class="btn btn-sm btn-brand m-btn m-btn--icon m-btn--icon-only m-btn--custom m-btn--pill">
+                                                    <i class="la la-angle-down"></i>
+                                                </a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1">
+                                        <div class="tab-content active  m--padding-30">
+                                            <div class="m-form__section m-form__section--first">
+                                                <div class="form-group m-form__group m-form__group--sm row">
+                                                    <div class="col-xl-4 col-lg-4">
+                                                        <label class="col-form-label col-xl-12 col-lg-12 offset-lg-3 offset-xl-3">Campaign Name:</label>
+                                                    </div>
+                                                    <div class="col-xl-8 col-lg-8">
+                                                        <span class="m-form__control-static col-xl-12 col-lg-12 offset-lg-6 offset-xl-6">Campaign Name</span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group m-form__group m-form__group--sm row">
+                                                    <div class="col-xl-4 col-lg-4">
+                                                        <label class="col-form-label col-xl-12 col-lg-12 offset-lg-3 offset-xl-3">Campaign Type:</label>
+                                                    </div>
+                                                    <div class="col-xl-8 col-lg-8">
+                                                        <span class="m-form__control-static col-xl-12 col-lg-12 offset-lg-6 offset-xl-6">Linkedin New Connection</span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group m-form__group m-form__group--sm row">
+                                                    <div class="col-xl-4 col-lg-4">
+                                                        <label class="col-form-label col-xl-12 col-lg-12 offset-lg-3 offset-xl-3">Contacts</label>
+                                                    </div>
+                                                    <div class="col-xl-8 col-lg-8">
+                                                        <span class="m-form__control-static col-xl-12 col-lg-12 offset-lg-6 offset-xl-6 m--font-brand" style="font-size: 17px; color: #716aca !important; font-weight: 500;">1218</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row campaign-overview-widget">
+                                    <div class="col-xl-6">
+                                        <div class="campaign-overview-stats">
+                                            <div class="m-portlet">
+                                                <div class="m-portlet__head">
+                                                    <div class="m-portlet__head-caption">
+                                                        <div class="m-portlet__head-title">
+                                                            <h3 class="m-portlet__head-text">
+                                    Stats
+                                  </h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="m-portlet__body">
+                                                    <!--begin::Widget5-->
+                                                    <div class="m-widget4 m-widget4--chart-bottom" style="min-height: 325px">
+                                                        <div class="m-widget4__item">
+                                                            <div class="m-widget4__info">
+                                                                <span class="m-widget4__title">
+                                    Connection Requests
+                                    </span>
+                                                            </div>
+                                                            <span class="m-widget4__ext">
+                                    <span class="m-widget4__number m--font-brand">1200</span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="m-widget4__item">
+                                                            <div class="m-widget4__info">
+                                                                <span class="m-widget4__title">
+                                    Connected
+                                    </span>
+                                                            </div>
+                                                            <span class="m-widget4__ext">
+                                    <span class="m-widget4__number m--font-brand">150</span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="m-widget4__item">
+                                                            <div class="m-widget4__info">
+                                                                <span class="m-widget4__title">
+                                    Replied to Connection
+                                    </span>
+                                                            </div>
+                                                            <span class="m-widget4__ext">
+                                    <span class="m-widget4__number m--font-brand">52</span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="m-widget4__item">
+                                                            <div class="m-widget4__info">
+                                                                <span class="m-widget4__title">
+                                    Replied to Messages
+                                    </span>
+                                                            </div>
+                                                            <span class="m-widget4__ext">
+                                    <span class="m-widget4__number m--font-brand">11</span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <!--end::Widget 5-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6">
+                                        <div class="campaign-overview-stats">
+                                            <div class="m-portlet m-portlet--bordered-semi m-portlet--half-height m-portlet--fit " style="min-height: 210px">
+                                                <div class="m-widget20">
+                                                    <div class="m-widget20__number m--font-success">670</div>
+                                                    <div class="m-widget20__chart" style="height:160px;">
+                                                        <canvas id="m_chart_bandwidth1"></canvas>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="m--space-30"></div>
+                                            <div class="m-portlet m-portlet--bordered-semi m-portlet--half-height m-portlet--fit " style="min-height: 210px">
+                                                <div class="m-portlet__body">
+                                                    <div class="m-widget20">
+                                                        <div class="m-widget20__number m--font-warning">340</div>
+                                                        <div class="m-widget20__chart" style="height:160px;">
+                                                            <canvas id="m_chart_bandwidth2"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end: Form Wizard Step 1-->
+
+                            <!--end: Form Body -->
+                        </div>
+                        <!--begin: Form Actions -->
+                        <div class="m-portlet__foot--fit">
+                            <div class="m-form__actions campaign-detail-action">
+                                <div class="row">
+                                    <div class="col-lg-1"></div>
+                                    <div class="col-lg-4 m--align-left">
+                                        <a href="" class="btn btn-secondary m-btn m-btn--custom m-btn--icon" data-wizard-action="prev">
+                                            <span>
+                            <i class="la la-arrow-left"></i>&nbsp;&nbsp;
+                            <span>Back</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-6 m--align-right" style="margin-left: 53px;">
+                                        <a href="" class="btn btn-primary m-btn m-btn--custom m-btn--icon" data-wizard-action="submit">
+                                            <span>
+                            <i class="la la-check"></i>&nbsp;&nbsp;
+                            <span>Submit</span>
+                                            </span>
+                                        </a>
+                                        <a href="/outreach/campaigns" class="btn btn-info m-btn m-btn--custom m-btn--icon mr25" data-wizard-action="next">
+                                            <span>
+                            <i class="la la-times-circle"></i>
+                            <span>Close</span>&nbsp;&nbsp;
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-1"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end: Form Actions -->
+                    </form>
+                </div>
+                <!--end: Form Wizard Form-->
+            </div>
+        </div>
+    </div>
+</div>

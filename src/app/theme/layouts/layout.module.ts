@@ -35,4 +35,4 @@ import { DashboardComponent } from "../pages/dashboard/dashboard.component";
     ],
     imports: [CommonModule, RouterModule]
 })
-export class LayoutModule {}
+export class LayoutModule { }

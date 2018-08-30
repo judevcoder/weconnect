@@ -22,4 +22,4 @@ const routes: Routes = [
     exports: [RouterModule],
     declarations: [IndexComponent]
 })
-export class IndexModule {}
+export class IndexModule { }

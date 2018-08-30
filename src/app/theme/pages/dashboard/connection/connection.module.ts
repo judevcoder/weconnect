@@ -22,4 +22,4 @@ const routes: Routes = [
     exports: [RouterModule],
     declarations: [ConnectionComponent]
 })
-export class ConnectionModule {}
+export class ConnectionModule { }
