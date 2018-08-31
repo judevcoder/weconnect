@@ -100,57 +100,7 @@
                         </div>
                     </div>
                     <div class="m-portlet__body">
-                        <div class="m-widget3 select-show-list-count">
-                            <select class="custom-select form-control display-select-count" (change)="setPerPage($event.target.value);">
-                                <option>10</option>
-                                <option>15</option>
-                                <option>20</option>
-                                <option>25</option>
-                            </select>
-                            <label style="float: right; margin-right: 5px; margin-top: 4px;">Display</label>
-                        </div>
-                        <div class="m-widget3">
-                            <div *ngFor="let person of people; let i = index" class="m-widget3__item">
-                                <div class="m-widget3__header">
-                                    <div class="m-widget3__user-img">
-                                        <img class="m-widget3__img" [src]="person.img" alt="">
-                                    </div>
-                                    <div class="m-widget3__info">
-                                        <span class="m-widget3__username">
-                            {{person.name}}
-                        </span>
-                                        <br>
-                                        <span class="m-widget3__time">
-                            {{person.job}}
-                        </span>
-                                    </div>
-                                    <ul class="m-portlet__nav">
-                                        <li class="m-portlet__nav-item m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" m-dropdown-toggle="hover" aria-expanded="true">
-                                            <a href="#" class="btn btn-outline-primary btn-sm 	m-btn m-btn--icon">
-                                                <span>
-                            <i class="la la-link"></i>
-                            <span>Connect</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="m-widget3 search-result-pagination col-lg-12 col-md-12 col-sm-12 col-xl-12">
-                            <label class="pagination-label">Showing {{startNum}} to {{endNum}} of {{totalSize}} connects</label>
-                            <ul class="pagination">
-                                <li class="page-item previous-page">
-                                    <a class="page-link previous-page-link" (click)="prevPage();">
-                                        <</a>
-                                </li>
-                                <li *ngFor="let page of viewPages; let i = index" class="page-item"><a class="page-link" (click)="goPage(page);">{{page + 1}}</a></li>
-                                <li class="page-item next-page">
-                                    <a class="page-link next-page-link" (click)="nextPage();">></a>
-                                </li>
-                            </ul>
-                        </div>
+                        <div class="m_datatable" id="json_data"></div>
                     </div>
                 </div>
             </div>

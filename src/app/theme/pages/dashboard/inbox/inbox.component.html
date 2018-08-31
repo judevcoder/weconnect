@@ -100,55 +100,7 @@
                     </div>
                 </div>
                 <div class="m-portlet__body">
-                    <div class="m-widget3">
-                        <div *ngFor="let person of data; let i = index" class="m-widget3__item">
-                            <div class="m-widget3__header">
-                                <div class="m-widget3__user-img">
-                                    <img class="m-widget3__img" [src]="person.img" alt="">
-                                </div>
-                                <div class="m-widget3__info">
-                                    <span class="m-widget3__username">
-                                        {{person.name}}
-                                    </span>
-                                    <br>
-                                    <span class="m-widget3__time">
-                                        {{person.job}}
-                                    </span>
-                                </div>
-                                <ul class="m-portlet__nav">
-                                    <li class="m-portlet__nav-item m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" m-dropdown-toggle="hover" aria-expanded="true">
-                                        <a href="#" class="m-portlet__nav-link m-portlet__nav-link--icon m-portlet__nav-link--icon-xl m-dropdown__toggle">
-                                            <i class="la la-ellipsis-h m--font-brand"></i>
-                                        </a>
-                                        <div class="m-dropdown__wrapper">
-                                            <span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
-                                            <div class="m-dropdown__inner">
-                                                <div class="m-dropdown__body">
-                                                    <div class="m-dropdown__content">
-                                                        <ul class="m-nav">
-                                                            <li class="m-nav__item">
-                                                                <a href="" class="m-nav__link">
-                                                                    <i class="m-nav__link-icon la la-star"></i>
-                                                                    <span class="m-nav__link-text">Mark as Important</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="m-nav__item">
-                                                                <a href="" class="m-nav__link">
-                                                                    <i class="m-nav__link-icon la la-envelope"></i>
-                                                                    <span class="m-nav__link-text">Mark as Unread</span>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
+                    <div class="m_datatable" id="json_data"></div>
                 </div>
             </div>
         </div>
@@ -160,15 +112,15 @@
                             <div class="m-widget3__item" style="margin-bottom: 0;">
                                 <div class="m-widget3__header">
                                     <div class="m-widget3__user-img">
-                                        <img class="m-widget3__img" src="assets/app/media/img/users/user1.jpg" alt="">
+                                        <img class="m-widget3__img" src="{{profile.img}}" alt="">
                                     </div>
                                     <div class="m-widget3__info">
                                         <span class="m-widget3__username">
-                                            Anna Strong
+                                            {{profile.name}}
                                         </span>
                                         <br>
                                         <span class="m-widget3__time">
-                                            Visual Designer, Google Inc
+                                            {{profile.job}}
                                         </span>
                                     </div>
                                 </div>

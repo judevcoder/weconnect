@@ -1,6 +1,5 @@
 import { NgModule } from "@angular/core";
 
-import { DefaultComponent } from "../pages/default/default.component";
 import { HeaderNavComponent } from "./header-nav/header-nav.component";
 import { AsideNavComponent } from "./aside-nav/aside-nav.component";
 import { FooterComponent } from "./footer/footer.component";
@@ -16,7 +15,6 @@ import { DashboardComponent } from "../pages/dashboard/dashboard.component";
 @NgModule({
     declarations: [
         DashboardComponent,
-        DefaultComponent,
         HeaderNavComponent,
         AsideNavComponent,
         FooterComponent,
@@ -26,7 +24,6 @@ import { DashboardComponent } from "../pages/dashboard/dashboard.component";
     ],
     exports: [
         DashboardComponent,
-        DefaultComponent,
         HeaderNavComponent,
         AsideNavComponent,
         FooterComponent,

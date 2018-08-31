@@ -104,68 +104,7 @@
                     </div>
                 </div>
                 <div class="m-portlet__body search-result-list">
-                    <div class="m-widget3 select-show-list-count">
-                        <label class="m-checkbox m-checkbox--state-success">
-                            <input type="checkbox">
-                            <select>
-                                <option>Select All</option>
-                                <option>Current Page</option>
-                            </select>
-                            <span></span>
-                        </label>
-                    </div>
-                    <div class="m-widget3">
-                        <div *ngFor="let person of data; let i = index" class="m-widget3__item">
-                            <label class="m-checkbox m-checkbox--state-success top25">
-                                <input type="checkbox">
-                                <span></span>
-                            </label>
-                            <div class="m-widget3__header ml25">
-                                <div class="m-widget3__user-img">
-                                    <img class="m-widget3__img" [src]="person.img" alt="">
-                                </div>
-                                <div class="m-widget3__info">
-                                    <span class="m-widget3__username">
-                        				{{person.name}}
-                        			</span>
-                                    <br>
-                                    <span class="m-widget3__time">
-                        				{{person.job}}
-                        			</span>
-                                </div>
-                                <ul class="m-portlet__nav">
-                                    <li class="m-portlet__nav-item m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" m-dropdown-toggle="hover" aria-expanded="true">
-                                        <a href="#" class="m-portlet__nav-link m-portlet__nav-link--icon m-portlet__nav-link--icon-xl m-dropdown__toggle">
-                                            <i class="la la-ellipsis-h m--font-brand"></i>
-                                        </a>
-                                        <div class="m-dropdown__wrapper">
-                                            <span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
-                                            <div class="m-dropdown__inner">
-                                                <div class="m-dropdown__body">
-                                                    <div class="m-dropdown__content">
-                                                        <ul class="m-nav">
-                                                            <li class="m-nav__item">
-                                                                <a [routerLink]="'/inbox'" class="m-nav__link">
-                                                                    <i class="m-nav__link-icon flaticon-chat-1"></i>
-                                                                    <span class="m-nav__link-text">Message</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="m-nav__item">
-                                                                <a href="" class="m-nav__link">
-                                                                    <i class="m-nav__link-icon flaticon-delete-2"></i>
-                                                                    <span class="m-nav__link-text">Remove Connection</span>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="m_datatable" id="json_data"></div>
                 </div>
             </div>
         </div>
@@ -179,12 +118,12 @@
                             </div>
                             <div class="m-card-profile__pic">
                                 <div class="m-card-profile__pic-wrapper">
-                                    <img src="assets/app/media/img/users/user1.jpg" alt="" />
+                                    <img src="{{profile.img}}" alt="" />
                                 </div>
                             </div>
                             <div class="m-card-profile__details">
-                                <span class="m-card-profile__name">Anna Strong</span>
-                                <a href="" class="m-card-profile__email m-link">Chief Financial Officer</a>
+                                <span class="m-card-profile__name">{{profile.name}}</span>
+                                <a href="" class="m-card-profile__email m-link">{{profile.job}}</a>
                                 <ul class="contact-info m-nav m-nav--hover-bg m-portlet-fit--sides">
                                     <li>
                                         <a href="" class="m-nav__link m-dropdown__toggle">
@@ -228,7 +167,7 @@
                                 <i class="m-nav__link-icon flaticon-time-3"></i>
                                 <span class="m-nav__link-title">
                         <span class="m-nav__link-wrap">
-                          <span class="m-nav__link-text">New York</span>
+                          <span class="m-nav__link-text">{{profile.city}}</span>
                                 </span>
                                 </span>
                             </a>
@@ -236,7 +175,7 @@
                         <li class="m-nav__item">
                             <a href="header/profile&amp;demo=default.html" class="m-nav__link">
                                 <i class="m-nav__link-icon flaticon-profile-1"></i>
-                                <span class="m-nav__link-text">Harvard University</span>
+                                <span class="m-nav__link-text">{{profile.university}}</span>
                             </a>
                         </li>
                         <li class="m-nav__item">

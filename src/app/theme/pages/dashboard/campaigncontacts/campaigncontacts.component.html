@@ -126,53 +126,7 @@
                                                 </div>
                                             </div>
                                             <div class="m-portlet__body search-result-list">
-                                                <div class="m-widget3 select-show-list-count">
-                                                    <select class="custom-select form-control display-select-count" (change)="setPerPage($event.target.value);">
-                                                        <option>10</option>
-                                                        <option>15</option>
-                                                        <option>20</option>
-                                                        <option>25</option>
-                                                    </select>
-                                                    <label style="float: right; margin-right: 5px; margin-top: 4px;">Display</label>
-                                                </div>
-                                                <div class="m-widget3">
-                                                    <div *ngFor="let person of people; let i = index" class="m-widget3__item">
-                                                        <div class="m-widget3__header">
-                                                            <div class="m-widget3__user-img">
-                                                                <img class="m-widget3__img" [src]="person.img" alt="">
-                                                            </div>
-                                                            <div class="m-widget3__info">
-                                                                <span class="m-widget3__username">
-                                        {{person.name}}
-                                    </span>
-                                                                <br>
-                                                                <span class="m-widget3__time">
-                                        {{person.job}}
-                                    </span>
-                                                            </div>
-                                                            <ul class="m-portlet__nav">
-                                                                <li class="m-portlet__nav-item m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push">
-                                                                    <a href="" class="m-portlet__nav-link m-portlet__nav-link--icon m-portlet__nav-link--icon-xl m-dropdown__toggle">
-                                      {{person.status}}
-                                      </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="m-widget3 search-result-pagination col-lg-12 col-md-12 col-sm-12 col-xl-12">
-                                                    <label class="pagination-label">Showing {{startNum}} to {{endNum}} of {{totalSize}} connects</label>
-                                                    <ul class="pagination">
-                                                        <li class="page-item previous-page">
-                                                            <a class="page-link previous-page-link" (click)="prevPage();">
-                                                                <</a>
-                                                        </li>
-                                                        <li *ngFor="let page of viewPages; let i = index" class="page-item"><a [ngClass]="(page!=currentPage)?'page-link':'page-link page-active'" (click)="goPage(page);">{{page + 1}}</a></li>
-                                                        <li class="page-item next-page">
-                                                            <a class="page-link next-page-link" (click)="nextPage();">></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                                <div class="m_datatable" id="json_data"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -186,12 +140,12 @@
                                                         </div>
                                                         <div class="m-card-profile__pic">
                                                             <div class="m-card-profile__pic-wrapper">
-                                                                <img src="assets/app/media/img/users/user2.jpg" alt="" />
+                                                                <img src="{{profile.img}}" alt="" />
                                                             </div>
                                                         </div>
                                                         <div class="m-card-profile__details">
-                                                            <span class="m-card-profile__name">Wiltor Delton </span>
-                                                            <a href="" class="m-card-profile__email m-link">Project Manager</a>
+                                                            <span class="m-card-profile__name">{{profile.name}}</span>
+                                                            <a href="" class="m-card-profile__email m-link">{{profile.job}}</a>
                                                             <ul class="contact-info m-nav m-nav--hover-bg m-portlet-fit--sides" style="    margin-right: -4rem;">
                                                                 <li>
                                                                     <a href="" class="m-nav__link m-dropdown__toggle">
@@ -228,7 +182,7 @@
                                                             <i class="m-nav__link-icon flaticon-time-3"></i>
                                                             <span class="m-nav__link-title">
                                     <span class="m-nav__link-wrap">
-                                      <span class="m-nav__link-text">New York</span>
+                                      <span class="m-nav__link-text">{{profile.city}}</span>
                                                             </span>
                                                             </span>
                                                         </a>
@@ -236,7 +190,7 @@
                                                     <li class="m-nav__item">
                                                         <a href="header/profile&amp;demo=default.html" class="m-nav__link">
                                                             <i class="m-nav__link-icon flaticon-profile-1"></i>
-                                                            <span class="m-nav__link-text">Harvard University</span>
+                                                            <span class="m-nav__link-text">{{profile.university}}</span>
                                                         </a>
                                                     </li>
                                                     <li class="m-nav__item">

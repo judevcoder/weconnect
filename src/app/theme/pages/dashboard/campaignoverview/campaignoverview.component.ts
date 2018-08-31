@@ -20,7 +20,7 @@ export class CampaignOverviewComponent implements OnInit, AfterViewInit {
     ngOnInit() { }
 
     ngAfterViewInit() {
-        this._script.loadScripts("app-connection", [
+        this._script.loadScripts("app-campaign-overview", [
             "assets/app/js/dashboard.js"
         ]);
     }
