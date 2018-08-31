@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 .we_connect_table {
+    table {
+        overflow: visible !important;
+    }
     .m-datatable__head {
         display: none !important;
     }
@@ -34,7 +37,7 @@
         border-bottom: 0.07rem dashed #ebedf2;
         td {
             &:last-child {
-                span:first-child{
+                span:first-child {
                     float: right;
                     padding-right: 35px !important;
                 }
@@ -58,6 +61,14 @@
         .m-datatable__cell--check {
             span:first-child {
                 width: 30px !important;
+            }
+        }
+        .m-datatable__cell {
+            &[data-field="img"] {
+                width: 50px !important;
+            }
+            &[data-field="RecordID"] {
+                width: 50px !important;
             }
         }
     }
