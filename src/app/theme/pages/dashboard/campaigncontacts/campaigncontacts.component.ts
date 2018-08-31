@@ -96,7 +96,7 @@ export class CampaignContactsComponent implements OnInit, AfterViewInit {
                     field: "status",
                     title: "Status",
                     sortable: false,
-                    width: 60,
+                    width: 120,
                     template: function(row) {
                         return (
                             '<a href="javascript:;" class="m-portlet__nav-link m-portlet__nav-link--icon m-portlet__nav-link--icon-xl m-dropdown__toggle">' +
@@ -110,9 +110,12 @@ export class CampaignContactsComponent implements OnInit, AfterViewInit {
 
         let that = this;
         jQuery(document)
-            .off("click", ".profile-img")
-            .on("click", ".profile-img", function() {
-                let id = $(this).attr("data-id");
+            .off("click", ".m-datatable__body .m-datatable__row")
+            .on("click", ".m-datatable__body .m-datatable__row", function() {
+                $(this).closest('tbody').find('.m-datatable__row--selected').removeClass('m-datatable__row--selected');
+                $(this).addClass('m-datatable__row--selected');
+
+                let id = $(this).find('.profile-img').attr("data-id");
                 that.profile = that.data.find(x => x.id == id);
             });
     }

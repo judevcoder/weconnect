@@ -17,10 +17,20 @@ export class OutreachSettingsComponent implements OnInit, AfterViewInit {
 
     constructor(private _script: ScriptLoaderService) { }
 
-    ngOnInit() { }
+    ngOnInit() {
+        (<any>$('#start_time_picker')).timepicker();
+        (<any>$('#end_time_picker')).timepicker();
+        $(document).off('click', '.schedule-date button').on('click', '.schedule-date button', function() {
+            if($(this).hasClass('active')) {
+                $(this).removeClass('active');
+            } else {
+                $(this).addClass('active');
+            }
+        });
+    }
 
     ngAfterViewInit() {
-        this._script.loadScripts("app-connection", [
+        this._script.loadScripts("app-outreach-settings", [
             "assets/app/js/dashboard.js"
         ]);
     }

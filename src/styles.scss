@@ -23,6 +23,7 @@
     }
 
     .table-nav-portlet {
+        float: right;
         margin-bottom: 0 !important;
     }
 
@@ -32,8 +33,36 @@
         }
         border-bottom: 0.07rem dashed #ebedf2;
         td {
+            &:last-child {
+                span{
+                    float: right;
+                    padding-right: 35px !important;
+                }
+            }
             background: #ffffff !important;
         }
+    }
+    .m-datatable__row--hover {
+        .m-datatable__cell {
+            cursor: pointer;
+            background: #faf9fc !important;
+        }
+    }
+    .m-datatable__row--selected {
+        .m-datatable__cell {
+            background: #faf9fc !important;
+        }
+    }
+    .m-datatable__row {
+        cursor: pointer;
+    }
+    .m-datatable__pager-info {
+        position: absolute;
+        top: 80px;
+        right: 20px;
+    }
+    .m-datatable__pager-nav {
+        float: right;
     }
 }
 
@@ -108,9 +137,11 @@ ul.contact-info {
     margin-right: 0;
 }
 
-// .profile-detail-info li {
-//     padding: 0 53px;
-// }
+.profile-detail-info {
+    .m-nav__link {
+        padding: 12px 60px !important;
+    }
+}
 
 .show-more {
     text-align: center;
