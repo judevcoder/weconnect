@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 .we_connect_table {
     .m-datatable__head {
-        opacity: 0;
+        display: none !important;
     }
     .profile-img {
         cursor: pointer;
@@ -34,7 +34,7 @@
         border-bottom: 0.07rem dashed #ebedf2;
         td {
             &:last-child {
-                span{
+                span:first-child{
                     float: right;
                     padding-right: 35px !important;
                 }
@@ -55,6 +55,11 @@
     }
     .m-datatable__row {
         cursor: pointer;
+        .m-datatable__cell--check {
+            span:first-child {
+                width: 30px !important;
+            }
+        }
     }
     .m-datatable__pager-info {
         position: absolute;
@@ -64,6 +69,10 @@
     .m-datatable__pager-nav {
         float: right;
     }
+}
+
+.table-row-select {
+    padding: 16px;
 }
 
 .profile-settings {

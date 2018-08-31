@@ -24,6 +24,9 @@ export class ConnectionComponent implements OnInit, AfterViewInit {
         city: "New York"
     };
 
+    private pageSelection: string = 'page';
+    private isRowSelected: boolean = false;
+
     constructor(
         private _script: ScriptLoaderService,
         private dataService: DataService
@@ -161,5 +164,10 @@ export class ConnectionComponent implements OnInit, AfterViewInit {
         this._script.loadScripts("app-connection", [
             "assets/app/js/dashboard.js"
         ]);
+    }
+
+    private selectRow() {
+        console.log(this.isRowSelected);
+        console.log(this.pageSelection);
     }
 }

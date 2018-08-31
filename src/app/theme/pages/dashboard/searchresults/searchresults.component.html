@@ -104,6 +104,20 @@
                     </div>
                 </div>
                 <div class="m-portlet__body search-result-list">
+					<div class="table-row-select">
+						<label class="m-checkbox m-checkbox--solid m-checkbox--info">
+							<input type="checkbox" id="table_row_select_control" [(ngModel)]="isRowSelected" (change)="selectRow()">
+							<select class="custom-select form-control" [(ngModel)]="pageSelection">
+								<option value="all">
+									Select All
+								</option>
+								<option value="page">
+									Current Page
+								</option>
+							</select>
+							<span style="margin-top: 8px;"></span>
+						</label>
+					</div>
                     <div class="m_datatable" id="json_data"></div>
                 </div>
             </div>
