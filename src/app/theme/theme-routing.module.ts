@@ -48,6 +48,11 @@ const routes: Routes = [
                 "./pages/dashboard/savedsearch/savedsearch.module#SavedSearchModule"
             },
             {
+                path: "myfolder/templates",
+                loadChildren:
+                "./pages/dashboard/myfoldertemplates/myfoldertemplates.module#MyfolderTemplatesModule"
+            },
+            {
                 path: "outreach",
                 loadChildren:
                 "./pages/dashboard/outreach/outreach.module#OutreachModule"
