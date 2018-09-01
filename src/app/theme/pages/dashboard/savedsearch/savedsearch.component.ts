@@ -15,14 +15,14 @@ import { ScriptLoaderService } from "../../../../_services/script-loader.service
 export class SavedSearchComponent implements OnInit, AfterViewInit {
     data: any;
 
-    constructor(private _script: ScriptLoaderService) {}
+    constructor(private _script: ScriptLoaderService) { }
 
     ngOnInit() {
         this._script
             .loadScripts(
-                "body",
-                ["assets/vendors/custom/datatables/datatables.bundle.js"],
-                true
+            "body",
+            ["assets/vendors/custom/datatables/datatables.bundle.js"],
+            true
             )
             .then(result => {
                 var table = (<any>$("#m_table_1")).DataTable({
@@ -84,5 +84,5 @@ export class SavedSearchComponent implements OnInit, AfterViewInit {
             });
     }
 
-    ngAfterViewInit() {}
+    ngAfterViewInit() { }
 }

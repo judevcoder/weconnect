@@ -21,7 +21,7 @@ export class OutreachSettingsComponent implements OnInit, AfterViewInit {
         (<any>$('#start_time_picker')).timepicker();
         (<any>$('#end_time_picker')).timepicker();
         $(document).off('click', '.schedule-date button').on('click', '.schedule-date button', function() {
-            if($(this).hasClass('active')) {
+            if ($(this).hasClass('active')) {
                 $(this).removeClass('active');
             } else {
                 $(this).addClass('active');

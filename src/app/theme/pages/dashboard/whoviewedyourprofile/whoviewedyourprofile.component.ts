@@ -15,7 +15,7 @@ import { ScriptLoaderService } from "../../../../_services/script-loader.service
 export class WhoViewedYourProfileComponent implements OnInit, AfterViewInit {
     data: any;
 
-    constructor(private _script: ScriptLoaderService) {}
+    constructor(private _script: ScriptLoaderService) { }
 
     ngOnInit() {
         var datatable = (<any>$("#json_data")).mDatatable({

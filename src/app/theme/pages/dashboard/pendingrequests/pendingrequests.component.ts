@@ -17,7 +17,7 @@ export class PendingRequestsComponent implements OnInit, AfterViewInit {
     constructor(
         private _script: ScriptLoaderService,
         private dataService: DataService
-    ) {}
+    ) { }
 
     ngOnInit() {
         var datatable = (<any>$("#json_data")).mDatatable({

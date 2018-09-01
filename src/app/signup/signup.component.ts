@@ -19,7 +19,7 @@ declare let mUtil: any;
     encapsulation: ViewEncapsulation.None
 })
 export class SignUpComponent implements OnInit {
-    constructor() {}
+    constructor() { }
 
-    ngOnInit() {}
+    ngOnInit() { }
 }

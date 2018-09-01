@@ -27,14 +27,14 @@ export class CampaignContactsComponent implements OnInit, AfterViewInit {
     constructor(
         private _script: ScriptLoaderService,
         private dataService: DataService
-    ) {}
+    ) { }
 
     ngOnInit() {
         this.dataService.getData().subscribe(
             data => {
                 this.data = data;
             },
-            error => {}
+            error => { }
         );
 
         var datatable = (<any>$("#json_data")).mDatatable({

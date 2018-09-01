@@ -28,4 +28,4 @@ const routes: Routes = [
     exports: [RouterModule],
     declarations: [SearchResultsComponent]
 })
-export class SearchResultsModule {}
+export class SearchResultsModule { }

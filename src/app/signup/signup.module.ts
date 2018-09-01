@@ -11,4 +11,4 @@ import { SignUpComponent } from "./signup.component";
     providers: [],
     entryComponents: []
 })
-export class SignUpModule {}
+export class SignUpModule { }
