@@ -129,8 +129,28 @@
     }
 }
 
+ul.m-messenger__form-icon {
+    float: right;
+    margin-right: 60px !important;
+
+    li.m-messenger__form-tools {
+        background: #ffffff !important;
+
+        a.m-messenger__form-attachment {
+            i   {
+                    font-size: 1.7rem !important;
+                    color: #000000;
+            }
+        }
+    }
+}
+
 .contact-info {
     margin: 0 auto !important;
+}
+
+#upload{
+    display:none
 }
 
 ul.contact-info {
@@ -216,6 +236,13 @@ ul.contact-info {
         font-size: 14px;
         border-radius: 0;
     }
+}
+
+@media (max-width: 1200px) {
+    .m-portlet .m-portlet__body {
+        padding: 3.2rem 2.2rem;
+    }
+    
 }
 
 .advance-search-label {
@@ -1016,4 +1043,32 @@ img.google-image {
 
 .m-pricing-table-2 .m-pricing-table-2__head .btn-group .btn.active {
     background: #6610f2 !important  ;
+}
+
+#message-text {
+    height: 140px;
+}
+
+#comment_connection_message {
+    padding-right: 50px;
+}
+
+#chars {
+    position: absolute;
+    top: 73px;
+    right: 40px;
+}
+
+.emoji-picker-icon {
+    position: absolute;
+    top: 55px;
+    right: 110px;
+    font-size: 1.7rem;
+    padding: 10px;
+    background: #f7f8fa;
+    border-radius: 50%;
+}
+
+.emoji-picker-icon:hover {
+    background: #ebedf2;
 }

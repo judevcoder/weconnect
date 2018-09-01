@@ -30,6 +30,8 @@ export class InboxComponent implements OnInit, AfterViewInit {
     ) { }
 
     ngOnInit() {
+        
+
         this.dataService.getData().subscribe(
             data => {
                 this.data = data;
@@ -151,9 +153,30 @@ export class InboxComponent implements OnInit, AfterViewInit {
                 let id = $(this).find('.profile-img').attr("data-id");
                 that.profile = that.data.find(x => x.id == id);
             });
+
+        jQuery(document)
+            .off("click", "#upload_link")
+            .on("click", "#upload_link", function(e) {
+                e.preventDefault();
+                $("#upload:hidden").trigger('click');
+
+            })
+
+        jQuery(document)
+            .off("click", "#typeform_expand")
+            .on("click", "#typeform_expand", function(e) {
+                var MessageContent = $(".m-messenger__form-input").val();
+                $("#type-message-text").val(MessageContent);
+
+            })
     }
 
     ngAfterViewInit() {
         this._script.loadScripts("app-inbox", ["assets/app/js/dashboard.js"]);
+        this._script.loadScripts("app-inbox", ["json/js/config.js"]);
+        this._script.loadScripts("app-inbox", ["json/js/util.js"]);
+        this._script.loadScripts("app-inbox", ["json/js/jquery.emojiarea.js"]);
+        this._script.loadScripts("app-inbox", ["json/js/emoji-picker.js"]);
+        this._script.loadScripts("app-inbox", ["json/js/emoji.js"]);
     }
 }
