@@ -437,7 +437,7 @@
 	                        </span>
 	                            </div>
 	                            <span class="m-widget3__status m--font-info">
-	                      <a href="" class="btn btn-outline-primary btn-sm 	m-btn m-btn--icon">
+	                      <a href="" class="btn btn-outline-primary btn-sm 	m-btn m-btn--icon" id="security_pin" data-toggle="modal" data-target="#linkedin_security_key">
 	                          <span>
 	                            <i class="la la-link"></i>
 	                            <span>Connect</span>
@@ -548,7 +548,7 @@
 	                            </div>
 	                            <div class="m-widget3__info">
 	                                <span class="m-widget3__username">
-	                        Melania Trump
+	                        Kate Myers
 	                        </span>
 	                                <br>
 	                                <span class="m-widget3__time">
@@ -664,7 +664,7 @@
 	                            </div>
 	                            <div class="m-widget3__info">
 	                                <span class="m-widget3__username">
-	                        Melania Trump
+	                        Lisa Kelly
 	                        </span>
 	                                <br>
 	                                <span class="m-widget3__time">
@@ -792,4 +792,37 @@
 	</div>
 
 	<!-- Confirm Delete modal end! -->
+
+		<!-- LinkedIn security code modal start! -->
+		<div class="modal fade show" id="linkedin_security_key" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="padding-right: 17px;">
+		  	<div class="modal-dialog modal-md modal-dialog-centered" role="document">
+			    <div class="modal-content">
+			    	<form class="m-form m-form--label-align-right">
+				      	<div class="modal-body">
+				      		<div class="col-md-12 m--margin-top-50" style="text-align: center;">
+						        <h5>Linkedin Security Code</h5>
+					        </div>
+						  	<div class="col-md-12 m--margin-top-15">
+						        <span class="m-form__help">As you have logged into Linkedin from a new location, LinkedIn will send you a security pin to validate your login access. Sometimes LinkedIn may take upto 15 mins to send this to you, when you receive it enter the pin below and submit</span>
+					        </div>
+						  	<div class="form-group m-form__group row m--margin-top-25">
+								<div class="col-md-12 m--margin-top-15">
+									<div class="input-group">
+										<input type="text" class="form-control m-input" name="linkedin_security_key" placeholder="Enter Linkedin Security Pin" style="background: #f2f3f8;">
+										<div class="input-group-append"><a href="#" class="btn btn-success">Submit</a></div>
+									</div>
+								</div>
+							</div>
+							<div class="form-group m-form__group row m--margin-top-15">
+						        <div class="col-md-12" style="text-align: center;">
+							        <span class="m-form__help">Your linkedin Credentials are encrypted. <br> We do not have any control over your account. <br> You can deactivate your LinkedIn account anytime.</span>
+						        </div>
+						    </div>
+					  	</div>
+			    	</form>
+		    	</div>
+		  	</div>
+		</div>
+		<!-- LinkedIn security code modal end! -->
+
 </div>
