@@ -44,4 +44,8 @@ export class OutreachSequencesComponent implements OnInit, AfterViewInit {
             this.boxes.push('box');
         }
     }
+
+    private removeSection() {
+        this.boxes.pop();
+    }
 }
