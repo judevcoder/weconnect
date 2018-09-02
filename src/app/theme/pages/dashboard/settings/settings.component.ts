@@ -17,7 +17,21 @@ export class SettingsComponent implements OnInit, AfterViewInit {
 
     constructor(private _script: ScriptLoaderService) { }
 
-    ngOnInit() { }
+    ngOnInit() {
+        jQuery(document)
+            .off("change", "#exampleSelect1")
+            .on("change", "#exampleSelect1", function() {
+                var selectedVal1 = $("#exampleSelect1 option:selected").attr("value");
+                $(".plan-pricing-1").text(selectedVal1);
+            });
+
+        jQuery(document)
+            .off("change", "#exampleSelect2")
+            .on("change", "#exampleSelect2", function() {
+                var selectedVal2 = $("#exampleSelect2 option:selected").attr("value");
+                $(".plan-pricing-2").text(selectedVal2);
+            });
+    }
 
     ngAfterViewInit() {
         this._script.loadScripts("app-connection", [

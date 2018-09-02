@@ -19,12 +19,12 @@ export class OutreachSequencesComponent implements OnInit, AfterViewInit {
 
     constructor(private _script: ScriptLoaderService) { }
 
-    ngOnInit() { 
+    ngOnInit() {
         var maxLength = 300;
         jQuery(document)
             .on("keyup", "#comment_connection_message", function() {
                 var length = String($(this).val()).length;
-                var length = maxLength-length;
+                var length = maxLength - length;
                 $('#chars').text(length);
             });
     }
@@ -36,8 +36,7 @@ export class OutreachSequencesComponent implements OnInit, AfterViewInit {
     }
 
     private addStep() {
-        if (this.boxes.length >= 5 )
-        {
+        if (this.boxes.length >= 5) {
             $(".add-step-btn").removeClass("btn-outline-success").addClass("btn-success");
             $(".add-step-btn").attr("disabled", "disabled");
         } else {
