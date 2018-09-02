@@ -1062,7 +1062,7 @@ img.google-image {
 .emoji-picker-icon {
     position: absolute;
     top: 55px;
-    right: 110px;
+    right: 114px !important;
     font-size: 1.7rem;
     padding: 10px;
     background: #f7f8fa;
@@ -1071,4 +1071,31 @@ img.google-image {
 
 .emoji-picker-icon:hover {
     background: #ebedf2;
+}
+
+.m-subheader__breadcrumbs {
+    margin-left: 85px;
+}
+
+.myfolder-templates {
+    padding: 30px 95px !important;
+}
+
+.emoji-menu {
+    float: right;
+    margin-right: 25px;
+    margin-top: -214px;
+}
+
+.remove-sequences {
+    color: #000000;
+    text-decoration: none;
+    padding-right: 9px;
+    float: left;
+    margin-left: -27px;
+    margin-top: -4px;
+}
+
+.message-input-form {
+    width: calc(100% - 45px) !important;
 }
