@@ -30,7 +30,7 @@ export class InboxComponent implements OnInit, AfterViewInit {
     ) { }
 
     ngOnInit() {
-        
+
 
         this.dataService.getData().subscribe(
             data => {
