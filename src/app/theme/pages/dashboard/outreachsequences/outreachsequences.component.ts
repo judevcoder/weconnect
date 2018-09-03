@@ -4,6 +4,7 @@ import {
     ViewEncapsulation,
     AfterViewInit
 } from "@angular/core";
+import { Router } from "@angular/router";
 import { Helpers } from "../../../../helpers";
 import { ScriptLoaderService } from "../../../../_services/script-loader.service";
 
@@ -14,10 +15,12 @@ import { ScriptLoaderService } from "../../../../_services/script-loader.service
 })
 export class OutreachSequencesComponent implements OnInit, AfterViewInit {
     data: any;
+    disabled: boolean = false;
+    campaignName: string = localStorage.getItem('CampaignName');
 
     boxes: Array<string> = ['box'];
 
-    constructor(private _script: ScriptLoaderService) { }
+    constructor(private _script: ScriptLoaderService, private router: Router) { }
 
     ngOnInit() {
         var maxLength = 300;
@@ -37,8 +40,7 @@ export class OutreachSequencesComponent implements OnInit, AfterViewInit {
 
     private addStep() {
         if (this.boxes.length >= 5) {
-            $(".add-step-btn").removeClass("btn-outline-success").addClass("btn-success");
-            $(".add-step-btn").attr("disabled", "disabled");
+            this.disabled = true;
         } else {
             this.boxes.push('box');
         }
@@ -46,5 +48,10 @@ export class OutreachSequencesComponent implements OnInit, AfterViewInit {
 
     private removeSection() {
         this.boxes.pop();
+    }
+
+    private saveCampaignName() {
+        localStorage.setItem('CampaignName', this.campaignName);
+        this.router.navigate(['/outreach/settings']);
     }
 }

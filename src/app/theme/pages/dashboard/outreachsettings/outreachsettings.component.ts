@@ -4,6 +4,7 @@ import {
     ViewEncapsulation,
     AfterViewInit
 } from "@angular/core";
+import { Router } from "@angular/router";
 import { Helpers } from "../../../../helpers";
 import { ScriptLoaderService } from "../../../../_services/script-loader.service";
 
@@ -14,8 +15,9 @@ import { ScriptLoaderService } from "../../../../_services/script-loader.service
 })
 export class OutreachSettingsComponent implements OnInit, AfterViewInit {
     data: any;
+    campaignName: string = localStorage.getItem('CampaignName');
 
-    constructor(private _script: ScriptLoaderService) { }
+    constructor(private _script: ScriptLoaderService, private router: Router) { }
 
     ngOnInit() {
         (<any>$('#start_time_picker')).timepicker();
@@ -33,5 +35,10 @@ export class OutreachSettingsComponent implements OnInit, AfterViewInit {
         this._script.loadScripts("app-outreach-settings", [
             "assets/app/js/dashboard.js"
         ]);
+    }
+
+    private saveCampaignName() {
+        localStorage.setItem('CampaignName', this.campaignName);
+        this.router.navigate(['/outreach/launch']);
     }
 }

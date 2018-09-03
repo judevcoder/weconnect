@@ -4,6 +4,7 @@ import {
     ViewEncapsulation,
     AfterViewInit
 } from "@angular/core";
+import { Router } from "@angular/router";
 import { Helpers } from "../../../../helpers";
 import { ScriptLoaderService } from "../../../../_services/script-loader.service";
 
@@ -14,25 +15,24 @@ import { ScriptLoaderService } from "../../../../_services/script-loader.service
 })
 export class OutreachSetupComponent implements OnInit, AfterViewInit {
     data: any;
+    campaignName: string = "Campaign Name";
 
-    constructor(private _script: ScriptLoaderService) { }
+    constructor(private _script: ScriptLoaderService, private router: Router) { }
 
-    ngOnInit() {
-        jQuery(document)
-            var initcampaignName = $("input[name='name']").val();
-            $(".m-portlet__head-text").text(String(initcampaignName));
-
-        jQuery(document)
-            .off("keyup", "input[name='name']")
-            .on("keyup", "input[name='name']", function() {
-                var campaignName = $(this).val();
-                $(".m-portlet__head-text").text(String(campaignName));
-            });
-    }
+    ngOnInit() {}
 
     ngAfterViewInit() {
         this._script.loadScripts("app-connection", [
             "assets/app/js/dashboard.js"
         ]);
+    }
+
+    private saveCampaignName() {
+        localStorage.setItem('CampaignName', this.campaignName);
+        this.router.navigate(['/outreach/sequences']);
+    }
+
+    private changeCampaignName(value: string) {
+        this.campaignName = value;
     }
 }

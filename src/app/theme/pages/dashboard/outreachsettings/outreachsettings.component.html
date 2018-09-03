@@ -5,7 +5,7 @@
             <div class="m-portlet__head-caption">
                 <div class="m-portlet__head-title">
                     <h3 class="m-portlet__head-text">
-                Campaign Name
+                {{campaignName}}
               </h3>
                 </div>
             </div>
@@ -194,7 +194,7 @@
                             <span>Submit</span>
                                                     </span>
                                                 </a>
-                                                <a href="/outreach/launch" class="btn btn-success m-btn m-btn--custom m-btn--icon" data-wizard-action="next">
+                                                <a class="btn btn-success m-btn m-btn--custom m-btn--icon save-continue-btn" data-wizard-action="next" (click)="saveCampaignName()">
                                                     <span>
                             <span>Save & Continue</span>&nbsp;&nbsp;
                                                     <i class="la la-arrow-right"></i>

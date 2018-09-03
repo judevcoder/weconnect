@@ -1141,7 +1141,18 @@ ul.m-subheader__breadcrumbs li.m-nav__item a.m-nav__link.active:visited {
 .remove-campaign-sequences {
     color: #000000;
     text-decoration: none;
+    position: absolute;
+    margin-top: 14px;
+    right: 90px;
     
+}
+
+@media (max-width: 444px) {
+    .remove-campaign-sequences {
+        position: absolute;
+        margin-top: 38px;
+        right: 57px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1209,4 +1220,43 @@ ul.m-subheader__breadcrumbs li.m-nav__item a.m-nav__link.active:visited {
             }
         }
     }
+}
+
+textarea.campaign-message-input {
+    padding-top: 20px;
+    margin-left: 15px;
+    margin-top: 15px;
+    width: 96%;
+    border: none;
+    overflow: auto;
+    outline: none;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+textarea.campaign-message-input:focus {
+    border: none;
+    overflow: auto;
+    outline: none;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.campaign-message-separator {
+     margin-bottom: 10px !important;
+}
+
+.outreach-sequences-m-form__help-section {
+    border: 1px solid #ebedf2;
+    border-radius: 4px;
+    padding: 2px 13px 10px 13px;
+    border-top: none;
+}
+
+.save-continue-btn span {
+    color: #ffffff;
 }

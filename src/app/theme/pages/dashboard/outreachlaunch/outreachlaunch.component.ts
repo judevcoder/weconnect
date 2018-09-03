@@ -14,6 +14,7 @@ import { ScriptLoaderService } from "../../../../_services/script-loader.service
 })
 export class OutreachLaunchComponent implements OnInit, AfterViewInit {
     data: any;
+    campaignName: string = localStorage.getItem('CampaignName');
 
     constructor(private _script: ScriptLoaderService) { }
 

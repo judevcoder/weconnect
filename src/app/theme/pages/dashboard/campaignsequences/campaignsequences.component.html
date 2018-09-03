@@ -129,10 +129,12 @@
                                                         <ng-template #other_span>
                                                             <span class="m-accordion__item-title sub-accordion-title" style="color: #000;">Message After Connection If No Reply</span>
                                                         </ng-template>
+                                                        <span>
+                                                        </span>
                                                         <span class="m-accordion__item-mode"></span>
                                                     </div>
                                                     <div class="m-accordion__item-body collapse" id="m_accordion_2_item_2_body" class=" " role="tabpanel" aria-labelledby="m_accordion_2_item_2_head" data-parent="#m_accordion_2_item_1_head">
-                                                        <div *ngIf="i >= 1; else other_template" class="tab-content  m--padding-20 m--padding-bottom-30">
+                                                        <div *ngIf="i >= 1; else other_template" class="tab-content  m--padding-20">
                                                             <div  class="row" style="margin: 0;">
                                                                 <div class="col-lg-12" style="padding: 0;">
                                                                     <select name="country" class="form-control m-input">
@@ -170,12 +172,40 @@
                                                                     </select>
                                                                 </div>
                                                             </div>
-                                                            <div class="row">
-                                                                <span style="padding-top: 20px; margin-left: 15px;">Enter the message if no reply</span>
+                                                            <div class="row" style="margin: 0;">
+                                                                <textarea class="campaign-message-input" placeholder="Enter the message after connection."></textarea>
+                                                            </div>
+                                                            <div class="m-portlet__body-separator campaign-message-separator"></div>
+                                                            <div class="row" style="margin: 0;">
+                                                                <span class="m-form__help" style="float: left;">
+                                                                    <div class="btn-group dropup mr10">
+                                                                        <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top: 5px; padding-bottom: 5px;"><i class="flaticon-layers"></i>
+                                                                        </button>
+                                                                        <div class="dropdown-menu">
+                                                                            <a class="dropdown-item" href="">Introduction</a>
+                                                                            <a class="dropdown-item" href="">Snippet 1</a>
+                                                                            <a class="dropdown-item" href="">Snippet 1</a>
+                                                                            <div class="dropdown-divider"></div>
+                                                                            <a class="dropdown-item" href="" data-toggle="modal" data-target="#new_template">+ Add New</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </span>
+                                                                <span class="m-form__help">
+                                                                    <div class="btn-group dropup">
+                                                                        <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top: 5px; padding-bottom: 5px;"><i class="la la-code"></i>
+                                                                        </button>
+                                                                        <div class="dropdown-menu">
+                                                                            <a class="dropdown-item" href="">First Name</a>
+                                                                            <a class="dropdown-item" href="">Last Name</a>
+                                                                            <a class="dropdown-item" href="">Company Name</a>
+                                                                            <a class="dropdown-item" style="padding-bottom: 25px;" href="">Job Title</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </span>
                                                             </div>
                                                         </div>
                                                         <ng-template #other_template>
-                                                            <div class="tab-content  m--padding-20 m--padding-bottom-30">
+                                                            <div class="tab-content  m--padding-20">
                                                                 <div class="row" style="margin: 0;">
                                                                     <div class="col-lg-6" style="padding: 0;">
                                                                         <select name="country" class="form-control m-input">
@@ -241,38 +271,41 @@
                                                                         </select>
                                                                     </div>
                                                                 </div>
-                                                                <div class="row">
-                                                                    <span style="padding-top: 20px; margin-left: 15px;">Enter the message after connection.</span>
+                                                                <div class="row" style="margin: 0;">
+                                                                    <textarea class="campaign-message-input" placeholder="Enter the message after connection."></textarea>
+                                                                </div>
+                                                                <div class="m-portlet__body-separator campaign-message-separator"></div>
+                                                                <div class="row" style="margin: 0;">
+                                                                    <span class="m-form__help" style="float: left;">
+                                                                        <div class="btn-group dropup mr10">
+                                                                            <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top: 5px; padding-bottom: 5px;"><i class="flaticon-layers"></i>
+                                                                            </button>
+                                                                            <div class="dropdown-menu">
+                                                                                <a class="dropdown-item" href="">Introduction</a>
+                                                                                <a class="dropdown-item" href="">Snippet 1</a>
+                                                                                <a class="dropdown-item" href="">Snippet 1</a>
+                                                                                <div class="dropdown-divider"></div>
+                                                                                <a class="dropdown-item" href="" data-toggle="modal" data-target="#new_template">+ Add New</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </span>
+                                                                    <span class="m-form__help">
+                                                                        <div class="btn-group dropup">
+                                                                            <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top: 5px; padding-bottom: 5px;"><i class="la la-code"></i>
+                                                                            </button>
+                                                                            <div class="dropdown-menu">
+                                                                                <a class="dropdown-item" href="">First Name</a>
+                                                                                <a class="dropdown-item" href="">Last Name</a>
+                                                                                <a class="dropdown-item" href="">Company Name</a>
+                                                                                <a class="dropdown-item" style="padding-bottom: 25px;" href="">Job Title</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </span>
                                                                 </div>
                                                             </div>
                                                         </ng-template>
                                                     </div>
                                                 </div>
-                                                <span class="m-form__help" style="float: left;">
-                                                    <div class="btn-group dropup mr10">
-                                                        <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top: 5px; padding-bottom: 5px;"><i class="flaticon-layers"></i>
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="">Introduction</a>
-                                                            <a class="dropdown-item" href="">Snippet 1</a>
-                                                            <a class="dropdown-item" href="">Snippet 1</a>
-                                                            <div class="dropdown-divider"></div>
-                                                            <a class="dropdown-item" href="" data-toggle="modal" data-target="#new_template">+ Add New</a>
-                                                        </div>
-                                                    </div>
-                                                </span>
-                                                <span class="m-form__help">
-                                                    <div class="btn-group dropup">
-                                                        <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top: 5px; padding-bottom: 5px;"><i class="la la-code"></i>
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="">First Name</a>
-                                                            <a class="dropdown-item" href="">Last Name</a>
-                                                            <a class="dropdown-item" href="">Company Name</a>
-                                                            <a class="dropdown-item" style="padding-bottom: 25px;" href="">Job Title</a>
-                                                        </div>
-                                                    </div>
-                                                </span>
                                             </div>
                                             <div class="row sequences-accodion">
                                                 <a href="javascript:;" class="btn btn-outline-success btn-sm m-btn m-btn--custom add-step-btn" (click)="addStep()">
