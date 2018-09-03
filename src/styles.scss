@@ -1260,3 +1260,9 @@ textarea.campaign-message-input:focus {
 .save-continue-btn span {
     color: #ffffff;
 }
+
+@media(max-width: 768px) {
+    .billing-tab {
+        overflow: auto !important;
+    }
+}
