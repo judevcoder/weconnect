@@ -99,8 +99,21 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="m-portlet__body">
-                        <div class="table-row-select"></div>
+                    <div class="m-portlet__body search-result-list">
+                        <div class="table-row-select">
+                            <label class="m-checkbox m-checkbox--solid m-checkbox--info">
+                                <input type="checkbox" id="table_row_select_control" [(ngModel)]="isRowSelected" (change)="selectRow()">
+                                <select class="custom-select form-control" [(ngModel)]="pageSelection">
+                                    <option value="all">
+                                        Select All
+                                    </option>
+                                    <option value="page">
+                                        Current Page
+                                    </option>
+                                </select>
+                                <span style="margin-top: 8px;"></span>
+                            </label>
+                        </div>
                         <div class="m_datatable" id="json_data"></div>
                     </div>
                 </div>
@@ -115,39 +128,39 @@
                                 </div>
                                 <div class="m-card-profile__pic">
                                     <div class="m-card-profile__pic-wrapper">
-                                        <img src="assets/app/media/img/users/user4.jpg" alt="" />
+                                        <img src="{{profile.img}}" alt="" />
                                     </div>
                                 </div>
                                 <div class="m-card-profile__details">
-                                    <span class="m-card-profile__name">Mark Andre</span>
-                                    <a href="" class="m-card-profile__email m-link">Chief Financial Officer</a>
+                                    <span class="m-card-profile__name">{{profile.name}}</span>
+                                    <a href="" class="m-card-profile__email m-link">{{profile.job}}</a>
                                     <ul class="contact-info m-nav m-nav--hover-bg m-portlet-fit--sides">
                                         <li>
                                             <a href="" class="m-nav__link m-dropdown__toggle">
                                                 <span class="m-nav__link-icon">
-                              <i class="m-nav__link-icon la la-linkedin-square contact-info-la"></i>
-                            </span>
+                                  <i class="m-nav__link-icon la la-linkedin-square contact-info-la"></i>
+                                </span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="" class="m-nav__link m-dropdown__toggle">
                                                 <span class="m-nav__link-icon">
-                              <i class="m-nav__link-icon la la-twitter-square contact-info-la"></i>
-                            </span>
+                                  <i class="m-nav__link-icon la la-twitter-square contact-info-la"></i>
+                                </span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="" class="m-nav__link m-dropdown__toggle">
                                                 <span class="m-nav__link-icon">
-                              <i class="m-nav__link-icon la la-envelope contact-info-la"></i>
-                            </span>
+                                  <i class="m-nav__link-icon la la-envelope contact-info-la"></i>
+                                </span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="" class="m-nav__link m-dropdown__toggle">
+                                            <a [routerLink]="'/inbox'" class="m-nav__link m-dropdown__toggle">
                                                 <span class="m-nav__link-icon">
-                              <i class="m-nav__link-icon la flaticon-chat-1 contact-info-la"></i>
-                            </span>
+                                  <i class="m-nav__link-icon la flaticon-chat-1 contact-info-la"></i>
+                                </span>
                                             </a>
                                         </li>
                                     </ul>
@@ -163,22 +176,16 @@
                                 <a href="header/profile&amp;demo=default.html" class="m-nav__link">
                                     <i class="m-nav__link-icon flaticon-time-3"></i>
                                     <span class="m-nav__link-title">
-                        <span class="m-nav__link-wrap">
-                          <span class="m-nav__link-text">New York</span>
+                            <span class="m-nav__link-wrap">
+                              <span class="m-nav__link-text">{{profile.city}}</span>
                                     </span>
                                     </span>
-                                </a>
-                            </li>
-                            <li class="m-nav__item">
-                                <a href="header/profile&amp;demo=default.html" class="m-nav__link">
-                                    <i class="m-nav__link-icon flaticon-chat-1"></i>
-                                    <span class="m-nav__link-text">Activity</span>
                                 </a>
                             </li>
                             <li class="m-nav__item">
                                 <a href="header/profile&amp;demo=default.html" class="m-nav__link">
                                     <i class="m-nav__link-icon flaticon-profile-1"></i>
-                                    <span class="m-nav__link-text">Harvard University</span>
+                                    <span class="m-nav__link-text">{{profile.university}}</span>
                                 </a>
                             </li>
                             <li class="m-nav__item">
@@ -198,20 +205,20 @@
                                 </div>
                                 <div class="m-widget4__info">
                                     <span class="m-widget4__title">
-                      Chief Financial Officer
-                      </span>
+                          Chief Financial Officer
+                          </span>
                                     <br>
                                     <span class="m-widget4__sub">
-                      Google Corp
-                      </span>
+                          Google Corp
+                          </span>
                                     <br>
                                     <span class="m-widget4__sub">
-                      Jul 2015 - present
-                      </span>
+                          Jul 2015 - present
+                          </span>
                                     <br>
                                     <span class="m-widget4__sub">
-                      (3 yrs 2 mos)
-                      </span>
+                          (3 yrs 2 mos)
+                          </span>
                                 </div>
                             </div>
                             <div class="m-widget4__item">
@@ -220,20 +227,20 @@
                                 </div>
                                 <div class="m-widget4__info">
                                     <span class="m-widget4__title">
-                      Finance Controller
-                      </span>
+                          Finance Controller
+                          </span>
                                     <br>
                                     <span class="m-widget4__sub">
-                      Oracle Corporation
-                      </span>
+                          Oracle Corporation
+                          </span>
                                     <br>
                                     <span class="m-widget4__sub">
-                      Jun 2012 - Jun 2015
-                      </span>
+                          Jun 2012 - Jun 2015
+                          </span>
                                     <br>
                                     <span class="m-widget4__sub">
-                      (3 yrs)
-                      </span>
+                          (3 yrs)
+                          </span>
                                 </div>
                             </div>
                             <div class="m-widget4__item">
@@ -242,25 +249,24 @@
                                 </div>
                                 <div class="m-widget4__info">
                                     <span class="m-widget4__title">
-                      Chief Financial Officer
-                      </span>
+                          Chief Financial Officer
+                          </span>
                                     <br>
                                     <span class="m-widget4__sub">
-                      Google Corp
-                      </span>
+                          Google Corp
+                          </span>
                                     <br>
                                     <span class="m-widget4__sub">
-                      Jul 2015 - present
-                      </span>
+                          Jul 2015 - present
+                          </span>
                                     <br>
                                     <span class="m-widget4__sub">
-                      (3 yrs 2 mos)
-                      </span>
+                          (3 yrs 2 mos)
+                          </span>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

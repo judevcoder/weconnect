@@ -17,7 +17,17 @@ export class OutreachSetupComponent implements OnInit, AfterViewInit {
 
     constructor(private _script: ScriptLoaderService) { }
 
-    ngOnInit() { }
+    ngOnInit() { 
+        jQuery(document)
+            $(".m-portlet__head-text").text($("input[name='name']").val());
+
+        jQuery(document)
+            .off("keyup", "input[name='name']")
+            .on("keyup", "input[name='name']", function() {
+                var campaignName = $(this).val();
+                $(".m-portlet__head-text").text(campaignName);
+            });
+    }
 
     ngAfterViewInit() {
         this._script.loadScripts("app-connection", [

@@ -163,6 +163,7 @@ export class SearchResultsComponent implements OnInit, AfterViewInit {
     ngAfterViewInit() {
         this._script.loadScripts("app-search-results", [
             "assets/app/js/dashboard.js"
+            "json/js/select2.js"
         ]);
     }
 

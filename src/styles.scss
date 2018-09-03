@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 .we_connect_table {
     table {
-        overflow: visible !important;
+        overflow: auto !important;
     }
     .m-datatable__head {
         display: none !important;
@@ -572,9 +572,9 @@ li.paginate_button.page-item.disabled:hover > a.page-link {
 }
 
 .profile-settings-section {
-    padding: 50px 150px !important;
+    // padding: 50px 150px !important;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
     .profile-settings-section {
         padding: 30px 20px !important;
     }
@@ -1077,8 +1077,10 @@ img.google-image {
     margin-left: 85px;
 }
 
-.myfolder-templates {
-    padding: 30px 95px !important;
+@media (min-width: 768px) {
+    .myfolder-templates {
+        padding: 30px 95px !important;
+    }
 }
 
 .emoji-menu {
@@ -1102,3 +1104,100 @@ img.google-image {
 .mr10 {
         margin-right: 10px;
     }
+
+ul.m-subheader__breadcrumbs li.m-nav__item a.m-nav__link:hover {
+    span.m-nav__link-text {
+        color: #5867dd !important;
+    }
+}
+
+ul.m-subheader__breadcrumbs li.m-nav__item a.m-nav__link.active:visited {
+    span.m-nav__link-text {
+        color: #5867dd !important;
+    }
+}
+
+.select2-selection--multiple:focus {
+    border-color: #2e40d4 !important;
+}
+
+.select2-selection--multiple:focus-within {
+    border-color: #2e40d4 !important;
+}
+
+.select2.select2-container {
+    width: 100% !important;
+}
+
+.remove-campaign-sequences {
+    color: #000000;
+    text-decoration: none;
+    
+}
+
+@media (max-width: 768px) {
+    .m-datatable__pager-info {
+        margin-top: 45px !important;
+        left: 56px !important;
+    }
+
+    #json_data {
+        margin-top: 40px;
+    }
+
+    #m_user_profile_tab_5 {
+        .outreach-table-section {
+            .m-portlet {
+                .m-portlet.m-portlet--mobile {
+                    .m-portlet__head {
+                        height: 110px;
+                        .m-portlet__head-tools {
+                            float: left;
+                            .m-portlet__nav {
+                                .m-portlet__nav-item {
+                                    padding: 0 0 !important;
+                                }
+                            }
+                        }
+                    }
+
+                    .dataTables_wrapper {
+                        .row {
+                            .col-sm-12 {
+                                .dataTables_wrapper {
+                                    overflow: auto;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+#m_user_profile_tab_5 {
+    .outreach-table-section {
+        .m-portlet {
+            .m-portlet.m-portlet--mobile {
+                .dataTables_wrapper {
+                    .row {
+                        .col-sm-12 {
+                            .dataTables_wrapper {
+                                // overflow: auto;
+                                .row:nth-child(1) {
+                                    display: none;
+                                }
+                                .row:nth-child(3) {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

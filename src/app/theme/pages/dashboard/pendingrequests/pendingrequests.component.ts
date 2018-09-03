@@ -14,12 +14,29 @@ import { DataService } from "../../../../_services/data.service";
     encapsulation: ViewEncapsulation.None
 })
 export class PendingRequestsComponent implements OnInit, AfterViewInit {
+    data: any;
+
+    private profile: object = {
+        name: "Anna Strong",
+        job: "Chief Financial Officer",
+        img: "assets/app/media/img/users/user1.jpg",
+        university: "Harvard University",
+        city: "New York"
+    };
+
+    private pageSelection: string = 'page';
+    private isRowSelected: boolean = false;
+
     constructor(
         private _script: ScriptLoaderService,
         private dataService: DataService
     ) { }
 
     ngOnInit() {
+        this.dataService.getData().subscribe(data => {
+            this.data = data;
+        }, error => { });
+
         var datatable = (<any>$("#json_data")).mDatatable({
             // datasource definition
             data: {
@@ -67,7 +84,11 @@ export class PendingRequestsComponent implements OnInit, AfterViewInit {
                     sortable: false,
                     template: function(row) {
                         return (
-                            '<img src="' + row.img + '" class="profile-img"/>'
+                            '<img src="' +
+                            row.img +
+                            '" class="profile-img" data-id="' +
+                            row.id +
+                            '"/>'
                         );
                     }
                 },
@@ -81,7 +102,7 @@ export class PendingRequestsComponent implements OnInit, AfterViewInit {
                             '<span class="m-widget3__username">' +
                             row.name +
                             '</span><br>\
-									<span class="m-widget3__time">' +
+                                    <span class="m-widget3__time">' +
                             row.job +
                             "</span>"
                         );
@@ -93,21 +114,36 @@ export class PendingRequestsComponent implements OnInit, AfterViewInit {
                     overflow: "visible",
                     sortable: false,
                     template: function(row) {
-                        return '<a href="javascript:;" class="btn btn-outline-danger btn-sm 	m-btn m-btn--icon">\
-									<span>\
-										<i class="la la-remove"></i>\
-										<span>Withdraw</span>\
-									</span>\
-								</a>';
+                        return '<a href="javascript:;" class="btn btn-outline-danger btn-sm     m-btn m-btn--icon">\
+                                    <span>\
+                                        <i class="la la-remove"></i>\
+                                        <span>Withdraw</span>\
+                                    </span>\
+                                </a>';
                     }
                 }
             ]
         });
+        let that = this;
+        jQuery(document)
+            .off("click", ".m-datatable__body .m-datatable__row")
+            .on("click", ".m-datatable__body .m-datatable__row", function() {
+                $(this).closest('tbody').find('.m-datatable__row--selected').removeClass('m-datatable__row--selected');
+                $(this).addClass('m-datatable__row--selected');
+
+                let id = $(this).find('.profile-img').attr("data-id");
+                that.profile = that.data.find(x => x.id == id);
+            });
     }
 
     ngAfterViewInit() {
         this._script.loadScripts("app-pending-requests", [
             "assets/app/js/dashboard.js"
         ]);
+    }
+
+    private selectRow() {
+        console.log(this.isRowSelected);
+        console.log(this.pageSelection);
     }
 }

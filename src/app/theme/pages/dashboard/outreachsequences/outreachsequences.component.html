@@ -157,37 +157,12 @@
                                                     <a href="javascript:;" (click)="removeSection()" class="remove-sequences">
                                                         <span *ngIf="i >= 1"><i class="flaticon-delete-1"></i></span>
                                                     </a>
-                                                    <label class="form-control-label">Message After Connection If No Reply</label>
-                                                    <div class="row" style="margin: 0;">
-                                                        <div class="col-lg-6" style="padding: 0;">
-                                                            <select name="country" class="form-control m-input">
-                                                                <option value="YE">Select Hours</option>
-                                                                <option value="YE">1 Hour After Connection</option>
-                                                                <option value="ZM">2 Hours After Connection</option>
-                                                                <option value="ZW">3 Hours After Connection</option>
-                                                                <option value="ZW">4 Hours After Connection</option>
-                                                                <option value="ZW">5 Hours After Connection</option>
-                                                                <option value="ZW">6 Hours After Connection</option>
-                                                                <option value="ZW">7 Hours After Connection</option>
-                                                                <option value="ZW">8 Hours After Connection</option>
-                                                                <option value="ZW">9 Hours After Connection</option>
-                                                                <option value="ZW">10 Hours After Connection</option>
-                                                                <option value="ZW">11 Hours After Connection</option>
-                                                                <option value="ZW">12 Hours After Connection</option>
-                                                                <option value="ZW">13 Hours After Connection</option>
-                                                                <option value="ZW">14 Hours After Connection</option>
-                                                                <option value="ZW">15 Hours After Connection</option>
-                                                                <option value="ZW">16 Hours After Connection</option>
-                                                                <option value="ZW">17 Hours After Connection</option>
-                                                                <option value="ZW">18 Hours After Connection</option>
-                                                                <option value="ZW">19 Hours After Connection</option>
-                                                                <option value="ZW">20 Hours After Connection</option>
-                                                                <option value="ZW">21 Hours After Connection</option>
-                                                                <option value="ZW">22 Hours After Connection</option>
-                                                                <option value="ZW">23 Hours After Connection</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-lg-6" style="padding: 0;">
+                                                    <label *ngIf="i >= 1; else other_label" class="form-control-label">Message If No Reply</label>
+                                                    <ng-template #other_label>
+                                                        <label class="form-control-label">Message After Connection If No Reply</label>
+                                                    </ng-template>
+                                                    <div *ngIf="i >= 1; else other_content" class="row" style="margin: 0;">
+                                                        <div class="col-lg-12" style="padding: 0;">
                                                             <select name="country" class="form-control m-input">
                                                                 <option value="YE">Select Days</option>
                                                                 <option value="YE">1 Day After Connection</option>
@@ -223,32 +198,99 @@
                                                             </select>
                                                         </div>
                                                     </div>
-                                                        <textarea class="form-control" rows="5" id="comment" placeholder="Enter the message after connection"></textarea>
-                                                        <span class="m-form__help" style="float: left;">
-                                                            <div class="btn-group dropup mr10">
-                                                                <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top: 5px; padding-bottom: 5px;"><i class="flaticon-layers"></i>
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="">Introduction</a>
-                                                                    <a class="dropdown-item" href="">Snippet 1</a>
-                                                                    <a class="dropdown-item" href="">Snippet 1</a>
-                                                                    <div class="dropdown-divider"></div>
-                                                                    <a class="dropdown-item" href="" data-toggle="modal" data-target="#new_template">+ Add New</a>
-                                                                </div>
+                                                    <ng-template #other_content>
+                                                        <div class="row" style="margin: 0;">
+                                                            <div class="col-lg-6" style="padding: 0;">
+                                                                <select name="country" class="form-control m-input">
+                                                                    <option value="YE">Select Hours</option>
+                                                                    <option value="YE">1 Hour After Connection</option>
+                                                                    <option value="ZM">2 Hours After Connection</option>
+                                                                    <option value="ZW">3 Hours After Connection</option>
+                                                                    <option value="ZW">4 Hours After Connection</option>
+                                                                    <option value="ZW">5 Hours After Connection</option>
+                                                                    <option value="ZW">6 Hours After Connection</option>
+                                                                    <option value="ZW">7 Hours After Connection</option>
+                                                                    <option value="ZW">8 Hours After Connection</option>
+                                                                    <option value="ZW">9 Hours After Connection</option>
+                                                                    <option value="ZW">10 Hours After Connection</option>
+                                                                    <option value="ZW">11 Hours After Connection</option>
+                                                                    <option value="ZW">12 Hours After Connection</option>
+                                                                    <option value="ZW">13 Hours After Connection</option>
+                                                                    <option value="ZW">14 Hours After Connection</option>
+                                                                    <option value="ZW">15 Hours After Connection</option>
+                                                                    <option value="ZW">16 Hours After Connection</option>
+                                                                    <option value="ZW">17 Hours After Connection</option>
+                                                                    <option value="ZW">18 Hours After Connection</option>
+                                                                    <option value="ZW">19 Hours After Connection</option>
+                                                                    <option value="ZW">20 Hours After Connection</option>
+                                                                    <option value="ZW">21 Hours After Connection</option>
+                                                                    <option value="ZW">22 Hours After Connection</option>
+                                                                    <option value="ZW">23 Hours After Connection</option>
+                                                                </select>
                                                             </div>
-                                                        </span>
-                                                        <span class="m-form__help">
-                                                            <div class="btn-group dropup">
-                                                                <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top: 5px; padding-bottom: 5px;"><i class="la la-code"></i>
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="">First Name</a>
-                                                                    <a class="dropdown-item" href="">Last Name</a>
-                                                                    <a class="dropdown-item" href="">Company Name</a>
-                                                                    <a class="dropdown-item" style="padding-bottom: 25px;" href="">Job Title</a>
-                                                                </div>
+                                                            <div class="col-lg-6" style="padding: 0;">
+                                                                <select name="country" class="form-control m-input">
+                                                                    <option value="YE">Select Days</option>
+                                                                    <option value="YE">1 Day After Connection</option>
+                                                                    <option value="ZM">2 Days After Connection</option>
+                                                                    <option value="ZW">3 Days After Connection</option>
+                                                                    <option value="ZW">4 Days After Connection</option>
+                                                                    <option value="ZW">5 Days After Connection</option>
+                                                                    <option value="ZW">6 Days After Connection</option>
+                                                                    <option value="ZW">7 Days After Connection</option>
+                                                                    <option value="ZW">8 Days After Connection</option>
+                                                                    <option value="ZW">9 Days After Connection</option>
+                                                                    <option value="ZW">10 Days After Connection</option>
+                                                                    <option value="ZW">11 Days After Connection</option>
+                                                                    <option value="ZW">12 Days After Connection</option>
+                                                                    <option value="ZW">13 Days After Connection</option>
+                                                                    <option value="ZW">14 Days After Connection</option>
+                                                                    <option value="ZW">15 Days After Connection</option>
+                                                                    <option value="ZW">16 Days After Connection</option>
+                                                                    <option value="ZW">17 Days After Connection</option>
+                                                                    <option value="ZW">18 Days After Connection</option>
+                                                                    <option value="ZW">19 Days After Connection</option>
+                                                                    <option value="ZW">20 Days After Connection</option>
+                                                                    <option value="ZW">21 Days After Connection</option>
+                                                                    <option value="ZW">22 Days After Connection</option>
+                                                                    <option value="ZW">23 Days After Connection</option>
+                                                                    <option value="ZW">24 Days After Connection</option>
+                                                                    <option value="ZW">25 Days After Connection</option>
+                                                                    <option value="ZW">26 Days After Connection</option>
+                                                                    <option value="ZW">27 Days After Connection</option>
+                                                                    <option value="ZW">28 Days After Connection</option>
+                                                                    <option value="ZW">29 Days After Connection</option>
+                                                                    <option value="ZW">30 Days After Connection</option>
+                                                                </select>
                                                             </div>
-                                                        </span>
+                                                        </div>
+                                                    </ng-template>
+                                                    <textarea class="form-control" rows="5" id="comment" placeholder="Enter the message after connection"></textarea>
+                                                    <span class="m-form__help" style="float: left;">
+                                                        <div class="btn-group dropup mr10">
+                                                            <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top: 5px; padding-bottom: 5px;"><i class="flaticon-layers"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu">
+                                                                <a class="dropdown-item" href="">Introduction</a>
+                                                                <a class="dropdown-item" href="">Snippet 1</a>
+                                                                <a class="dropdown-item" href="">Snippet 1</a>
+                                                                <div class="dropdown-divider"></div>
+                                                                <a class="dropdown-item" href="" data-toggle="modal" data-target="#new_template">+ Add New</a>
+                                                            </div>
+                                                        </div>
+                                                    </span>
+                                                    <span class="m-form__help">
+                                                        <div class="btn-group dropup">
+                                                            <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top: 5px; padding-bottom: 5px;"><i class="la la-code"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu">
+                                                                <a class="dropdown-item" href="">First Name</a>
+                                                                <a class="dropdown-item" href="">Last Name</a>
+                                                                <a class="dropdown-item" href="">Company Name</a>
+                                                                <a class="dropdown-item" style="padding-bottom: 25px;" href="">Job Title</a>
+                                                            </div>
+                                                        </div>
+                                                    </span>
                                                 </div>
                                             </div>
                                             <div class="form-group m-form__group row">

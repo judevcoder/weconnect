@@ -6,6 +6,7 @@ import {
 } from "@angular/core";
 import { Helpers } from "../../../../helpers";
 import { ScriptLoaderService } from "../../../../_services/script-loader.service";
+import { DataService } from "../../../../_services/data.service";
 
 @Component({
     selector: "app-who-viewed-your-profile",
@@ -15,9 +16,27 @@ import { ScriptLoaderService } from "../../../../_services/script-loader.service
 export class WhoViewedYourProfileComponent implements OnInit, AfterViewInit {
     data: any;
 
-    constructor(private _script: ScriptLoaderService) { }
+    private profile: object = {
+        name: "Anna Strong",
+        job: "Chief Financial Officer",
+        img: "assets/app/media/img/users/user1.jpg",
+        university: "Harvard University",
+        city: "New York"
+    };
+
+    private pageSelection: string = 'page';
+    private isRowSelected: boolean = false;
+
+    constructor(
+        private _script: ScriptLoaderService,
+        private dataService: DataService
+    ) { }
 
     ngOnInit() {
+        this.dataService.getData().subscribe(data => {
+            this.data = data;
+        }, error => { });
+
         var datatable = (<any>$("#json_data")).mDatatable({
             // datasource definition
             data: {
@@ -51,27 +70,39 @@ export class WhoViewedYourProfileComponent implements OnInit, AfterViewInit {
             // columns definition
             columns: [
                 {
+                    field: "RecordID",
+                    title: "#",
+                    width: 50,
+                    sortable: false,
+                    textAlign: "center",
+                    selector: { class: "m-checkbox--solid m-checkbox--brand" }
+                },
+                {
                     field: "img",
                     title: "Logo",
                     width: 50,
                     sortable: false,
                     template: function(row) {
                         return (
-                            '<img src="' + row.img + '" class="profile-img"/>'
+                            '<img src="' +
+                            row.img +
+                            '" class="profile-img" data-id="' +
+                            row.id +
+                            '"/>'
                         );
                     }
                 },
                 {
                     field: "name",
                     title: "Name",
-                    width: 300,
+                    width: 250,
                     sortable: false,
                     template: function(row) {
                         return (
                             '<span class="m-widget3__username">' +
                             row.name +
                             '</span><br>\
-									<span class="m-widget3__time">' +
+                                    <span class="m-widget3__time">' +
                             row.job +
                             "</span>"
                         );
@@ -99,21 +130,37 @@ export class WhoViewedYourProfileComponent implements OnInit, AfterViewInit {
                                 color: "success"
                             }
                         };
-                        return '<a href="javascript:;" class="btn btn-outline-' + status[row.button].color + ' btn-sm 	m-btn m-btn--icon">\
-									<span>\
-										<i class="' + status[row.button].state + '"></i>\
-										<span>' + status[row.button].title + '</span>\
-									</span>\
-								</a>';
+                        return '<a href="javascript:;" class="btn btn-outline-' + status[row.button].color + ' btn-sm     m-btn m-btn--icon">\
+                                    <span>\
+                                        <i class="' + status[row.button].state + '"></i>\
+                                        <span>' + status[row.button].title + '</span>\
+                                    </span>\
+                                </a>';
                     }
                 }
             ]
         });
+        let that = this;
+        jQuery(document)
+            .off("click", ".m-datatable__body .m-datatable__row")
+            .on("click", ".m-datatable__body .m-datatable__row", function() {
+                $(this).closest('tbody').find('.m-datatable__row--selected').removeClass('m-datatable__row--selected');
+                $(this).addClass('m-datatable__row--selected');
+
+                let id = $(this).find('.profile-img').attr("data-id");
+                that.profile = that.data.find(x => x.id == id);
+            });
     }
 
     ngAfterViewInit() {
-        this._script.loadScripts("app-who-viewed-your-profile", [
+        this._script.loadScripts("app-pending-requests", [
             "assets/app/js/dashboard.js"
         ]);
     }
+
+    private selectRow() {
+        console.log(this.isRowSelected);
+        console.log(this.pageSelection);
+    }
+
 }
