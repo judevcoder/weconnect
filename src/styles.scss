@@ -1061,15 +1061,24 @@ img.google-image {
 
 .emoji-picker-icon {
     position: absolute;
-    top: 55px;
+    top: 54px;
     right: 114px !important;
     font-size: 1.7rem;
     padding: 10px;
     background: #f7f8fa;
     border-radius: 50%;
+    // display: none;
+}
+
+.emoji-picker-icon.active {
+    background: #ebedf2;
 }
 
 .emoji-picker-icon:hover {
+    background: #ebedf2;
+}
+
+.emoji-picker-icon:active {
     background: #ebedf2;
 }
 

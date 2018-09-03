@@ -143,6 +143,7 @@ export class InboxComponent implements OnInit, AfterViewInit {
                 }
             ]
         });
+
         let that = this;
         jQuery(document)
             .off("click", ".m-datatable__body .m-datatable__row")
@@ -160,15 +161,37 @@ export class InboxComponent implements OnInit, AfterViewInit {
                 e.preventDefault();
                 $("#upload:hidden").trigger('click');
 
-            })
+            });
 
         jQuery(document)
             .off("click", "#typeform_expand")
             .on("click", "#typeform_expand", function(e) {
+                e.preventDefault();
                 var MessageContent = $(".m-messenger__form-input").val();
                 $("#type-message-text").val(MessageContent);
 
-            })
+            });
+
+        jQuery(document)
+            .off("click", "#emoji-icon")
+            .on("click", "#emoji-icon", function(e) { 
+                e.preventDefault();
+                $(".emoji-picker-icon:hidden").trigger('click');
+            });
+
+        // jQuery(document)
+        //     .off("click", ".emoji-picker-icon")
+        //     .on("click", ".emoji-picker-icon", function(e) { 
+        //         e.preventDefault();
+        //         var display = $(".emoji-menu").css("display");
+        //         console.log(display);
+        //         if (display) {
+        //             $(this).removeClass("active");
+        //         } else {
+        //             $(this).addClass("active");
+        //         }
+        //     });
+        
     }
 
     ngAfterViewInit() {
