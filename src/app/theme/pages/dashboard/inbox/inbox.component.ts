@@ -174,7 +174,7 @@ export class InboxComponent implements OnInit, AfterViewInit {
 
         jQuery(document)
             .off("click", "#emoji-icon")
-            .on("click", "#emoji-icon", function(e) { 
+            .on("click", "#emoji-icon", function(e) {
                 e.preventDefault();
                 $(".emoji-picker-icon:hidden").trigger('click');
             });
@@ -191,7 +191,7 @@ export class InboxComponent implements OnInit, AfterViewInit {
         //             $(this).addClass("active");
         //         }
         //     });
-        
+
     }
 
     ngAfterViewInit() {
