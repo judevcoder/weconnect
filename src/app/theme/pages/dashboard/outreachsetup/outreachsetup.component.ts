@@ -20,13 +20,17 @@ export class OutreachSetupComponent implements OnInit, AfterViewInit {
     ngOnInit() {
         // jQuery(document)
         //     $(".m-portlet__head-text").text($("input[name='name']").val());
+    ngOnInit() {
+        jQuery(document)
+            var initcampaignName = $("input[name='name']").val();
+            $(".m-portlet__head-text").text(String(initcampaignName));
 
-        // jQuery(document)
-        //     .off("keyup", "input[name='name']")
-        //     .on("keyup", "input[name='name']", function() {
-        //         var campaignName = $(this).val();
-        //         $(".m-portlet__head-text").text(campaignName);
-        //     });
+        jQuery(document)
+            .off("keyup", "input[name='name']")
+            .on("keyup", "input[name='name']", function() {
+                var campaignName = $(this).val();
+                $(".m-portlet__head-text").text(String(campaignName));
+            });
     }
 
     ngAfterViewInit() {
