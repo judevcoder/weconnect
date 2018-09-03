@@ -18,9 +18,6 @@ export class OutreachSetupComponent implements OnInit, AfterViewInit {
     constructor(private _script: ScriptLoaderService) { }
 
     ngOnInit() {
-        // jQuery(document)
-        //     $(".m-portlet__head-text").text($("input[name='name']").val());
-    ngOnInit() {
         jQuery(document)
             var initcampaignName = $("input[name='name']").val();
             $(".m-portlet__head-text").text(String(initcampaignName));

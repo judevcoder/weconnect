@@ -15,11 +15,11 @@
 * `$ npm install`
 * `$ npm install -g yarn`
 * `$ npm install -g gulp`
-* `$ yarn`
 
 ### Run and Compile Project
 
 * `$ cd tools`
+* `$ yarn`
 * `$ gulp --angular`
 * `$ cd ..`
 * `$ npm start`
