@@ -231,36 +231,61 @@
                                         </div>
                                     </div>
                                     <div class="m-portlet__body">
-                                        <div class="billing-tab m-scrollable m-scroller ps ps--active-y" data-scrollbar-shown="true" data-scrollable="true" data-height="80" style="overflow:hidden; height: 80px">
-                                            <div class="row added-card">
-                                                <div class="card-icon">
-                                                    <span><i class="fa fa-credit-card"></i></span>
-                                                </div>
-                                                <div class="card-detail-info">
-                                                    <span>John Taylor xxxx-9610</span>
-                                                    <br>
-                                                    <span>Expires 12/10 - Added on 08-14-18</span>
-                                                </div>
-                                                <div class="remove-icon">
-                                                    <a href="">
-                                                        <span><i class="la la-close"></i></span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="row added-card">
-                                                <div class="card-icon">
-                                                    <span><i class="fa fa-credit-card"></i></span>
-                                                </div>
-                                                <div class="card-detail-info">
-                                                    <span>John Taylor xxxx-9725</span>
-                                                    <br>
-                                                    <span>Expires 15/7 - Added on 05-24-18</span>
-                                                </div>
-                                                <div class="remove-icon">
-                                                    <a href="">
-                                                        <span><i class="la la-close"></i></span>
-                                                    </a>
-                                                </div>
+                                        <div class="m-scrollable m-scroller ps ps--active-y" data-scrollbar-shown="true" data-scrollable="true" data-height="80" style="overflow:hidden; height: 80px">
+                                            <div class="row added-card table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" style="text-align: center">#</th>
+                                                            <th scope="col">Date</th>
+                                                            <th scope="col">Plan</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="card-icon col-sm-2">
+                                                                    <span><i class="fa fa-credit-card"></i></span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="card-detail-info col-sm-8">
+                                                                    <span>John Taylor xxxx-9610</span>
+                                                                    <br>
+                                                                    <span>Expires 12/10 - Added on 08-14-18</span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="remove-icon col-sm-2">
+                                                                    <a href="javascript:;">
+                                                                        <span><i class="la la-close"></i></span>
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="card-icon col-sm-2">
+                                                                    <span><i class="fa fa-credit-card"></i></span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="card-detail-info col-sm-8">
+                                                                    <span>John Taylor xxxx-9725</span>
+                                                                    <br>
+                                                                    <span>Expires 15/7 - Added on 05-24-18</span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="remove-icon col-sm-2">
+                                                                    <a href="">
+                                                                        <span><i class="la la-close"></i></span>
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
                                             <!-- <div class="m-separator m-separator--space m-separator--dashed"></div> -->
                                         </div>
@@ -272,82 +297,84 @@
                                         <div class="m-portlet__head-caption">
                                             <div class="m-portlet__head-title">
                                                 <span class="m-portlet__head-icon">
-                              <i class="la la-credit-card"></i>
-                            </span>
+                                                    <i class="la la-credit-card"></i>
+                                                </span>
                                                 <h3 class="m-portlet__head-text">
-                              Billing History
-                            </h3>
+                                                    Billing History
+                                                </h3>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="m-portlet__body">
-                                        <div class="billing-tab m-scrollable m-scroller ps ps--active-y" data-scrollbar-shown="true" data-scrollable="true" data-height="200" style="overflow:hidden; height: 200px">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col" style="text-align: center">#</th>
-                                                        <th scope="col">Date</th>
-                                                        <th scope="col">Plan</th>
-                                                        <th scope="col">Price</th>
-                                                        <th scope="col"></th>
-                                                        <th scope="col">Total</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="sorting_1 checkbox-td" scope="row">
-                                                            <label class="m-checkbox m-checkbox--solid">
-                                                                <input type="checkbox">&nbsp;
-                                                                <span></span>
-                                                            </label>
-                                                        </td>
-                                                        <td>7th May 2018</td>
-                                                        <td>Rainmaker</td>
-                                                        <td>$$$</td>
-                                                        <td>Download</td>
-                                                        <td>$$$</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="sorting_1 checkbox-td" scope="row">
-                                                            <label class="m-checkbox m-checkbox--solid">
-                                                                <input type="checkbox">&nbsp;
-                                                                <span></span>
-                                                            </label>
-                                                        </td>
-                                                        <td>7th Jun 2018</td>
-                                                        <td>Rainmaker</td>
-                                                        <td>$$$</td>
-                                                        <td>Download</td>
-                                                        <td>$$$</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="sorting_1 checkbox-td" scope="row">
-                                                            <label class="m-checkbox m-checkbox--solid">
-                                                                <input type="checkbox">&nbsp;
-                                                                <span></span>
-                                                            </label>
-                                                        </td>
-                                                        <td>7th Jun 2018</td>
-                                                        <td>Rainmaker</td>
-                                                        <td>$$$</td>
-                                                        <td>Download</td>
-                                                        <td>$$$</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="sorting_1 checkbox-td" scope="row">
-                                                            <label class="m-checkbox m-checkbox--solid">
-                                                                <input type="checkbox">&nbsp;
-                                                                <span></span>
-                                                            </label>
-                                                        </td>
-                                                        <td>7th Jun 2018</td>
-                                                        <td>Rainmaker</td>
-                                                        <td>$$$</td>
-                                                        <td>Download</td>
-                                                        <td>$$$</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                        <div class="m-scrollable m-scroller ps ps--active-y" data-scrollbar-shown="true" data-scrollable="true" data-height="200" style="overflow:hidden; height: 200px">
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" style="text-align: center">#</th>
+                                                            <th scope="col">Date</th>
+                                                            <th scope="col">Plan</th>
+                                                            <th scope="col">Price</th>
+                                                            <th scope="col"></th>
+                                                            <th scope="col">Total</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="sorting_1 checkbox-td" scope="row">
+                                                                <label class="m-checkbox m-checkbox--solid">
+                                                                    <input type="checkbox">&nbsp;
+                                                                    <span></span>
+                                                                </label>
+                                                            </td>
+                                                            <td>7th May 2018</td>
+                                                            <td>Rainmaker</td>
+                                                            <td>$$$</td>
+                                                            <td>Download</td>
+                                                            <td>$$$</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="sorting_1 checkbox-td" scope="row">
+                                                                <label class="m-checkbox m-checkbox--solid">
+                                                                    <input type="checkbox">&nbsp;
+                                                                    <span></span>
+                                                                </label>
+                                                            </td>
+                                                            <td>7th Jun 2018</td>
+                                                            <td>Rainmaker</td>
+                                                            <td>$$$</td>
+                                                            <td>Download</td>
+                                                            <td>$$$</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="sorting_1 checkbox-td" scope="row">
+                                                                <label class="m-checkbox m-checkbox--solid">
+                                                                    <input type="checkbox">&nbsp;
+                                                                    <span></span>
+                                                                </label>
+                                                            </td>
+                                                            <td>7th Jun 2018</td>
+                                                            <td>Rainmaker</td>
+                                                            <td>$$$</td>
+                                                            <td>Download</td>
+                                                            <td>$$$</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="sorting_1 checkbox-td" scope="row">
+                                                                <label class="m-checkbox m-checkbox--solid">
+                                                                    <input type="checkbox">&nbsp;
+                                                                    <span></span>
+                                                                </label>
+                                                            </td>
+                                                            <td>7th Jun 2018</td>
+                                                            <td>Rainmaker</td>
+                                                            <td>$$$</td>
+                                                            <td>Download</td>
+                                                            <td>$$$</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                             <!-- <div class="m-separator m-separator--space m-separator--dashed"></div> -->
                                         </div>
                                     </div>
