@@ -103,6 +103,14 @@ export class OutreachCampaignComponent implements OnInit, AfterViewInit {
                                     Messaging: {
                                         title: "Messaging",
                                         state: "info"
+                                    },
+                                    Endorse: {
+                                        title: "Endorse",
+                                        state: "primary"
+                                    },
+                                    Follow: {
+                                        title: "Follow",
+                                        state: "info"
                                     }
                                 };
                                 if (typeof status[data] === "undefined") {
@@ -135,7 +143,7 @@ export class OutreachCampaignComponent implements OnInit, AfterViewInit {
                                         <a class="dropdown-item" href="javascript:;"><i class="la la-trash"></i> Delete</a>
                                     </div>
                                 </span>
-                                <a href="javascript:;" class="m-portlet__nav-link btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" title="View">
+                                <a href="/campaign/overview" class="m-portlet__nav-link btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" title="View">
                                     <i class="la la-edit"></i>
                                 </a>
                                 <a href="javascript:;" class="m-portlet__nav-link btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" title="Pause Campaign">

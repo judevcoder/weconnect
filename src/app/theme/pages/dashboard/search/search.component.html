@@ -24,8 +24,12 @@
 	            <div class="m-portlet__body">
 	                <div class="form-group m-form__group row input-keyword-form-group">
 	                    <div class="col-lg-12">
-	                        <input type="text" class="form-control m-input input-keyword" placeholder="Enter Keywords">
-	                        <input type="button" class="form-control m-input search-btn" value="Search">
+	                        <div class="input-group">
+														<input type="text" class="form-control" placeholder="Enter Keywords">
+														<div class="input-group-append">
+															<button class="btn btn-primary" type="button">Search</button>
+														</div>
+													</div>
 	                    </div>
 	                </div>
 	                <div class="form-group m-form__group row input-keyword-form-group">
@@ -50,8 +54,24 @@
 	                    <div class="col-lg-6 col-md-12 col-sm-12">
 	                        <input type="email" class="form-control m-input advance-search-input" placeholder="Enter Location">
 	                    </div>
+	                    <div class="col-lg-12 mt25">
+		                    <div class="m-checkbox-inline">
+												<label class="m-checkbox">
+												<input type="checkbox"> 1st
+												<span></span>
+												</label>
+												<label class="m-checkbox">
+												<input type="checkbox" checked="checked"> 2nd
+												<span></span>
+												</label>
+												<label class="m-checkbox">
+												<input type="checkbox" checked="checked"> 3rd+
+												<span></span>
+												</label>
+											</div>
+										</div>
 	                    <div class="col-lg-12 col-md-12 col-sm-12">
-	                        <a routerLink="/search/searchresults" class="btn btn-primary advance-search-submit">Submit</a>
+	                        <a routerLink="/search/searchresults" class="btn btn-primary advance-search-submit">Search</a>
 	                    </div>
 
 	                    <div class="col-lg-6 col-md-12">
@@ -78,17 +98,28 @@
 	                    <div class="col-lg-12 col-md-12 col-sm-12">
 	                        <div class="tab-content">
 	                            <div class="tab-pane active m-input-icon m-input-icon--right" id="search_linkedin" role="tabpanel">
-	                                <input type="text" class="form-control m-input" placeholder="Insert Linkedin search page URL">
-	                                <span class="m-input-icon__icon m-input-icon__icon--right"><span><i class="la la-search"></i></span></span>
-
+	                                <div class="input-group">
+																		<input type="text" class="form-control" placeholder="Insert Linkedin search page URL">
+																		<div class="input-group-append">
+																			<button class="btn btn-secondary" type="button"><i class="la la-search"></i></button>
+																		</div>
+																</div>
 	                            </div>
 	                            <div class="tab-pane m-input-icon m-input-icon--right" id="search_sales_navigator" role="tabpanel">
-	                                <input type="text" class="form-control m-input" placeholder="Insert Sales Navigator search page URL">
-	                                <span class="m-input-icon__icon m-input-icon__icon--right"><span><i class="la la-search"></i></span></span>
+	                                <div class="input-group">
+																		<input type="text" class="form-control" placeholder="Insert Sales Navigator search page URL">
+																		<div class="input-group-append">
+																			<button class="btn btn-secondary" type="button"><i class="la la-search"></i></button>
+																		</div>
+																</div>
 	                            </div>
 	                            <div class="tab-pane m-input-icon m-input-icon--right" id="search_linkedin_recruiter" role="tabpanel">
-	                                <input type="text" class="form-control m-input" placeholder="Insert LinkedIn Recruiter search page URL">
-	                                <span class="m-input-icon__icon m-input-icon__icon--right"><span><i class="la la-search"></i></span></span>
+	                                <div class="input-group">
+																		<input type="text" class="form-control" placeholder="Insert LinkedIn Recruiter search page URL">
+																		<div class="input-group-append">
+																			<button class="btn btn-secondary" type="button"><i class="la la-search"></i></button>
+																		</div>
+																</div>
 	                            </div>
 	                        </div>
 	                    </div>

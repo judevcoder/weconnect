@@ -82,6 +82,9 @@ export class SavedSearchComponent implements OnInit, AfterViewInit {
                     ]
                 });
             });
+            jQuery(document).ready(function () {
+            $(".flaticon-folder").parent().parent().addClass("m-menu__item--active");
+        });
     }
 
     ngAfterViewInit() { }

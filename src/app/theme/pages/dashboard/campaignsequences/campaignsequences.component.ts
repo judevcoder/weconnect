@@ -19,7 +19,11 @@ export class CampaignSequencesComponent implements OnInit, AfterViewInit {
 
     constructor(private _script: ScriptLoaderService) { }
 
-    ngOnInit() { }
+    ngOnInit() {
+    jQuery(document).ready(function () {
+            $(".flaticon-mail-1").parent().parent().addClass("m-menu__item--active");
+        });
+     }
 
     ngAfterViewInit() {
         this._script.loadScripts("app-connection", [

@@ -126,14 +126,8 @@ export class SearchResultsComponent implements OnInit, AfterViewInit {
                                             <div class="m-dropdown__content">\
                                                 <ul class="m-nav">\
                                                     <li class="m-nav__item">\
-                                                        <a routerLink="/inbox" class="m-nav__link table-drop-link">\
-                                                            <i class="m-nav__link-icon flaticon-chat-1"></i>\
-                                                            <span class="m-nav__link-text">Message</span>\
-                                                        </a>\
-                                                    </li>\
-                                                    <li class="m-nav__item">\
-                                                        <a href="javascript:;" class="m-nav__link table-drop-link">\
-                                                            <i class="m-nav__link-icon la la-remove"></i>\
+                                                        <a routerLink="" class="m-nav__link table-drop-link">\
+                                                            <i class="m-nav__link-icon flaticon-delete-1"></i>\
                                                             <span class="m-nav__link-text">Remove</span>\
                                                         </a>\
                                                     </li>\
