@@ -15,6 +15,7 @@ import { DataService } from "../../../../_services/data.service";
 })
 export class InboxComponent implements OnInit, AfterViewInit {
     data: any;
+    messages: Array<object> = [];
 
     private profile: object = {
         name: "Anna Strong",
@@ -31,6 +32,12 @@ export class InboxComponent implements OnInit, AfterViewInit {
 
     ngOnInit() {
 
+        this.dataService.getMessages(this.profile['name']).subscribe(
+            data => {
+                this.messages = data;
+            },
+            error => { }
+        );
 
         this.dataService.getData().subscribe(
             data => {
@@ -50,6 +57,17 @@ export class InboxComponent implements OnInit, AfterViewInit {
                     }
                 },
                 pageSize: 10
+            },
+
+            // toolbar            
+            toolbar: {
+                // toolbar items
+                items: {
+                    // pagination
+                    pagination: {
+                        pageSizeSelect: [10, 20, 30]
+                    }
+                }
             },
 
             // layout definition
@@ -153,6 +171,7 @@ export class InboxComponent implements OnInit, AfterViewInit {
 
                 let id = $(this).find('.profile-img').attr("data-id");
                 that.profile = that.data.find(x => x.id == id);
+                that.updateMessage();
             });
 
         jQuery(document)
@@ -192,6 +211,17 @@ export class InboxComponent implements OnInit, AfterViewInit {
         //         }
         //     });
 
+    }
+
+    updateMessage() {
+        this.dataService.getMessages(this.profile['name']).subscribe(
+            data => {
+                this.messages = data;
+            },
+            error => {
+                this.messages = [];
+            }
+        );
     }
 
     ngAfterViewInit() {

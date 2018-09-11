@@ -1,0 +1,52 @@
+[
+	{
+		"type": "in",
+		"name": "Nick Bold",
+		"content": "Hi Bob. What time will be the meeting ?"
+	},
+	{
+		"type": "out",
+		"name": "me",
+		"content": "Hi Megan. It's at 2.30PM"
+	},
+	{
+		"type": "in",
+		"name": "Nick Bold",
+		"content": "Are you there? Can you please respond?"
+	},
+	{
+		"type": "out",
+		"name": "me",
+		"content": "Hi Megan. It's at 2.30PM"
+	},
+	{
+		"type": "in",
+		"name": "Nick Bold",
+		"content": "I was hoping to get this over last weekend itself, you dragged it. What have you finished so far?"
+	},
+	{
+		"type": "out",
+		"name": "me",
+		"content": "Hi Megan. It's at 2.30PM"
+	},
+	{
+		"type": "in",
+		"name": "Nick Bold",
+		"content": "Hi Bob. What time will be the meeting ?"
+	},
+	{
+		"type": "out",
+		"name": "me",
+		"content": "Hi Megan. It's at 2.30PM"
+	},
+	{
+		"type": "in",
+		"name": "Nick Bold",
+		"content": "Hi Bob. What time will be the meeting ?"
+	},
+	{
+		"type": "out",
+		"name": "me",
+		"content": "Hi Megan. It's at 2.30PM"
+	}
+]

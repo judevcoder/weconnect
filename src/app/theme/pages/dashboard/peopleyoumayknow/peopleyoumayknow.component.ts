@@ -51,6 +51,17 @@ export class PeopleYouMayKnowComponent implements OnInit, AfterViewInit {
                 pageSize: 10
             },
 
+            // toolbar            
+            toolbar: {
+                // toolbar items
+                items: {
+                    // pagination
+                    pagination: {
+                        pageSizeSelect: [10, 20, 30]
+                    }
+                }
+            },
+
             // layout definition
             layout: {
                 theme: "default", // datatable theme

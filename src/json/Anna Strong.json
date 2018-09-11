@@ -1,0 +1,52 @@
+[
+	{
+		"type": "in",
+		"name": "Anna Strong",
+		"content": "Hi Bob. What time will be the meeting ?"
+	},
+	{
+		"type": "out",
+		"name": "me",
+		"content": "Hi Megan. It's at 2.30PM"
+	},
+	{
+		"type": "in",
+		"name": "Anna Strong",
+		"content": "what is easier for you?"
+	},
+	{
+		"type": "out",
+		"name": "me",
+		"content": "Hi Megan. It's at 2.30PM"
+	},
+	{
+		"type": "in",
+		"name": "Anna Strong",
+		"content": "If you don't need to make json, I can implement with jquery"
+	},
+	{
+		"type": "out",
+		"name": "me",
+		"content": "Hi Megan. It's at 2.30PM"
+	},
+	{
+		"type": "in",
+		"name": "Anna Strong",
+		"content": "I think json should work. later we can link the backend api to json"
+	},
+	{
+		"type": "out",
+		"name": "me",
+		"content": "Hi Megan. It's at 2.30PM"
+	},
+	{
+		"type": "in",
+		"name": "Anna Strong",
+		"content": "Hi Bob. What time will be the meeting ?"
+	},
+	{
+		"type": "out",
+		"name": "me",
+		"content": "Hi Megan. It's at 2.30PM"
+	}
+]

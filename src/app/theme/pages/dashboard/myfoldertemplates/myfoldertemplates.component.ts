@@ -74,8 +74,8 @@ export class MyfolderTemplatesComponent implements OnInit, AfterViewInit {
                                         <a class="dropdown-item" href="javascript:;"><i class="la la-trash"></i> Delete</a>
                                     </div>
                                 </span>
-                                <a href="javascript:;" class="m-portlet__nav-link btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" title="View">
-                                    <i class="la la-edit"></i>
+                                <a href="javascript:;" class="m-portlet__nav-link btn m-btn edit-template-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" title="View">
+                                    <i class="la la-edit" data-toggle="modal" data-target=".edit_template"></i>
                                 </a>`;
                             }
                         }

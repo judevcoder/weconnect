@@ -47,7 +47,23 @@ export class ConnectionComponent implements OnInit, AfterViewInit {
                         method: "GET"
                     }
                 },
-                pageSize: 10
+                pageSize: 5
+            },
+
+            select: {
+                style:    'multi',
+                selector: 'td:first-child'
+            },
+
+            // toolbar            
+            toolbar: {
+                // toolbar items
+                items: {
+                    // pagination
+                    pagination: {
+                        pageSizeSelect: [10, 20, 30],
+                    }
+                }
             },
 
             // layout definition
@@ -158,6 +174,18 @@ export class ConnectionComponent implements OnInit, AfterViewInit {
                 let id = $(this).find('.profile-img').attr("data-id");
                 that.profile = that.data.find(x => x.id == id);
             });
+
+        (<any>jQuery(document))
+            .on('click', '.m-datatable__pager-link', function() {
+                var checkboxState = $("#table_row_select_control").attr("ng-reflect-model");
+                alert(checkboxState);
+                if (checkboxState == "true") {
+                    $(".m-datatable__body tr").find("input[type='checkbox']").attr("checked", "checked");
+                } else if (checkboxState == "false") {
+                    $(".m-datatable__body tr").find("input[type='checkbox']").removeAttr("checked");
+                }
+
+            });
     }
 
     ngAfterViewInit() {
@@ -167,7 +195,9 @@ export class ConnectionComponent implements OnInit, AfterViewInit {
     }
 
     private selectRow() {
-        console.log(this.isRowSelected);
-        console.log(this.pageSelection);
+        var isChecked = $('#table_row_select_control').prop('checked');
+        $('.we_connect_table').children('table').children('tbody').children('tr:visible').find('input[type="checkbox"]').prop('checked', isChecked);
+        
+        
     }
 }

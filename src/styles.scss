@@ -6,6 +6,12 @@
     .m-datatable__head {
         display: none !important;
     }
+    .m-datatable__table {
+        .m-datatable__body {
+            height: 680px !important;
+            overflow: auto !important;
+        }
+    }
     .profile-img {
         cursor: pointer;
         width: 3.2rem;

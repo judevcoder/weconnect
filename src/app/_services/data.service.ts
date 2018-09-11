@@ -8,4 +8,8 @@ export class DataService {
     public getData(): Observable<any> {
         return this.http.get("./json/data.json");
     }
+
+    public getMessages(name: string): Observable<any> {
+        return this.http.get("./json/" + name + ".json");
+    }
 }
