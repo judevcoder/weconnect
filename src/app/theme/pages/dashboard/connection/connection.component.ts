@@ -47,7 +47,7 @@ export class ConnectionComponent implements OnInit, AfterViewInit {
                         method: "GET"
                     }
                 },
-                pageSize: 5
+                pageSize: 10
             },
 
             select: {
@@ -176,16 +176,16 @@ export class ConnectionComponent implements OnInit, AfterViewInit {
                 that.profile = that.data.find(x => x.id == id);
             });
 
-        // (<any>jQuery(document))
-        //     .on('click', '.m-datatable__pager-link', function() {
-        //         var checkboxState = $("#table_row_select_control").attr("ng-reflect-model");
-        //         alert(checkboxState);
-        //         if (checkboxState == "true") {
-        //             $(".m-datatable__body tr").find("input[type='checkbox']").attr("checked", "checked");
-        //         } else if (checkboxState == "false") {
-        //             $(".m-datatable__body tr").find("input[type='checkbox']").removeAttr("checked");
-        //         }
-        //     });
+        (<any>jQuery(document))
+            .on('click', '.m-datatable__pager-link', function() {
+                var checkboxState = $("#table_row_select_control").attr("ng-reflect-model");
+                alert(checkboxState);
+                if (checkboxState == "true") {
+                    $(".m-datatable__body tr").find("input[type='checkbox']").attr("checked", "checked");
+                } else if (checkboxState == "false") {
+                    $(".m-datatable__body tr").find("input[type='checkbox']").removeAttr("checked");
+                }
+            });
 
         jQuery(document).ready(function(){
             $(".m-datatable__table tr:last").find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
