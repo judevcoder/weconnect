@@ -99,9 +99,22 @@
                         </ul>
                     </div>
                 </div>
-                <div class="m-portlet__body">
-                        <div class="table-row-select"></div>
-                    <div class="m_datatable" id="json_data"></div>
+                <div class="m-portlet__body search-result-list">
+                    <div class="table-row-select">
+                        <label class="m-checkbox m-checkbox--solid m-checkbox--info">
+                            <input type="checkbox" id="table_row_select_control" [(ngModel)]="isRowSelected" (change)="selectRow()">
+                            <select class="custom-select form-control" [(ngModel)]="pageSelection">
+                                <option value="all">
+                                    Select All
+                                </option>
+                                <option value="page">
+                                    Current Page
+                                </option>
+                            </select>
+                            <span style="margin-top: 8px;"></span>
+                        </label>
+                    </div>
+                    <div class="m_datatable" id="search_company_json_data"></div>
                 </div>
             </div>
         </div>
@@ -115,12 +128,12 @@
                             </div>
                             <div class="m-card-profile__pic">
                                 <div class="m-card-profile__pic-wrapper">
-                                    <img src="assets/app/media/img/companies/0.png" alt="" />
+                                    <img src="{{company.img}}" alt="" />
                                 </div>
                             </div>
                             <div class="m-card-profile__details">
-                                <span class="m-card-profile__name">CDK Global</span>
-                                <a href="" class="m-card-profile__email m-link">We’re evolving the experience for our dealers and their customers, all over the world. With more than $2 billion in revenue, we’re evo…see all</a>
+                                <span class="m-card-profile__name">{{company.name}}</span>
+                                <a href="" class="m-card-profile__email m-link">{{company.job}}</a>
                             </div>
                         </div>
                     </div>

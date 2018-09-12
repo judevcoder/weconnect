@@ -70,7 +70,8 @@ export class ConnectionComponent implements OnInit, AfterViewInit {
             layout: {
                 theme: "default", // datatable theme
                 class: "we_connect_table", // custom wrapper class
-                scroll: false, // enable/disable datatable scroll both horizontal and vertical when needed.
+                height: 680,
+                scroll: true, // enable/disable datatable scroll both horizontal and vertical when needed.
                 footer: false // display/hide footer
             },
 
@@ -184,8 +185,18 @@ export class ConnectionComponent implements OnInit, AfterViewInit {
         //         } else if (checkboxState == "false") {
         //             $(".m-datatable__body tr").find("input[type='checkbox']").removeAttr("checked");
         //         }
-
         //     });
+
+        jQuery(document).ready(function(){
+            $(".m-datatable__table tr:last").find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
+            $(".m-datatable__table tr:last").prev().find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
+        });
+
+        jQuery(document).on('click', function() {
+            $(".m-datatable__table tr:last").find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
+            $(".m-datatable__table tr:last").prev().find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
+        });
+        
     }
 
     ngAfterViewInit() {
@@ -196,8 +207,6 @@ export class ConnectionComponent implements OnInit, AfterViewInit {
 
     private selectRow() {
         var isChecked = $('#table_row_select_control').prop('checked');
-        $('.we_connect_table').children('table').children('tbody').children('tr:visible').find('input[type="checkbox"]').prop('checked', isChecked);
-        
-        
+        $('.we_connect_table').children('table').children('tbody').find('tr:visible').find('input[type="checkbox"]').prop('checked', isChecked);
     }
 }

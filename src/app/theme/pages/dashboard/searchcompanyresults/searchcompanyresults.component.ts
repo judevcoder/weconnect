@@ -6,6 +6,7 @@ import {
 } from "@angular/core";
 import { Helpers } from "../../../../helpers";
 import { ScriptLoaderService } from "../../../../_services/script-loader.service";
+import { DataService } from "../../../../_services/data.service";
 
 @Component({
     selector: "app-search-company-results",
@@ -15,10 +16,28 @@ import { ScriptLoaderService } from "../../../../_services/script-loader.service
 export class SearchCompanyResultsComponent implements OnInit, AfterViewInit {
     data: any;
 
-    constructor(private _script: ScriptLoaderService) { }
+    private company: object = {
+        name: "CDK Global",
+        job: "Computer Software, 5001-10,000 employees, Greater Chicago Area",
+        img: "assets/app/media/img/companies/0.png",
+        // university: "Harvard University",
+        // city: "New York"
+    };
+
+    private pageSelection: string = 'page';
+    private isRowSelected: boolean = false;
+
+    constructor(
+        private _script: ScriptLoaderService,
+        private dataService: DataService
+    ) { }
 
     ngOnInit() {
-        var datatable = (<any>$("#json_data")).mDatatable({
+        this.dataService.getCompany().subscribe(data => {
+            this.data = data;
+        }, error => { });
+
+        var datatable = (<any>$("#search_company_json_data")).mDatatable({
             // datasource definition
             data: {
                 type: "remote",
@@ -31,11 +50,23 @@ export class SearchCompanyResultsComponent implements OnInit, AfterViewInit {
                 pageSize: 10
             },
 
+            // toolbar            
+            toolbar: {
+                // toolbar items
+                items: {
+                    // pagination
+                    pagination: {
+                        pageSizeSelect: [10, 20, 30],
+                    }
+                }
+            },
+
             // layout definition
             layout: {
                 theme: "default", // datatable theme
                 class: "we_connect_table", // custom wrapper class
-                scroll: false, // enable/disable datatable scroll both horizontal and vertical when needed.
+                height: 680,
+                scroll: true, // enable/disable datatable scroll both horizontal and vertical when needed.
                 footer: false // display/hide footer
             },
 
@@ -65,7 +96,11 @@ export class SearchCompanyResultsComponent implements OnInit, AfterViewInit {
                     sortable: false,
                     template: function(row) {
                         return (
-                            '<img src="' + row.img + '" class="profile-img"/>'
+                            '<img src="' +
+                            row.img +
+                            '" class="profile-img" data-id="' +
+                            row.id +
+                            '"/>'
                         );
                     }
                 },
@@ -119,11 +154,35 @@ export class SearchCompanyResultsComponent implements OnInit, AfterViewInit {
                 }
             ]
         });
+
+        let that = this;
+        jQuery(document)
+            .off("click", ".m-datatable__body .m-datatable__row")
+            .on("click", ".m-datatable__body .m-datatable__row", function() {
+                $(this).closest('tbody').find('.m-datatable__row--selected').removeClass('m-datatable__row--selected');
+                $(this).addClass('m-datatable__row--selected');
+
+                let id = $(this).find('.profile-img').attr("data-id");
+                that.company = that.data.find(x => x.id == id);
+            });
+
+        jQuery(document).ready(function(){
+            $(".m-datatable__table tr:last").find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
+        });
+
+        jQuery(document).on('click', function() {
+            $(".m-datatable__table tr:last").find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
+        });
     }
 
     ngAfterViewInit() {
         this._script.loadScripts("app-connection", [
             "assets/app/js/dashboard.js"
         ]);
+    }
+
+    private selectRow() {
+        var isChecked = $('#table_row_select_control').prop('checked');
+        $('.we_connect_table').children('table').children('tbody').find('tr:visible').find('input[type="checkbox"]').prop('checked', isChecked);
     }
 }

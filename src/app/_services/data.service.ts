@@ -12,4 +12,8 @@ export class DataService {
     public getMessages(name: string): Observable<any> {
         return this.http.get("./json/" + name + ".json");
     }
+
+    public getCompany(): Observable<any> {
+        return this.http.get("./json/company.json");
+    }
 }

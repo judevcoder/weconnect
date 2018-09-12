@@ -6,12 +6,12 @@
     .m-datatable__head {
         display: none !important;
     }
-    .m-datatable__table {
-        .m-datatable__body {
-            height: 680px !important;
-            overflow: auto !important;
-        }
-    }
+    // .m-datatable__table {
+    //     .m-datatable__body {
+    //         height: 680px !important;
+    //         overflow: auto !important;
+    //     }
+    // }
     .profile-img {
         cursor: pointer;
         width: 3.2rem;
@@ -1177,6 +1177,26 @@ ul.m-subheader__breadcrumbs li.m-nav__item a.m-nav__link.active:visited {
     #json_data {
         margin-top: 40px;
     }
+
+    #inbox_json_data {
+        margin-top: 40px;
+    }
+
+    #searchresults_json_data {
+        margin-top: 40px;
+    }
+
+    #campaign_contact_json_data {
+        margin-top: 40px;
+    }
+
+    #viewed_json_data {
+        margin-top: 40px;
+    }
+
+    #people_json_data {
+        margin-top: 40px;
+    }    
 
     #m_user_profile_tab_5 {
         .outreach-table-section {

@@ -1,62 +1,136 @@
 [
     {
+        "id": 0,
         "img": "assets/app/media/img/companies/0.png",
         "name": "CDK Global",
         "job": "Computer Software, 5001-10,000 employees, Greater Chicago Area"
     },
     {
+        "id": 1,
         "img": "assets/app/media/img/companies/1.png",
         "name": "Infor",
         "job": "Computer Software 10,001+ employees Greater New York City Area"
     },
     {
+        "id": 2,
         "img": "assets/app/media/img/companies/2.png",
         "name": "Compuware",
         "job": "Computer Software 201-500 employees Greater Detroit Area"
     },
     {
+        "id": 3,
         "img": "assets/app/media/img/companies/3.png",
         "name": "Ramco Systems",
         "job": "Computer Software 1001-5000 employees Chennai Area, India"
     },
     {
+        "id": 4,
         "img": "assets/app/media/img/companies/4.png",
         "name": "OEConnection (OEC)",
         "job": "Computer Software 501-1000 employees Cleveland/Akron, Ohio Area"
     },
     {
+        "id": 5,
         "img": "assets/app/media/img/companies/5.png",
         "name": "UiPath",
         "job":
             "Computer Software 1001-5000 employees Greater New York City Area"
     },
     {
+        "id": 6,
         "img": "assets/app/media/img/companies/6.png",
         "name": "SMART Technologies",
         "job": "Computer Software 501-1000 employees Calgary, Canada Area"
     },
     {
+        "id": 7,
         "img": "assets/app/media/img/companies/7.png",
         "name": "Varonis",
         "job":
             "Computer Software 1001-5000 employees Greater New York City Area"
     },
     {
+        "id": 8,
         "img": "assets/app/media/img/companies/8.png",
         "name": "WeDo Technologies",
         "job": "Computer Software 501-1000 employees Lisbon Area, Portugal"
     },
     {
+        "id": 9,
         "img": "assets/app/media/img/companies/9.png",
         "name": "Trello",
         "job": "Computer Software 51-200 employees Greater New York City Area"
     },
     {
+        "id": 10,
         "img": "assets/app/media/img/companies/10.png",
         "name": "PatSnap",
         "job": "Computer Software 201-500 employees Singapore"
     },
     {
+        "id": 11,
+        "img": "assets/app/media/img/companies/11.png",
+        "name": "CA Technologies Automation",
+        "job": "Computer Software 10,001+ employees United States"
+    },
+    {
+        "id": 12,
+        "img": "assets/app/media/img/companies/2.png",
+        "name": "Compuware",
+        "job": "Computer Software 201-500 employees Greater Detroit Area"
+    },
+    {
+        "id": 13,
+        "img": "assets/app/media/img/companies/3.png",
+        "name": "Ramco Systems",
+        "job": "Computer Software 1001-5000 employees Chennai Area, India"
+    },
+    {
+        "id": 14,
+        "img": "assets/app/media/img/companies/4.png",
+        "name": "OEConnection (OEC)",
+        "job": "Computer Software 501-1000 employees Cleveland/Akron, Ohio Area"
+    },
+    {
+        "id": 15,
+        "img": "assets/app/media/img/companies/5.png",
+        "name": "UiPath",
+        "job":
+            "Computer Software 1001-5000 employees Greater New York City Area"
+    },
+    {
+        "id": 16,
+        "img": "assets/app/media/img/companies/6.png",
+        "name": "SMART Technologies",
+        "job": "Computer Software 501-1000 employees Calgary, Canada Area"
+    },
+    {
+        "id": 17,
+        "img": "assets/app/media/img/companies/7.png",
+        "name": "Varonis",
+        "job":
+            "Computer Software 1001-5000 employees Greater New York City Area"
+    },
+    {
+        "id": 18,
+        "img": "assets/app/media/img/companies/8.png",
+        "name": "WeDo Technologies",
+        "job": "Computer Software 501-1000 employees Lisbon Area, Portugal"
+    },
+    {
+        "id": 19,
+        "img": "assets/app/media/img/companies/9.png",
+        "name": "Trello",
+        "job": "Computer Software 51-200 employees Greater New York City Area"
+    },
+    {
+        "id": 20,
+        "img": "assets/app/media/img/companies/10.png",
+        "name": "PatSnap",
+        "job": "Computer Software 201-500 employees Singapore"
+    },
+    {
+        "id": 21,
         "img": "assets/app/media/img/companies/11.png",
         "name": "CA Technologies Automation",
         "job": "Computer Software 10,001+ employees United States"

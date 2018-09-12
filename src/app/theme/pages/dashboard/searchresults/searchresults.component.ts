@@ -37,7 +37,7 @@ export class SearchResultsComponent implements OnInit, AfterViewInit {
             this.data = data;
         }, error => { });
 
-        var datatable = (<any>$("#json_data")).mDatatable({
+        var datatable = (<any>$("#searchresults_json_data")).mDatatable({
             // datasource definition
             data: {
                 type: "remote",
@@ -54,7 +54,8 @@ export class SearchResultsComponent implements OnInit, AfterViewInit {
             layout: {
                 theme: "default", // datatable theme
                 class: "we_connect_table", // custom wrapper class
-                scroll: false, // enable/disable datatable scroll both horizontal and vertical when needed.
+                height: 680,
+                scroll: true, // enable/disable datatable scroll both horizontal and vertical when needed.
                 footer: false // display/hide footer
             },
 
@@ -152,6 +153,16 @@ export class SearchResultsComponent implements OnInit, AfterViewInit {
                 let id = $(this).find('.profile-img').attr("data-id");
                 that.profile = that.data.find(x => x.id == id);
             });
+
+        jQuery(document).ready(function(){
+            $(".m-datatable__table tr:last").find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
+            $(".m-datatable__table tr:last").prev().find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
+        });
+
+        jQuery(document).on('click', function() {
+            $(".m-datatable__table tr:last").find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
+            $(".m-datatable__table tr:last").prev().find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
+        });
     }
 
     ngAfterViewInit() {
@@ -164,7 +175,7 @@ export class SearchResultsComponent implements OnInit, AfterViewInit {
     }
 
     private selectRow() {
-        console.log(this.isRowSelected);
-        console.log(this.pageSelection);
+        var isChecked = $('#table_row_select_control').prop('checked');
+        $('.we_connect_table').children('table').children('tbody').find('tr:visible').find('input[type="checkbox"]').prop('checked', isChecked);
     }
 }
