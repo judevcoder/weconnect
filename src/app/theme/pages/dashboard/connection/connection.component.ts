@@ -51,7 +51,7 @@ export class ConnectionComponent implements OnInit, AfterViewInit {
             },
 
             select: {
-                style:    'multi',
+                style: 'multi',
                 selector: 'td:first-child'
             },
 
@@ -187,7 +187,7 @@ export class ConnectionComponent implements OnInit, AfterViewInit {
         //         }
         //     });
 
-        jQuery(document).ready(function(){
+        jQuery(document).ready(function() {
             $(".m-datatable__table tr:last").find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
             $(".m-datatable__table tr:last").prev().find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
         });
@@ -196,7 +196,7 @@ export class ConnectionComponent implements OnInit, AfterViewInit {
             $(".m-datatable__table tr:last").find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
             $(".m-datatable__table tr:last").prev().find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
         });
-        
+
     }
 
     ngAfterViewInit() {

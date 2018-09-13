@@ -19,7 +19,7 @@ export class OutreachSetupComponent implements OnInit, AfterViewInit {
 
     constructor(private _script: ScriptLoaderService, private router: Router) { }
 
-    ngOnInit() {}
+    ngOnInit() { }
 
     ngAfterViewInit() {
         this._script.loadScripts("app-connection", [

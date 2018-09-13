@@ -166,7 +166,7 @@ export class SearchCompanyResultsComponent implements OnInit, AfterViewInit {
                 that.company = that.data.find(x => x.id == id);
             });
 
-        jQuery(document).ready(function(){
+        jQuery(document).ready(function() {
             $(".m-datatable__table tr:last").find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
         });
 
@@ -178,6 +178,9 @@ export class SearchCompanyResultsComponent implements OnInit, AfterViewInit {
     ngAfterViewInit() {
         this._script.loadScripts("app-connection", [
             "assets/app/js/dashboard.js"
+        ]);
+        this._script.loadScripts("app-search-company-results", [
+            "json/js/select2.js"
         ]);
     }
 

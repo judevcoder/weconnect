@@ -28,7 +28,7 @@ export class CampaignSettingsComponent implements OnInit, AfterViewInit {
                 $(this).addClass('active');
             }
         });
-        jQuery(document).ready(function () {
+        jQuery(document).ready(function() {
             $(".flaticon-mail-1").parent().parent().addClass("m-menu__item--active");
         });
     }

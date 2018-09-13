@@ -212,7 +212,7 @@ export class InboxComponent implements OnInit, AfterViewInit {
         //         }
         //     });
 
-        jQuery(document).ready(function(){
+        jQuery(document).ready(function() {
             $(".m-datatable__table tr:last").find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
             $(".m-datatable__table tr:last").prev().find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
         });

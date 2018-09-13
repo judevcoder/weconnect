@@ -18,7 +18,7 @@ export class MyFolderComponent implements OnInit, AfterViewInit {
     constructor(private _script: ScriptLoaderService) { }
 
     ngOnInit() {
-    jQuery(document).ready(function () {
+        jQuery(document).ready(function() {
             $(".flaticon-folder").parent().parent().addClass("m-menu__item--active");
         });
     }

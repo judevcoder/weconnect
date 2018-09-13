@@ -130,11 +130,11 @@ export class CampaignContactsComponent implements OnInit, AfterViewInit {
                 let id = $(this).find('.profile-img').attr("data-id");
                 that.profile = that.data.find(x => x.id == id);
             });
-            jQuery(document).ready(function () {
+        jQuery(document).ready(function() {
             $(".flaticon-mail-1").parent().parent().addClass("m-menu__item--active");
         });
 
-        jQuery(document).ready(function(){
+        jQuery(document).ready(function() {
             $(".m-datatable__table tr:last").find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
             $(".m-datatable__table tr:last").prev().find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
         });
