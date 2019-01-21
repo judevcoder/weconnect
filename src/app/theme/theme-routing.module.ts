@@ -48,6 +48,11 @@ const routes: Routes = [
                 "./pages/dashboard/savedsearch/savedsearch.module#SavedSearchModule"
             },
             {
+                path: "myfolder/saved-search/saved-search-results",
+                loadChildren:
+                "./pages/dashboard/savedsearchresults/savedsearchresults.module#SavedSearchResultsModule"
+            },
+            {
                 path: "myfolder/templates",
                 loadChildren:
                 "./pages/dashboard/myfoldertemplates/myfoldertemplates.module#MyfolderTemplatesModule"
@@ -60,23 +65,28 @@ const routes: Routes = [
             {
                 path: "outreach/setup",
                 loadChildren:
-                "./pages/dashboard/outreachsetup/outreachsetup.module#OutreachSetupModule"
+                "./pages/dashboard/outreach_setup/outreach_setup.module#Outreach_SetupModule"
             },
-            {
-                path: "outreach/sequences",
-                loadChildren:
-                "./pages/dashboard/outreachsequences/outreachsequences.module#OutreachSequencesModule"
-            },
-            {
-                path: "outreach/settings",
-                loadChildren:
-                "./pages/dashboard/outreachsettings/outreachsettings.module#OutreachSettingsModule"
-            },
-            {
-                path: "outreach/launch",
-                loadChildren:
-                "./pages/dashboard/outreachlaunch/outreachlaunch.module#OutreachLaunchModule"
-            },
+            // {
+            //     path: "outreach/setup",
+            //     loadChildren:
+            //     "./pages/dashboard/outreachsetup/outreachsetup.module#OutreachSetupModule"
+            // },
+            // {
+            //     path: "outreach/sequences",
+            //     loadChildren:
+            //     "./pages/dashboard/outreachsequences/outreachsequences.module#OutreachSequencesModule"
+            // },
+            // {
+            //     path: "outreach/settings",
+            //     loadChildren:
+            //     "./pages/dashboard/outreachsettings/outreachsettings.module#OutreachSettingsModule"
+            // },
+            // {
+            //     path: "outreach/launch",
+            //     loadChildren:
+            //     "./pages/dashboard/outreachlaunch/outreachlaunch.module#OutreachLaunchModule"
+            // },
             {
                 path: "outreach/endorse-settings",
                 loadChildren:
@@ -93,25 +103,30 @@ const routes: Routes = [
                 "./pages/dashboard/outreachcampaign/outreachcampaign.module#OutreachCampaignModule"
             },
             {
-                path: "campaign/overview",
+                path: "campaign-overview",
                 loadChildren:
-                "./pages/dashboard/campaignoverview/campaignoverview.module#CampaignOverviewModule"
+                "./pages/dashboard/campaign_overview/campaign_overview.module#CampaignOverviewDemoModule"
             },
-            {
-                path: "campaign/contacts",
-                loadChildren:
-                "./pages/dashboard/campaigncontacts/campaigncontacts.module#CampaignContactsModule"
-            },
+            // {
+            //     path: "campaign/overview",
+            //     loadChildren:
+            //     "./pages/dashboard/campaignoverview/campaignoverview.module#CampaignOverviewModule"
+            // },
+            // {
+            //     path: "campaign/contacts",
+            //     loadChildren:
+            //     "./pages/dashboard/campaigncontacts/campaigncontacts.module#CampaignContactsModule"
+            // },
             {
                 path: "campaign/sequences",
                 loadChildren:
                 "./pages/dashboard/campaignsequences/campaignsequences.module#CampaignSequencesModule"
             },
-            {
-                path: "campaign/settings",
-                loadChildren:
-                "./pages/dashboard/campaignsettings/campaignsettings.module#CampaignSettingsModule"
-            },
+            // {
+            //     path: "campaign/settings",
+            //     loadChildren:
+            //     "./pages/dashboard/campaignsettings/campaignsettings.module#CampaignSettingsModule"
+            // },
             {
                 path: "notification",
                 loadChildren:

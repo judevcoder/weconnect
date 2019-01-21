@@ -18,10 +18,26 @@ export class CampaignContactsComponent implements OnInit, AfterViewInit {
 
     private profile: object = {
         name: "Anna Strong",
-        job: "Chief Financial Officer",
+        job: "Chief Financial Officer, Google Inc",
         img: "assets/app/media/img/users/user1.jpg",
-        university: "Harvard University",
-        city: "New York"
+        university: "Stanford University",
+        city: "New York",
+        connections: "300+ Connections",
+        title: "Chief Financial Officer",
+        present_comp_img: "assets/app/media/img/client-logos/logo9.png",
+        present_company: "Google Inc",
+        dates_employed: "Jul 2015 - present",
+        present_span: "3 yrs, 2 mos",
+        previous_comp_img: "assets/app/media/img/client-logos/logo6.png",
+        previous_company: "Oracle Corporation",
+        previous_title: "Finance Controller",
+        previous_dates_employed: "Jun 2012 - Jun 2015",
+        previous_span: "3 yrs",
+        previous_comp_img2: "assets/app/media/img/client-logos/logo8.png",
+        previous_company2: "Adobe Inc",
+        previous_title2: "Finance Manager",
+        previous_dates_employed2: "Jun 2010 - May 2012",
+        previous_span2: "2 yrs"
     };
 
     constructor(
@@ -49,8 +65,7 @@ export class CampaignContactsComponent implements OnInit, AfterViewInit {
                 },
                 pageSize: 10
             },
-
-            // toolbar            
+            // toolbar
             toolbar: {
                 // toolbar items
                 items: {
@@ -133,7 +148,6 @@ export class CampaignContactsComponent implements OnInit, AfterViewInit {
         jQuery(document).ready(function() {
             $(".flaticon-mail-1").parent().parent().addClass("m-menu__item--active");
         });
-
         jQuery(document).ready(function() {
             $(".m-datatable__table tr:last").find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
             $(".m-datatable__table tr:last").prev().find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");

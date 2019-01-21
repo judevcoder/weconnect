@@ -7,6 +7,7 @@ import {
 import { Helpers } from "../../../../helpers";
 import { ScriptLoaderService } from "../../../../_services/script-loader.service";
 import { DataService } from "../../../../_services/data.service";
+import { SendFormDataService } from "../../../../_services/send-form-data.service";
 
 @Component({
     selector: "app-people-you-may-know",
@@ -14,15 +15,31 @@ import { DataService } from "../../../../_services/data.service";
     encapsulation: ViewEncapsulation.None
 })
 export class PeopleYouMayKnowComponent implements OnInit, AfterViewInit {
-
+    save_loading = false;
     data: any;
 
     private profile: object = {
         name: "Anna Strong",
-        job: "Chief Financial Officer",
+        job: "Chief Financial Officer, Google Inc",
         img: "assets/app/media/img/users/user1.jpg",
-        university: "Harvard University",
-        city: "New York"
+        university: "Stanford University",
+        city: "New York",
+        connections: "300+ Connections",
+        title: "Chief Financial Officer",
+        present_comp_img: "assets/app/media/img/client-logos/logo9.png",
+        present_company: "Google Inc",
+        dates_employed: "Jul 2015 - present",
+        present_span: "3 yrs, 2 mos",
+        previous_comp_img: "assets/app/media/img/client-logos/logo6.png",
+        previous_company: "Oracle Corporation",
+        previous_title: "Finance Controller",
+        previous_dates_employed: "Jun 2012 - Jun 2015",
+        previous_span: "3 yrs",
+        previous_comp_img2: "assets/app/media/img/client-logos/logo8.png",
+        previous_company2: "Adobe Inc",
+        previous_title2: "Finance Manager",
+        previous_dates_employed2: "Jun 2010 - May 2012",
+        previous_span2: "2 yrs"
     };
 
     private pageSelection: string = 'page';
@@ -30,7 +47,8 @@ export class PeopleYouMayKnowComponent implements OnInit, AfterViewInit {
 
     constructor(
         private _script: ScriptLoaderService,
-        private dataService: DataService
+        private dataService: DataService,
+        private sendformdataService: SendFormDataService
     ) { }
 
     ngOnInit() {
@@ -38,7 +56,14 @@ export class PeopleYouMayKnowComponent implements OnInit, AfterViewInit {
             this.data = data;
         }, error => { });
 
-        var datatable = (<any>$("#people_json_data")).mDatatable({
+        this._script.loadScripts('body', [
+            'assets/vendors/base/vendors.bundle.js',
+            'assets/demo/demo7/base/scripts.bundle.js'], true).then(() => {
+                Helpers.setLoading(false);
+                this.handleSaveSearchFormSubmit();
+            });
+
+        var datatable = (<any>$("#json_data")).mDatatable({
             // datasource definition
             data: {
                 type: "remote",
@@ -50,14 +75,13 @@ export class PeopleYouMayKnowComponent implements OnInit, AfterViewInit {
                 },
                 pageSize: 10
             },
-
-            // toolbar            
+            // toolbar
             toolbar: {
                 // toolbar items
                 items: {
                     // pagination
                     pagination: {
-                        pageSizeSelect: [10, 20, 30]
+                        pageSizeSelect: [10, 20, 30],
                     }
                 }
             },
@@ -127,7 +151,7 @@ export class PeopleYouMayKnowComponent implements OnInit, AfterViewInit {
                     overflow: "visible",
                     sortable: false,
                     template: function(row) {
-                        return '<a href="javascript:;" class="btn btn-outline-primary btn-sm     m-btn m-btn--icon"> \
+                        return '<a href="javascript:;" class="btn btn-outline-primary btn-sm m-btn m-btn--icon connection-action" data-id="' + row.id + '"> \
                                     <span> \
                                         <i class="la la-link"></i> \
                                         <span>Connect</span> \
@@ -147,6 +171,22 @@ export class PeopleYouMayKnowComponent implements OnInit, AfterViewInit {
                 let id = $(this).find('.profile-img').attr("data-id");
                 that.profile = that.data.find(x => x.id == id);
             });
+        jQuery(document).ready(function() {
+            $(".m-datatable__table tr:last").find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
+            $(".m-datatable__table tr:last").prev().find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
+        });
+
+        jQuery(document).on('click', function() {
+            $(".m-datatable__table tr:last").find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
+            $(".m-datatable__table tr:last").prev().find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
+        });
+
+        jQuery(document)
+            .off('click', '.connection-action')
+            .on('click', '.connection-action', function() {
+            var id = $(this).attr('data-id');
+            that.action(String(id));
+        })
     }
 
     ngAfterViewInit() {
@@ -158,6 +198,51 @@ export class PeopleYouMayKnowComponent implements OnInit, AfterViewInit {
     private selectRow() {
         var isChecked = $('#table_row_select_control').prop('checked');
         $('.we_connect_table').children('table').children('tbody').find('tr:visible').find('input[type="checkbox"]').prop('checked', isChecked);
+    }
+
+    saveSearch() {
+        this.save_loading = true;
+        setTimeout(() => {
+            (<any>$('#save_search')).modal('hide');
+            this.save_loading = false;
+        }, 500);
+    }
+
+    handleSaveSearchFormSubmit() {
+        $('.save-search-btn').click((e) => {
+            let form = $(e.target).closest('form');
+            form.validate({
+                rules: {
+                    search_name: {
+                        required: true,
+                    }
+                },
+            });
+            if (!form.valid()) {
+                e.preventDefault();
+                return;
+            }
+        });
+    }
+
+    sendData() {
+        this.sendformdataService.sendData().subscribe(
+            data => {
+                console.log(data);
+            },
+            error => {
+                console.log(error);
+            });
+    }
+
+    action(id: string) {
+        this.sendformdataService.sendId(id).subscribe(
+            data => {
+                console.log(data);
+            },
+            error => {
+                console.log(error);
+            });
     }
 
 }

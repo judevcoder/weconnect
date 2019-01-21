@@ -1,0 +1,22 @@
+[
+  {
+    "id": 0,
+    "label": "First Name",
+    "code": "FIRST_NAME"
+  },
+  {
+    "id": 1,
+    "label": "Last Name",
+    "code": "LAST_NAME"
+  },
+  {
+    "id": 2,
+    "label": "Job Title",
+    "code": "TITLE"
+  },
+  {
+    "id": 3,
+    "label": "Company Name",
+    "code": "COMPANY"
+  }
+]

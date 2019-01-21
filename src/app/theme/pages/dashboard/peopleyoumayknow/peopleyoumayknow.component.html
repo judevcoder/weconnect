@@ -16,7 +16,7 @@
                                     <ul class="m-nav">
                                         <li class="m-nav__item">
                                             <a href="/outreach/setup" class="m-nav__link">
-                                                <i class="m-nav__link-icon flaticon-mail"></i>
+                                                <i class="m-nav__link-icon flaticon-mail-1"></i>
                                                 <span class="m-nav__link-text">Create Campaign</span>
                                             </a>
                                         </li>
@@ -84,7 +84,7 @@
                                                                 </a>
                                                             </li>
                                                             <li class="m-nav__item">
-                                                                <a href="" class="m-nav__link">
+                                                                <a href="" class="m-nav__link" (click)="sendData()">
                                                                     <i class="m-nav__link-icon la la-download"></i>
                                                                     <span class="m-nav__link-text">Export</span>
                                                                 </a>
@@ -114,7 +114,7 @@
                                 <span style="margin-top: 8px;"></span>
                             </label>
                         </div>
-                        <div class="m_datatable" id="people_json_data"></div>
+                        <div class="m_datatable" id="json_data"></div>
                     </div>
                 </div>
             </div>
@@ -173,99 +173,99 @@
                                 <span class="m-nav__section-text">Section</span>
                             </li>
                             <li class="m-nav__item">
-                                <a href="header/profile&amp;demo=default.html" class="m-nav__link">
-                                    <i class="m-nav__link-icon flaticon-time-3"></i>
-                                    <span class="m-nav__link-title">
-                            <span class="m-nav__link-wrap">
-                              <span class="m-nav__link-text">{{profile.city}}</span>
+                            <a href="javascript:;" class="m-nav__link">
+                                <i class="m-nav__link-icon flaticon-placeholder"></i>
+                                <span class="m-nav__link-title">
+                                    <span class="m-nav__link-wrap">
+                                        <span class="m-nav__link-text">{{profile.city}}</span>
                                     </span>
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="m-nav__item">
-                                <a href="header/profile&amp;demo=default.html" class="m-nav__link">
-                                    <i class="m-nav__link-icon flaticon-profile-1"></i>
-                                    <span class="m-nav__link-text">{{profile.university}}</span>
-                                </a>
-                            </li>
-                            <li class="m-nav__item">
-                                <a href="header/profile&amp;demo=default.html" class="m-nav__link">
-                                    <i class="m-nav__link-icon flaticon-share"></i>
-                                    <span class="m-nav__link-text">500+ Connections</span>
-                                </a>
-                            </li>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="m-nav__item">
+                            <a href="javascript:;" class="m-nav__link">
+                                <i class="m-nav__link-icon la la-university"></i>
+                                <span class="m-nav__link-text">{{profile.university}}</span>
+                            </a>
+                        </li>
+                        <li class="m-nav__item">
+                            <a href="javascript:;" class="m-nav__link">
+                                <i class="m-nav__link-icon la la-users"></i>
+                                <span class="m-nav__link-text">{{profile.connections}}</span>
+                            </a>
+                        </li>
                         </ul>
 
                         <div class="m-portlet__body-separator"></div>
 
                         <div class="m-widget4">
-                            <div class="m-widget4__item">
-                                <div class="m-widget4__img m-widget4__img--logo">
-                                    <img src="assets/app/media/img/client-logos/logo4.png" alt="">
-                                </div>
-                                <div class="m-widget4__info">
-                                    <span class="m-widget4__title">
-                          Chief Financial Officer
-                          </span>
-                                    <br>
-                                    <span class="m-widget4__sub">
-                          Google Corp
-                          </span>
-                                    <br>
-                                    <span class="m-widget4__sub">
-                          Jul 2015 - present
-                          </span>
-                                    <br>
-                                    <span class="m-widget4__sub">
-                          (3 yrs 2 mos)
-                          </span>
-                                </div>
+                        <div class="m-widget4__item">
+                            <div class="m-widget4__img m-widget4__img--logo">
+                                <img src="{{profile.present_comp_img}}" alt="">
                             </div>
-                            <div class="m-widget4__item">
-                                <div class="m-widget4__img m-widget4__img--logo">
-                                    <img src="assets/app/media/img/client-logos/logo2.png" alt="">
-                                </div>
-                                <div class="m-widget4__info">
-                                    <span class="m-widget4__title">
-                          Finance Controller
-                          </span>
-                                    <br>
-                                    <span class="m-widget4__sub">
-                          Oracle Corporation
-                          </span>
-                                    <br>
-                                    <span class="m-widget4__sub">
-                          Jun 2012 - Jun 2015
-                          </span>
-                                    <br>
-                                    <span class="m-widget4__sub">
-                          (3 yrs)
-                          </span>
-                                </div>
-                            </div>
-                            <div class="m-widget4__item">
-                                <div class="m-widget4__img m-widget4__img--logo">
-                                    <img src="assets/app/media/img/client-logos/logo1.png" alt="">
-                                </div>
-                                <div class="m-widget4__info">
-                                    <span class="m-widget4__title">
-                          Chief Financial Officer
-                          </span>
-                                    <br>
-                                    <span class="m-widget4__sub">
-                          Google Corp
-                          </span>
-                                    <br>
-                                    <span class="m-widget4__sub">
-                          Jul 2015 - present
-                          </span>
-                                    <br>
-                                    <span class="m-widget4__sub">
-                          (3 yrs 2 mos)
-                          </span>
-                                </div>
+                            <div class="m-widget4__info">
+                                <span class="m-widget4__title">
+                                    {{profile.title}}
+                                </span>
+                                <br>
+                                <span class="m-widget4__sub">
+                                    {{profile.present_company}}
+                                </span>
+                                <br>
+                                <span class="m-widget4__sub">
+                                    {{profile.dates_employed}}
+                                </span>
+                                <br>
+                                <span class="m-widget4__sub">
+                                    {{profile.present_span}}
+                                </span>
                             </div>
                         </div>
+                        <div class="m-widget4__item">
+                            <div class="m-widget4__img m-widget4__img--logo">
+                                <img src="{{profile.previous_comp_img}}" alt="">
+                            </div>
+                            <div class="m-widget4__info">
+                                <span class="m-widget4__title">
+                                  {{profile.previous_title}}
+                                  </span>
+                                <br>
+                                <span class="m-widget4__sub">
+                                  {{profile.previous_company}}
+                                  </span>
+                                <br>
+                                <span class="m-widget4__sub">
+                                  {{profile.previous_dates_employed}}
+                                  </span>
+                                <br>
+                                <span class="m-widget4__sub">
+                                  {{profile.previous_span}}
+                                  </span>
+                            </div>
+                        </div>
+                        <div class="m-widget4__item">
+                            <div class="m-widget4__img m-widget4__img--logo">
+                                <img src="{{profile.previous_comp_img2}}" alt="">
+                            </div>
+                            <div class="m-widget4__info">
+                                <span class="m-widget4__title">
+                                  {{profile.previous_title2}}
+                                  </span>
+                                <br>
+                                <span class="m-widget4__sub">
+                                  {{profile.previous_company2}}
+                                  </span>
+                                <br>
+                                <span class="m-widget4__sub">
+                                  {{profile.previous_dates_employed2}}
+                                  </span>
+                                <br>
+                                <span class="m-widget4__sub">
+                                  {{profile.previous_span2}}
+                                  </span>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -322,8 +322,8 @@
 <div class="modal fade show" id="save_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
         <div class="modal-content">
-            <div class="modal-body">
-                <form class="m-form m-form--label-align-right">
+            <form class="m-form m-form--label-align-right" (ngSubmit)="f.form.valid && saveSearch()" #f="ngForm" action="">
+                <div class="modal-body">
                     <div class="form-group m-form__group row">
                         <div class="col-lg-12">
                             <h5>Save Search</h5>
@@ -332,16 +332,16 @@
                     <span class="m-form__help">Save your time by viewing frequently accessed searches throuhg File Manager</span>
                     <div class="form-group m-form__group row m--margin-top-15">
                         <div class="col-lg-12">
-                            <label>Search Name</label>
-                            <input type="text" class="form-control m-input" placeholder="">
+                            <label class="form-control-label">* Search Name</label>
+                            <input type="text" class="form-control m-input" name="search_name" placeholder="">
                         </div>
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save</button>
-            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" [disabled]="save_loading" [ngClass]="{'m-loader m-loader--right m-loader--light': save_loading}" class="btn btn-primary save-search-btn">Save</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

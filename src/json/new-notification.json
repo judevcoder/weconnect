@@ -1,0 +1,58 @@
+[
+    {
+        "id": 0,
+        "time" : "Just now",
+        "status": "",
+        "status_title": "",
+        "content": "Connection campaign launched",
+        "read": false
+    },
+    {
+        "id": 1,
+        "time" : "14 mins",
+        "status": "success",
+        "status_title": "connected",
+        "content": "5 new connections",
+        "read": false
+    },
+    {
+        "id": 2,
+        "time" : "20 mins",
+        "status": "",
+        "status_title": "",
+        "content": "Visit Profiles Campaign created",
+        "read": false
+    },
+    {
+        "id": 3,
+        "time" : "1 hr",
+        "status": "info",
+        "status_title": "messages",
+        "content": "You have 2 new messages",
+        "read": false
+    },
+    {
+        "id": 4,
+        "time" : "2 hrs",
+        "status": "success",
+        "status_title": "View Profiles",
+        "content": "You are getting noticed",
+        "read": false
+    },
+    {
+        "id": 5,
+        "time" : "7 hrs",
+        "status": "danger",
+        "status_title": "replied",
+        "content": "John Kelly has replied",
+        "read": true
+    },
+    {
+        "id": 6,
+        "time" : "3 hrs",
+        "status": "",
+        "status_title": "",
+        "content": "Messaging campaign completed",
+        "read": true
+    }
+]

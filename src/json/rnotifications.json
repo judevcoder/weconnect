@@ -1,0 +1,77 @@
+[
+    {
+        "id": 0,
+        "time" : "10.00",
+        "status": "danger",
+        "content1": "A new connection campaign launched",
+        "content2": "",
+        "font": "",
+        "link": "",
+        "imgs": []
+    },
+    {
+        "id": 1,
+        "time" : "12:45",
+        "status": "success",
+        "content1": "You are now connected with",
+        "content2": "",
+        "font": "bold",
+        "link": "",
+        "imgs": [
+            {"img": "assets/app/media/img/users/100_4.jpg"},
+            {"img": "assets/app/media/img/users/100_13.jpg"},
+            {"img": "assets/app/media/img/users/100_11.jpg"},
+            {"img": "assets/app/media/img/users/100_14.jpg"}
+        ]
+    },
+    {
+        "id": 2,
+        "time" : "14:00",
+        "status": "brand",
+        "content1": "Visit Profiles",
+        "content2": "created.",
+        "font": "",
+        "link": "campaign",
+        "imgs": []
+    },
+    {
+        "id": 3,
+        "time" : "11th Sep",
+        "status": "warning",
+        "content1": "A new Follow campaign is created",
+        "content2": "",
+        "font": "",
+        "link": "",
+        "imgs": []
+    },
+    {
+        "id": 4,
+        "time" : "10th Sep",
+        "status": "info",
+        "content1": "You have a new message from",
+        "content2": "Marketing Manager, Google Inc.",
+        "font": "",
+        "link": "Anna Taylor",
+        "imgs": []
+    },
+    {
+        "id": 5,
+        "time" : "9th Sep",
+        "status": "brand",
+        "content1": "You have 4 new connections",
+        "content2": "",
+        "font": "",
+        "link": "",
+        "imgs": []
+    },
+    {
+        "id": 6,
+        "time" : "8th Sep",
+        "status": "danger",
+        "content1": "A new message from",
+        "content2": "CIO, Amazon Inc.",
+        "font": "",
+        "link": "Peter O'Kelly",
+        "imgs": []
+    }
+]

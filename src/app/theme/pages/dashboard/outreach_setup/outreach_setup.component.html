@@ -1,0 +1,1161 @@
+<!-- <p-growl [(value)]="msgs"></p-growl> -->
+<p-messages [(value)]="msgs"></p-messages>
+
+<div class="col-lg-12 col-sm-12 col-md-12 campaign-section">
+    <div class="m-portlet m-portlet--full-height">
+        <!--begin: Portlet Head-->
+        <div class="m-portlet__head">
+          <div class="m-portlet__head-caption">
+             <div class="m-portlet__head-title">
+                <h3 class="m-portlet__head-text">
+                   {{campaignName}}
+                </h3>
+             </div>
+          </div>
+          <div class="m-portlet__head-tools">
+             <ul class="m-portlet__nav">
+                <li class="m-portlet__nav-item">
+                   <a href="#" data-toggle="m-tooltip" class="m-portlet__nav-link m-portlet__nav-link--icon" data-direction="left" data-width="auto" title="Get help with filling up this form">
+                   <i class="flaticon-info m--icon-font-size-lg3"></i>
+                   </a>    
+                </li>
+             </ul>
+          </div>
+        </div>
+        <!--end: Portlet Head-->
+        <!--begin: Portlet Body-->
+        <div class="m-portlet__body m-portlet__body--no-padding">
+            <!--begin: Form Wizard-->
+            <div class="m-wizard m-wizard--3 m-wizard--success" id="m_wizard">
+                <!--begin: Message container -->
+                <div class="m-portlet__padding-x">
+                    <!-- Here you can put a message or alert -->
+                </div>
+                <!--end: Message container -->
+                <div class="row m-row--no-padding">
+                    <div class="col-xl-3 col-lg-12">
+                       <!--begin: Form Wizard Head -->
+                        <div class="m-wizard__head">
+                          <!--begin: Form Wizard Progress -->       
+                            <div class="m-wizard__progress">
+                                <div class="progress">
+                                <!-- <div class="progress-bar"  role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div> -->
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                                </div>
+                            </div>
+                            <!--end: Form Wizard Progress --> 
+                            <!--begin: Form Wizard Nav -->
+                            <div class="m-wizard__nav">
+                                <div class="m-wizard__steps">
+                                    <div class="m-wizard__step m-wizard__step--current" m-wizard-target="m_wizard_form_step_1">
+                                        <div class="m-wizard__step-info">
+                                            <a href="javascipt:;" class="m-wizard__step-number">
+                                                <span><span>1</span></span>
+                                            </a>
+                                            <div class="m-wizard__step-line">
+                                                <span></span>
+                                            </div>
+                                            <div class="m-wizard__step-label">
+                                                Setup
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="m-wizard__step" m-wizard-target="m_wizard_form_step_2">
+                                        <div class="m-wizard__step-info">
+                                            <a href="javascipt:;" class="m-wizard__step-number">
+                                                <span><span>2</span></span>
+                                            </a>
+                                            <div class="m-wizard__step-line">
+                                                <span></span>
+                                            </div>
+                                            <div class="m-wizard__step-label">
+                                                Sequences
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="m-wizard__step" m-wizard-target="m_wizard_form_step_3">
+                                        <div class="m-wizard__step-info">
+                                            <a href="javascipt:;" class="m-wizard__step-number">
+                                                <span><span>3</span></span>
+                                            </a>
+                                            <div class="m-wizard__step-line">
+                                                <span></span>
+                                            </div>
+                                            <div class="m-wizard__step-label">
+                                                Settings
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="m-wizard__step" m-wizard-target="m_wizard_form_step_4">
+                                        <div class="m-wizard__step-info">
+                                            <a href="javascipt:;" class="m-wizard__step-number">
+                                                <span><span>4</span></span>
+                                            </a>
+                                            <div class="m-wizard__step-line">
+                                                <span></span>
+                                            </div>
+                                            <div class="m-wizard__step-label">
+                                                Launch
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          <!--end: Form Wizard Nav -->
+                        </div>
+                       <!--end: Form Wizard Head -->    
+                    </div>
+                    <div class="col-xl-9 col-lg-12">
+                        <!--begin: Form Wizard Form-->
+                        <div class="m-wizard__form">
+                          <!--
+                             1) Use m-form--label-align-left class to alight the form input lables to the right
+                             2) Use m-form--state class to highlight input control borders on form validation
+                             -->
+                            <form class="m-form m-form--label-align-left- m-form--state-" id="m_form">
+                                <!--begin: Form Body -->
+                                <div class="m-portlet__body m-portlet__body--no-padding">
+                                    <!--begin: Form Wizard Step 1-->
+                                    <div class="m-wizard__form-step m-wizard__form-step--current" id="m_wizard_form_step_1">
+                                        <div class="m-form__section m-form__section--first">
+                                            <div class="m-form__heading">
+                                                <h3 class="m-form__heading-title">Client Details</h3>
+                                            </div>
+                                            <div class="campaign-name-form form-group m-form__group row">
+                                                <label class="col-xl-3 col-lg-3 col-form-label">* Campaign Name:</label>
+                                                <div class="col-xl-9 col-lg-9">
+                                                    <input *ngIf="!showcampaignName; else other_input_name" type="text" name="campaignname" class="form-control m-input" placeholder="" value="{{campaignName}}" (input)="changeCampaignName($event.target.value)">
+                                                    <ng-template #other_input_name>
+                                                        <input type="text" name="campaignname" class="form-control m-input" placeholder="" value="{{showcampaignName}}" (input)="changeCampaignName($event.target.value)">
+                                                    </ng-template>
+                                                    <div id="campaignname-error" class="form-control-feedback" style="display: none;">This field is required.</div>
+                                                    <span class="m-form__help">Please enter the campaign name</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                <label class="col-xl-3 col-lg-3 col-form-label">* Campaign Type:</label>
+                                                <div class="col-xl-9 col-lg-9">
+                                                    <select name="campaignntype" class="form-control m-input campaign-type" [(ngModel)]="campaignType" (change)="selectCampaignType($event.target.value)">
+                                                        <option *ngFor="let type of CampaignType" [value]="type.id" >{{type.content}}</option>
+                                                    </select>
+                                                    <span class="m-form__help">Select the campaign type from dropdown</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                <label class="col-xl-3 col-lg-3 col-form-label">* Select Prospects:</label>
+                                                <div class="col-xl-9 col-lg-9">
+                                                    <select name="campaignprospect" class="form-control m-input campaign-prospects" [(ngModel)]="campaignProspect" (change)="selectCampaignProspects($event.target.value)">
+                                                        <option *ngFor="let prospect of CampaignProspects" [value]="prospect.id" >{{prospect.content}}</option>
+                                                    </select>
+                                                    <span class="m-form__help">select prospects list from saved search</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="m-separator m-separator--dashed m-separator--lg"></div>
+                                    </div>
+                                    <!--end: Form Wizard Step 1-->
+                                    <!--begin: Form Wizard Step 2-->
+                                    <div class="m-wizard__form-step" id="m_wizard_form_step_2">
+                                        <ng-container *ngIf="campaignType == '2'; else add_connections">
+                                            <div class="m-form__section m-form__section--first">
+                                                <div class="form-group m-form__group row">
+                                                    <div class="col-lg-12">
+                                                        <label class="form-control-label">Message</label>
+                                                        <span id="chars">300</span>
+                                                        <textarea class="form-control connection-message" rows="5" id="comment_connection_message" placeholder="Adding a personal message can increase your connections rate" maxlength="300"  (input)="ConnectionMessage($event.target.value)"></textarea>
+                                                        <div class="outreach-sequences-m-form__help-section">
+                                                            <span class="m-form__help" style="float: left;">
+                                                                <div class="btn-group dropup mr10">
+                                                                    <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top: 5px; padding-bottom: 5px;"><i class="flaticon-layers"></i>
+                                                                    </button>
+                                                                    <div class="dropdown-menu template-dropdown">
+                                                                        <div class="m-scrollable" data-scrollable="true" style="height: 120px">
+                                                                            <ng-container *ngFor="let template of templates">
+                                                                                <a  attr.data-id="{{template.id}}" class="dropdown-item template-item" href="javascript:;" (click)="insertTemplate($event)">{{template.template_name}}</a>
+                                                                            </ng-container>
+                                                                        </div>
+                                                                        <div class="dropdown-divider"></div>
+                                                                        <a class="dropdown-item" href="" data-toggle="modal" data-target="#new_template">+ Add New</a>
+                                                                    </div>
+                                                                </div>
+                                                            </span>
+                                                            <span class="m-form__help">
+                                                                <div class="btn-group dropup">
+                                                                    <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top: 5px; padding-bottom: 5px;"><i class="la la-code"></i>
+                                                                    </button>
+                                                                    <div class="dropdown-menu">
+                                                                        <a attr.data-id="{{insertvar.id}}" *ngFor="let insertvar of insertvars" class="dropdown-item" href="javascript:;" (click)="insertVar($event)">{{insertvar.label}}</a>
+                                                                    </div>
+                                                                </div>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group m-form__group row" *ngFor="let box of messageboxes; let i = index">
+                                                    <div class="col-lg-12">
+                                                        <a href="javascript:;" (click)="removeMessageSection()" class="remove-sequences">
+                                                            <span *ngIf="i >= 0"><i class="flaticon-delete-1"></i></span>
+                                                        </a>
+                                                        <label class="form-control-label">Message If No Reply</label>
+                                                        <div *ngIf="i >= 1; else other_content" class="row" style="margin: 0;">
+                                                            <div class="col-lg-12" style="padding: 0;">
+                                                                <select name="country" class="form-control m-input">
+                                                                    <option value="YE">Select Days</option>
+                                                                    <option value="YE">1 Day After Connection</option>
+                                                                    <option value="ZM">2 Days After Connection</option>
+                                                                    <option value="ZW">3 Days After Connection</option>
+                                                                    <option value="ZW">4 Days After Connection</option>
+                                                                    <option value="ZW">5 Days After Connection</option>
+                                                                    <option value="ZW">6 Days After Connection</option>
+                                                                    <option value="ZW">7 Days After Connection</option>
+                                                                    <option value="ZW">8 Days After Connection</option>
+                                                                    <option value="ZW">9 Days After Connection</option>
+                                                                    <option value="ZW">10 Days After Connection</option>
+                                                                    <option value="ZW">11 Days After Connection</option>
+                                                                    <option value="ZW">12 Days After Connection</option>
+                                                                    <option value="ZW">13 Days After Connection</option>
+                                                                    <option value="ZW">14 Days After Connection</option>
+                                                                    <option value="ZW">15 Days After Connection</option>
+                                                                    <option value="ZW">16 Days After Connection</option>
+                                                                    <option value="ZW">17 Days After Connection</option>
+                                                                    <option value="ZW">18 Days After Connection</option>
+                                                                    <option value="ZW">19 Days After Connection</option>
+                                                                    <option value="ZW">20 Days After Connection</option>
+                                                                    <option value="ZW">21 Days After Connection</option>
+                                                                    <option value="ZW">22 Days After Connection</option>
+                                                                    <option value="ZW">23 Days After Connection</option>
+                                                                    <option value="ZW">24 Days After Connection</option>
+                                                                    <option value="ZW">25 Days After Connection</option>
+                                                                    <option value="ZW">26 Days After Connection</option>
+                                                                    <option value="ZW">27 Days After Connection</option>
+                                                                    <option value="ZW">28 Days After Connection</option>
+                                                                    <option value="ZW">29 Days After Connection</option>
+                                                                    <option value="ZW">30 Days After Connection</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <ng-template #other_content>
+                                                            <div class="row" style="margin: 0;">
+                                                                <div class="col-lg-12" style="padding: 0;">
+                                                                    <select name="country" class="form-control m-input">
+                                                                        <option value="YE">Select Days</option>
+                                                                        <option value="YE">1 Day After Connection</option>
+                                                                        <option value="ZM">2 Days After Connection</option>
+                                                                        <option value="ZW">3 Days After Connection</option>
+                                                                        <option value="ZW">4 Days After Connection</option>
+                                                                        <option value="ZW">5 Days After Connection</option>
+                                                                        <option value="ZW">6 Days After Connection</option>
+                                                                        <option value="ZW">7 Days After Connection</option>
+                                                                        <option value="ZW">8 Days After Connection</option>
+                                                                        <option value="ZW">9 Days After Connection</option>
+                                                                        <option value="ZW">10 Days After Connection</option>
+                                                                        <option value="ZW">11 Days After Connection</option>
+                                                                        <option value="ZW">12 Days After Connection</option>
+                                                                        <option value="ZW">13 Days After Connection</option>
+                                                                        <option value="ZW">14 Days After Connection</option>
+                                                                        <option value="ZW">15 Days After Connection</option>
+                                                                        <option value="ZW">16 Days After Connection</option>
+                                                                        <option value="ZW">17 Days After Connection</option>
+                                                                        <option value="ZW">18 Days After Connection</option>
+                                                                        <option value="ZW">19 Days After Connection</option>
+                                                                        <option value="ZW">20 Days After Connection</option>
+                                                                        <option value="ZW">21 Days After Connection</option>
+                                                                        <option value="ZW">22 Days After Connection</option>
+                                                                        <option value="ZW">23 Days After Connection</option>
+                                                                        <option value="ZW">24 Days After Connection</option>
+                                                                        <option value="ZW">25 Days After Connection</option>
+                                                                        <option value="ZW">26 Days After Connection</option>
+                                                                        <option value="ZW">27 Days After Connection</option>
+                                                                        <option value="ZW">28 Days After Connection</option>
+                                                                        <option value="ZW">29 Days After Connection</option>
+                                                                        <option value="ZW">30 Days After Connection</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </ng-template>
+                                                        <textarea class="form-control after-connection-message" rows="5" id="comment" placeholder="Enter the message"></textarea>
+                                                        <div class="outreach-sequences-m-form__help-section">
+                                                            <span class="m-form__help" style="float: left;">
+                                                                <div class="btn-group dropup mr10">
+                                                                    <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top: 5px; padding-bottom: 5px;"><i class="flaticon-layers"></i>
+                                                                    </button>
+                                                                    <div class="dropdown-menu template-dropdown">
+                                                                        <div class="m-scrollable" data-scrollable="true" style="height: 120px">
+                                                                            <a *ngFor="let template of templates" attr.data-id="{{template.id}}" class="dropdown-item template-item" href="javascript:;" (click)="insertTemplate($event)">{{template.template_name}}</a>
+                                                                        </div>
+                                                                        <div class="dropdown-divider"></div>
+                                                                        <a class="dropdown-item" href="" data-toggle="modal" data-target="#new_template">+ Add New</a>
+                                                                    </div>
+                                                                </div>
+                                                            </span>
+                                                            <span class="m-form__help">
+                                                                <div class="btn-group dropup">
+                                                                    <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top: 5px; padding-bottom: 5px;"><i class="la la-code"></i>
+                                                                    </button>
+                                                                    <div class="dropdown-menu">
+                                                                        <a attr.data-id="{{insertvar.id}}" *ngFor="let insertvar of insertvars" class="dropdown-item" href="javascript:;" (click)="insertVar($event)">{{insertvar.label}}</a>
+                                                                    </div>
+                                                                </div>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group m-form__group row">
+                                                    <div class="col-lg-12">
+                                                        <button (click)="addMessageStep()" [disabled]="disabled" type="button" class="btn btn-outline-success btn-sm m-btn m-btn--custom add-step-btn" style="border: 2px solid;">+ Add Step</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </ng-container>
+                                        <ng-template #add_connections>
+                                            <div class="m-form__section m-form__section--first">
+                                                <div class="form-group m-form__group row">
+                                                    <div class="col-lg-12">
+                                                        <label class="form-control-label">Connection Message</label>
+                                                        <span id="chars">300</span>
+                                                        <textarea class="form-control connection-message" rows="5" id="comment_connection_message" placeholder="Adding a personal message can increase your connections rate" maxlength="300"  (input)="ConnectionMessage($event.target.value)"></textarea>
+                                                        <div class="outreach-sequences-m-form__help-section">
+                                                            <span class="m-form__help" style="float: left;">
+                                                                <div class="btn-group dropup mr10">
+                                                                    <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top: 5px; padding-bottom: 5px;"><i class="flaticon-layers"></i>
+                                                                    </button>
+                                                                    <div class="dropdown-menu template-dropdown">
+                                                                        <div class="m-scrollable" data-scrollable="true" style="height: 120px">
+                                                                            <ng-container *ngFor="let template of templates">
+                                                                                <a  attr.data-id="{{template.id}}" class="dropdown-item template-item" href="javascript:;" (click)="insertTemplate($event)">{{template.template_name}}</a>
+                                                                            </ng-container>
+                                                                        </div>
+                                                                        <div class="dropdown-divider"></div>
+                                                                        <a class="dropdown-item" href="" data-toggle="modal" data-target="#new_template">+ Add New</a>
+                                                                    </div>
+                                                                </div>
+                                                            </span>
+                                                            <span class="m-form__help">
+                                                                <div class="btn-group dropup">
+                                                                    <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top: 5px; padding-bottom: 5px;"><i class="la la-code"></i>
+                                                                    </button>
+                                                                    <div class="dropdown-menu">
+                                                                        <a attr.data-id="{{insertvar.id}}" *ngFor="let insertvar of insertvars" class="dropdown-item" href="javascript:;" (click)="insertVar($event)">{{insertvar.label}}</a>
+                                                                    </div>
+                                                                </div>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group m-form__group row" *ngFor="let box of boxes; let i = index">
+                                                    <div class="col-lg-12">
+                                                        <a href="javascript:;" (click)="removeSection()" class="remove-sequences">
+                                                            <span *ngIf="i >= 1"><i class="flaticon-delete-1"></i></span>
+                                                        </a>
+                                                        <label *ngIf="i >= 1; else other_label" class="form-control-label">Message If No Reply</label>
+                                                        <ng-template #other_label>
+                                                            <label class="form-control-label">Message After Connection If No Reply</label>
+                                                        </ng-template>
+                                                        <div *ngIf="i >= 1; else other_content" class="row" style="margin: 0;">
+                                                            <div class="col-lg-12" style="padding: 0;">
+                                                                <select name="country" class="form-control m-input">
+                                                                    <option value="YE">Select Days</option>
+                                                                    <option value="YE">1 Day After Connection</option>
+                                                                    <option value="ZM">2 Days After Connection</option>
+                                                                    <option value="ZW">3 Days After Connection</option>
+                                                                    <option value="ZW">4 Days After Connection</option>
+                                                                    <option value="ZW">5 Days After Connection</option>
+                                                                    <option value="ZW">6 Days After Connection</option>
+                                                                    <option value="ZW">7 Days After Connection</option>
+                                                                    <option value="ZW">8 Days After Connection</option>
+                                                                    <option value="ZW">9 Days After Connection</option>
+                                                                    <option value="ZW">10 Days After Connection</option>
+                                                                    <option value="ZW">11 Days After Connection</option>
+                                                                    <option value="ZW">12 Days After Connection</option>
+                                                                    <option value="ZW">13 Days After Connection</option>
+                                                                    <option value="ZW">14 Days After Connection</option>
+                                                                    <option value="ZW">15 Days After Connection</option>
+                                                                    <option value="ZW">16 Days After Connection</option>
+                                                                    <option value="ZW">17 Days After Connection</option>
+                                                                    <option value="ZW">18 Days After Connection</option>
+                                                                    <option value="ZW">19 Days After Connection</option>
+                                                                    <option value="ZW">20 Days After Connection</option>
+                                                                    <option value="ZW">21 Days After Connection</option>
+                                                                    <option value="ZW">22 Days After Connection</option>
+                                                                    <option value="ZW">23 Days After Connection</option>
+                                                                    <option value="ZW">24 Days After Connection</option>
+                                                                    <option value="ZW">25 Days After Connection</option>
+                                                                    <option value="ZW">26 Days After Connection</option>
+                                                                    <option value="ZW">27 Days After Connection</option>
+                                                                    <option value="ZW">28 Days After Connection</option>
+                                                                    <option value="ZW">29 Days After Connection</option>
+                                                                    <option value="ZW">30 Days After Connection</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <ng-template #other_content>
+                                                            <div class="row" style="margin: 0;">
+                                                                <div class="col-lg-6" style="padding: 0;">
+                                                                    <select id="add_schedule_hour" name="add_schedule_hour" class="form-control m-input">
+                                                                        <option value="0">Select Hours</option>
+                                                                        <option value="YE">1 Hour After Connection</option>
+                                                                        <option value="ZM">2 Hours After Connection</option>
+                                                                        <option value="ZW">3 Hours After Connection</option>
+                                                                        <option value="ZW">4 Hours After Connection</option>
+                                                                        <option value="ZW">5 Hours After Connection</option>
+                                                                        <option value="ZW">6 Hours After Connection</option>
+                                                                        <option value="ZW">7 Hours After Connection</option>
+                                                                        <option value="ZW">8 Hours After Connection</option>
+                                                                        <option value="ZW">9 Hours After Connection</option>
+                                                                        <option value="ZW">10 Hours After Connection</option>
+                                                                        <option value="ZW">11 Hours After Connection</option>
+                                                                        <option value="ZW">12 Hours After Connection</option>
+                                                                        <option value="ZW">13 Hours After Connection</option>
+                                                                        <option value="ZW">14 Hours After Connection</option>
+                                                                        <option value="ZW">15 Hours After Connection</option>
+                                                                        <option value="ZW">16 Hours After Connection</option>
+                                                                        <option value="ZW">17 Hours After Connection</option>
+                                                                        <option value="ZW">18 Hours After Connection</option>
+                                                                        <option value="ZW">19 Hours After Connection</option>
+                                                                        <option value="ZW">20 Hours After Connection</option>
+                                                                        <option value="ZW">21 Hours After Connection</option>
+                                                                        <option value="ZW">22 Hours After Connection</option>
+                                                                        <option value="ZW">23 Hours After Connection</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-lg-6" style="padding: 0;">
+                                                                    <select id="add_schedule_day" name="add_schedule_day" class="form-control m-input">
+                                                                        <option value="0">Select Days</option>
+                                                                        <option value="YE">1 Day After Connection</option>
+                                                                        <option value="ZM">2 Days After Connection</option>
+                                                                        <option value="ZW">3 Days After Connection</option>
+                                                                        <option value="ZW">4 Days After Connection</option>
+                                                                        <option value="ZW">5 Days After Connection</option>
+                                                                        <option value="ZW">6 Days After Connection</option>
+                                                                        <option value="ZW">7 Days After Connection</option>
+                                                                        <option value="ZW">8 Days After Connection</option>
+                                                                        <option value="ZW">9 Days After Connection</option>
+                                                                        <option value="ZW">10 Days After Connection</option>
+                                                                        <option value="ZW">11 Days After Connection</option>
+                                                                        <option value="ZW">12 Days After Connection</option>
+                                                                        <option value="ZW">13 Days After Connection</option>
+                                                                        <option value="ZW">14 Days After Connection</option>
+                                                                        <option value="ZW">15 Days After Connection</option>
+                                                                        <option value="ZW">16 Days After Connection</option>
+                                                                        <option value="ZW">17 Days After Connection</option>
+                                                                        <option value="ZW">18 Days After Connection</option>
+                                                                        <option value="ZW">19 Days After Connection</option>
+                                                                        <option value="ZW">20 Days After Connection</option>
+                                                                        <option value="ZW">21 Days After Connection</option>
+                                                                        <option value="ZW">22 Days After Connection</option>
+                                                                        <option value="ZW">23 Days After Connection</option>
+                                                                        <option value="ZW">24 Days After Connection</option>
+                                                                        <option value="ZW">25 Days After Connection</option>
+                                                                        <option value="ZW">26 Days After Connection</option>
+                                                                        <option value="ZW">27 Days After Connection</option>
+                                                                        <option value="ZW">28 Days After Connection</option>
+                                                                        <option value="ZW">29 Days After Connection</option>
+                                                                        <option value="ZW">30 Days After Connection</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </ng-template>
+                                                        <textarea class="form-control after-connection-message" rows="5" id="comment" placeholder="Enter the message after connection"></textarea>
+                                                        <div class="outreach-sequences-m-form__help-section">
+                                                            <span class="m-form__help" style="float: left;">
+                                                                <div class="btn-group dropup mr10">
+                                                                    <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top: 5px; padding-bottom: 5px;"><i class="flaticon-layers"></i>
+                                                                    </button>
+                                                                    <div class="dropdown-menu template-dropdown">
+                                                                        <div class="m-scrollable" data-scrollable="true" style="height: 120px">
+                                                                            <a *ngFor="let template of templates" attr.data-id="{{template.id}}" class="dropdown-item template-item" href="javascript:;" (click)="insertTemplate($event)">{{template.template_name}}</a>
+                                                                        </div>
+                                                                        <div class="dropdown-divider"></div>
+                                                                        <a class="dropdown-item" href="" data-toggle="modal" data-target="#new_template">+ Add New</a>
+                                                                    </div>
+                                                                </div>
+                                                            </span>
+                                                            <span class="m-form__help">
+                                                                <div class="btn-group dropup">
+                                                                    <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top: 5px; padding-bottom: 5px;"><i class="la la-code"></i>
+                                                                    </button>
+                                                                    <div class="dropdown-menu">
+                                                                        <a attr.data-id="{{insertvar.id}}" *ngFor="let insertvar of insertvars" class="dropdown-item" href="javascript:;" (click)="insertVar($event)">{{insertvar.label}}</a>
+                                                                    </div>
+                                                                </div>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group m-form__group row">
+                                                    <div class="col-lg-12">
+                                                        <button (click)="addStep()" [disabled]="disabled" type="button" class="btn btn-outline-success btn-sm m-btn m-btn--custom add-step-btn" style="border: 2px solid;">+ Add Step</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </ng-template>
+                                    </div>
+                                    <!--end: Form Wizard Step 2-->
+                                    
+                                    <!--begin: Form Wizard Step 3-->
+                                    <div class="m-wizard__form-step" id="m_wizard_form_step_3">
+                                        <ng-container *ngIf="campaignType == '3'; else  m_wizard_form_step_3_second">
+                                            <div class="form-group m-form__group">
+                                                <div class="col-lg-6 offset-lg-3">
+                                                    <div class="input-group m-input-group">
+                                                        <div class="input-group-prepend mw75"><span class="input-group-text safe-input" id="basic-addon1">Daily Endorsement Limit</span></div>
+                                                        <input type="number" min="0" class="form-control m-input mw25" placeholder="100" aria-describedby="basic-addon1" id="daily_endorse_limit" [ngModel]="daily_endorse_limit" name="daily_endorse_limit" (input)="dailyEndorseLimit($event.target.value)">
+                                                    </div>
+                                                    <span class="m-form__help settings-help">Safe 100</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group">
+                                                <div class="col-lg-6 offset-lg-3">
+                                                    <div class="input-group m-input-group">
+                                                        <div class="input-group-prepend mw75"><span class="input-group-text safe-input" id="basic-addon1">Delay between Endorsement</span></div>
+                                                        <input type="number" min="0" class="form-control m-input mw25" placeholder="5 mins" aria-describedby="basic-addon1" id="delay_between_endorse" [ngModel]="delay_between_endorse" name="delay_between_endorse" (input)="delayBetweenEndorse($event.target.value)">
+                                                    </div>
+                                                    <span class="m-form__help settings-help">Safe 5 Mins</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group">
+                                                <div class="col-lg-6 offset-lg-3">
+                                                    <div class="input-group m-input-group">
+                                                        <div class="input-group-prepend mw75"><span class="input-group-text safe-input" id="basic-addon1">Maximum Skills to Endorse</span></div>
+                                                        <input type="number" min="0" class="form-control m-input mw25" placeholder="3 Skills" aria-describedby="basic-addon1" id="max_skills_endorse" [ngModel]="max_skills_endorse" name="max_skills_endorse" (input)="maxSkillsEndorse($event.target.value)">
+                                                    </div>
+                                                    <span class="m-form__help settings-help">Safe 3 Skills</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group">
+                                                <div class="col-lg-6 offset-lg-3">
+                                                    <label>Schedule Time</label>
+                                                    <div class="m-input-icon m-input-icon--left m-input-icon--right">
+                                                        <input type="text" class="form-control m-input m-input--solid" placeholder="Default" [ngModel]="schedulename" name="schedulename">
+                                                        <span class="m-input-icon__icon m-input-icon__icon--left schedule-time">
+                                                            <a href="javascipt:;" data-toggle="modal" data-target="#add_schedule">
+                                                                <span><i class="la la-plus m--margin-top-10"></i></span>
+                                                            </a>
+                                                        </span>
+                                                        <span class="m-input-icon__icon m-input-icon__icon--right schedule-time"><span><i class="la la-clock-o"></i></span></span>
+                                                    </div>
+                                                    <span class="m-form__help">Default is set M-F 8AM-5PM EST</span>
+                                                </div>
+                                            </div>
+                                        </ng-container>
+                                        <ng-template #m_wizard_form_step_3_second>
+                                            <ng-container *ngIf="campaignType == '4'; else m_wizard_form_step_3_third">
+                                                <div class="form-group m-form__group">
+                                                    <div class="col-lg-6 offset-lg-3">
+                                                        <div class="input-group m-input-group">
+                                                            <div class="input-group-prepend mw75"><span class="input-group-text safe-input" id="basic-addon1">Daily Follow Limit</span></div>
+                                                            <input type="number" min="0" class="form-control m-input mw25" placeholder="100" aria-describedby="basic-addon1" id="daily_follow_limit" [ngModel]="daily_follow_limit" name="daily_follow_limit" (input)="dailyFollowLimit($event.target.value)">
+                                                        </div>
+                                                        <span class="m-form__help settings-help">Safe 100</span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group m-form__group">
+                                                    <div class="col-lg-6 offset-lg-3">
+                                                        <div class="input-group m-input-group">
+                                                            <div class="input-group-prepend mw75"><span class="input-group-text safe-input" id="basic-addon1">Delay between each Follow</span></div>
+                                                            <input type="number" min="0" class="form-control m-input mw25" placeholder="5 mins" aria-describedby="basic-addon1" id="delay_between_follow" [ngModel]="delay_between_follow" name="delay_between_follow" (input)="delayBetweenFollow($event.target.value)">
+                                                        </div>
+                                                        <span class="m-form__help settings-help">Safe 5 Mins</span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group m-form__group">
+                                                    <div class="col-lg-6 offset-lg-3">
+                                                        <label>Schedule Time</label>
+                                                        <div class="m-input-icon m-input-icon--left m-input-icon--right">
+                                                            <input type="text" class="form-control m-input m-input--solid" placeholder="Default" [ngModel]="schedulename" name="schedulename">
+                                                            <span class="m-input-icon__icon m-input-icon__icon--left schedule-time">
+                                                                <a href="javascipt:;" data-toggle="modal" data-target="#add_schedule">
+                                                                    <span><i class="la la-plus m--margin-top-10"></i></span>
+                                                                </a>
+                                                            </span>
+                                                            <span class="m-input-icon__icon m-input-icon__icon--right schedule-time"><span><i class="la la-clock-o"></i></span></span>
+                                                        </div>
+                                                        <span class="m-form__help">Default is set M-F 8AM-5PM EST</span>
+                                                    </div>
+                                                </div>
+                                            </ng-container>
+                                        </ng-template>
+                                        <ng-template #m_wizard_form_step_3_third>
+                                            <ng-container *ngIf="campaignType == '5'; else m_wizard_form_step_3_normal">
+                                                <div class="form-group m-form__group">
+                                                    <div class="col-lg-6 offset-lg-3">
+                                                        <div class="input-group m-input-group">
+                                                            <div class="input-group-prepend mw75"><span class="input-group-text safe-input" id="basic-addon1">Daily Visit Profile Limit</span></div>
+                                                            <input type="number" min="0" class="form-control m-input mw25" placeholder="100" aria-describedby="basic-addon1" id="daily_visit_profile_limit" [ngModel]="daily_visit_profile_limit" name="daily_visit_profile_limit" (input)="dailyVisitProfileLimit($event.target.value)">
+                                                        </div>
+                                                        <span class="m-form__help settings-help">Safe 100</span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group m-form__group">
+                                                    <div class="col-lg-6 offset-lg-3">
+                                                        <div class="input-group m-input-group">
+                                                            <div class="input-group-prepend mw75"><span class="input-group-text safe-input" id="basic-addon1">Delay between each Profile Visit</span></div>
+                                                            <input type="number" min="0" class="form-control m-input mw25" placeholder="5 mins" aria-describedby="basic-addon1" id="delay_between_visit_profile" [ngModel]="delay_between_visit_profile" name="delay_between_visit_profile" (input)="delayBetweenVisitProfile($event.target.value)">
+                                                        </div>
+                                                        <span class="m-form__help settings-help">Safe 5 Mins</span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group m-form__group">
+                                                    <div class="col-lg-6 offset-lg-3">
+                                                        <label>Schedule Time</label>
+                                                        <div class="m-input-icon m-input-icon--left m-input-icon--right">
+                                                            <input type="text" class="form-control m-input m-input--solid" placeholder="Default" [ngModel]="schedulename" name="schedulename">
+                                                            <span class="m-input-icon__icon m-input-icon__icon--left schedule-time">
+                                                                <a href="javascipt:;" data-toggle="modal" data-target="#add_schedule">
+                                                                    <span><i class="la la-plus m--margin-top-10"></i></span>
+                                                                </a>
+                                                            </span>
+                                                            <span class="m-input-icon__icon m-input-icon__icon--right schedule-time"><span><i class="la la-clock-o"></i></span></span>
+                                                        </div>
+                                                        <span class="m-form__help">Default is set M-F 8AM-5PM EST</span>
+                                                    </div>
+                                                </div>
+                                            </ng-container>
+                                        </ng-template>
+                                        <ng-template #m_wizard_form_step_3_normal>
+                                            <div class="form-group m-form__group">
+                                                <div class="col-lg-6 offset-lg-3">
+                                                    <div class="input-group m-input-group ">
+                                                        <div class="input-group-prepend mw75"><span class="input-group-text safe-input">Daily Connection Limit</span></div>
+                                                        <input type="number" min="0" class="form-control m-input mw25" placeholder="100" aria-describedby="basic-addon1" id="daily_connection_limit" [ngModel]="daily_connection_limit" name="daily_connection_limit" (input)="dailyConnectionLimit($event.target.value)">
+                                                    </div>
+                                                    <span class="m-form__help ml310">Safe 100</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group">
+                                                <div class="col-lg-6 offset-lg-3">
+                                                    <div class="input-group m-input-group ">
+                                                        <div class="input-group-prepend mw75"><span class="input-group-text safe-input">Daily Followup Message Limit</span></div>
+                                                        <input type="number" min="0" class="form-control m-input mw25" placeholder="100" aria-describedby="basic-addon1" id="daily_follow_message" [ngModel]="daily_follow_message" name="daily_follow_message" (input)="dailyiFollowMessage($event.target.value)">
+                                                    </div>
+                                                    <span class="m-form__help ml310">Safe 100</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group">
+                                                <div class="col-lg-6 offset-lg-3">
+                                                    <div class="input-group m-input-group ">
+                                                        <div class="input-group-prepend mw75"><span class="input-group-text safe-input">Delay between connections</span></div>
+                                                        <input type="number" min="0" class="form-control m-input mw25" placeholder="5 mins" aria-describedby="basic-addon1" id="delay_between_connections" [ngModel]="delay_between_connections" name="delay_between_connections" (input)="dalayBetweenConnections($event.target.value)">
+                                                    </div>
+                                                    <span class="m-form__help ml310">Safe 5 mins</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group">
+                                                <div class="col-lg-6 offset-lg-3">
+                                                    <div class="input-group m-input-group ">
+                                                        <div class="input-group-prepend mw75"><span class="input-group-text safe-input">Delay between Messages</span></div>
+                                                        <input type="number" min="0" class="form-control m-input mw25" placeholder="5 mins" aria-describedby="basic-addon1" id="delay_between_messages" [ngModel]="delay_between_messages" name="delay_between_messages" (input)="delayBetweenMessages($event.target.value)">
+                                                    </div>
+                                                    <span class="m-form__help ml310">Safe 5 mins</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group">
+                                                <div class="col-lg-6 offset-lg-3">
+                                                    <label>Schedule Time</label>
+                                                    <div class="m-input-icon m-input-icon--left m-input-icon--right">
+                                                        <input type="text" class="form-control m-input m-input--solid" [ngModel]="schedulename" placeholder="Default" name="schedulename">
+                                                        <span class="m-input-icon__icon m-input-icon__icon--left schedule-time">
+                                                            <a href="javascipt:;" data-toggle="modal" data-target="#add_schedule">
+                                                                <span><i class="la la-plus m--margin-top-10"></i></span>
+                                                            </a>
+                                                        </span>
+                                                        <span class="m-input-icon__icon m-input-icon__icon--right schedule-time"><span><i class="la la-clock-o"></i></span></span>
+                                                    </div>
+                                                    <span class="m-form__help">Default is set M-F 8AM-5PM EST</span>
+                                                </div>
+                                            </div>
+                                        </ng-template>
+                                    </div>
+                                    <!--end: Form Wizard Step 3-->
+                                    
+                                    <!--begin: Form Wizard Step 4-->
+                                    <div class="m-wizard__form-step" id="m_wizard_form_step_4">
+                                        <!--begin::Section-->
+                                        <div class="m-accordion m-accordion--default" id="m_accordion_1" role="tablist">
+                                            <!--begin::Item-->
+                                            <div class="m-accordion__item">
+                                                <div class="m-accordion__item-head collapsed" role="tab" id="m_accordion_1_item_1_head" data-toggle="collapse" href="#m_accordion_1_item_1_body" aria-expanded="false">
+                                                    <span class="m-accordion__item-icon"><i class="fa flaticon-user-ok"></i></span>
+                                                    <span class="m-accordion__item-title">Setup</span>
+                                                    <span class="m-accordion__item-mode"></span>
+                                                </div>
+                                                <div class="m-accordion__item-body collapse" id="m_accordion_1_item_1_body" role="tabpanel" aria-labelledby="m_accordion_1_item_1_head" data-parent="#m_accordion_1">
+                                                    <!--begin::Content-->
+                                                    <div class="tab-content active  m--padding-30">
+                                                        <div class="m-form__section m-form__section--first">
+                                                            <div class="form-group m-form__group m-form__group--sm row">
+                                                                <label class="col-xl-4 col-lg-4 col-form-label">Campaign Name:</label>
+                                                                <div class="col-xl-8 col-lg-8">
+                                                                    <span class="m-form__control-static">{{campaignName}}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group m-form__group m-form__group--sm row">
+                                                                <label class="col-xl-4 col-lg-4 col-form-label">Campaign Type:</label>
+                                                                <div class="col-xl-8 col-lg-8">
+                                                                    <span class="m-form__control-static">{{campaigntypeName}}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group m-form__group m-form__group--sm row">
+                                                                <label class="col-xl-4 col-lg-4 col-form-label">Prospects</label>
+                                                                <div class="col-xl-8 col-lg-8">
+                                                                    <span class="m-form__control-static">{{campaignprospectName}}</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--end::Section-->
+                                                </div>
+                                            </div>
+                                            <!--end::Item-->
+                                            <!--begin::Item-->
+                                            <div *ngIf="campaignType == '1' || campaignType == '2'" class="m-accordion__item">
+                                                <ng-container *ngIf="campaignType == '2'; else other_sequence">
+                                                    <div class="m-accordion__item-head collapsed" role="tab" id="m_accordion_1_item_2_head" data-toggle="collapse" href="#m_accordion_1_item_2_body" aria-expanded="false">
+                                                        <span class="m-accordion__item-icon"><i class="fa  flaticon-email"></i></span>
+                                                        <span class="m-accordion__item-title">Sequences</span>
+                                                        <span class="m-accordion__item-mode"></span>
+                                                    </div>
+                                                    <div class="m-accordion__item-body collapse" id="m_accordion_1_item_2_body" role="tabpanel" aria-labelledby="m_accordion_1_item_2_head" data-parent="#m_accordion_1">
+                                                        <!--begin::Content-->
+                                                        <div class="col-lg-10 offset-lg-1">
+                                                            <div class="tab-content  m--padding-30 m-accordion m-accordion--toggle-arrow">
+                                                                <div class="m-accordion__item">
+                                                                    <div class="m-accordion__item-head collapsed" role="tab" id="m_accordion_2_item_1_head" data-toggle="collapse" href="#m_accordion_2_item_1_body" aria-expanded="false">
+                                                                        <span class="m-accordion__item-icon"><i class="fa  flaticon-chat-1"></i></span>
+                                                                        <span class="m-accordion__item-title sub-accordion-title" style="color: #000;">Message</span>
+                                                                        <span class="m-accordion__item-mode"></span>
+                                                                    </div>
+                                                                    <div class="m-accordion__item-body collapse" id="m_accordion_2_item_1_body" class="collapse" role="tabpanel" aria-labelledby="m_accordion_2_item_1_head" data-parent="#m_accordion_2_item_1_head">
+                                                                        <div class="tab-content  m--padding-30">
+                                                                            {{connectionMessage}}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--end::Content-->
+                                                    </div>
+                                                </ng-container>
+                                                <ng-template #other_sequence>
+                                                    <div class="m-accordion__item-head collapsed" role="tab" id="m_accordion_1_item_2_head" data-toggle="collapse" href="#m_accordion_1_item_2_body" aria-expanded="false">
+                                                        <span class="m-accordion__item-icon"><i class="fa  flaticon-email"></i></span>
+                                                        <span class="m-accordion__item-title">Sequences</span>
+                                                        <span class="m-accordion__item-mode"></span>
+                                                    </div>
+                                                    <div class="m-accordion__item-body collapse" id="m_accordion_1_item_2_body" class="collapse" role="tabpanel" aria-labelledby="m_accordion_1_item_2_head" data-parent="#m_accordion_1">
+                                                        <!--begin::Content-->
+                                                        <div class="col-lg-10 offset-lg-1">
+                                                            <div class="tab-content  m--padding-30 m-accordion m-accordion--toggle-arrow">
+                                                                <div class="m-accordion__item">
+                                                                    <div class="m-accordion__item-head collapsed" role="tab" id="m_accordion_2_item_1_head" data-toggle="collapse" href="#m_accordion_2_item_1_body" aria-expanded="    false">
+                                                                        <span class="m-accordion__item-icon"><i class="fa  flaticon-chat-1"></i></span>
+                                                                        <span class="m-accordion__item-title sub-accordion-title" style="color: #000;">Connection Message</span>
+                                                                        <span class="m-accordion__item-mode"></span>
+                                                                    </div>
+                                                                    <div class="m-accordion__item-body collapse" id="m_accordion_2_item_1_body" class="collapse" role="tabpanel" aria-labelledby="m_accordion_2_item_1_head" data-parent="#m_accordion_2_item_1_head">
+                                                                        <div class="tab-content  m--padding-30">
+                                                                            {{connectionMessage}}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="m-accordion__item">
+                                                                    <div class="m-accordion__item-head collapsed" role="tab" id="m_accordion_2_item_2_head" data-toggle="collapse" href="#m_accordion_2_item_2_body" aria-expanded="false">
+                                                                        <span class="m-accordion__item-icon"><i class="fa  flaticon-chat-1"></i></span>
+                                                                        <span class="m-accordion__item-title sub-accordion-title" style="color: #000;">Message after Connection</span>
+                                                                        <span class="m-accordion__item-mode"></span>
+                                                                    </div>
+                                                                    <div class="m-accordion__item-body collapse" id="m_accordion_2_item_2_body" class="collapse" role="tabpanel" aria-labelledby="m_accordion_2_item_2_head" data-parent="#m_accordion_2_item_1_head">
+                                                                        <div class="tab-content  m--padding-30">
+                                                                            {{messageAfterConnection}}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--end::Content-->
+                                                    </div>
+                                                </ng-template>
+                                            </div>
+                                            <!--end::Item-->
+                                            <!--begin::Item-->
+                                            <div class="m-accordion__item">
+                                                <div class="m-accordion__item-head collapsed" role="tab" id="m_accordion_1_item_3_head" data-toggle="collapse" href="#m_accordion_1_item_3_body" aria-expanded="false">
+                                                    <span class="m-accordion__item-icon"><i class="fa flaticon-settings-1"></i></span>
+                                                    <span class="m-accordion__item-title">Settings</span>
+                                                    <span class="m-accordion__item-mode"></span>
+                                                </div>
+                                                <div class="m-accordion__item-body collapse" id="m_accordion_1_item_3_body" role="tabpanel" aria-labelledby="m_accordion_1_item_3_head" data-parent="#m_accordion_1">
+                                                    <!--begin::Content-->
+                                                    <div class="tab-content  m--padding-30">
+                                                        <div class="m-form__section">
+                                                            <ng-container *ngIf="campaignType == '3'; else second">
+                                                                <div class="form-group m-form__group m-form__group--sm row">
+                                                                    <label class="col-xl-4 col-lg-4 col-form-label">Daily Endorsement Limit</label>
+                                                                    <div class="col-xl-8 col-lg-8">
+                                                                        <span class="m-form__control-static">{{daily_endorse_limit}}</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group m-form__group m-form__group--sm row">
+                                                                    <label class="col-xl-4 col-lg-4 col-form-label">Delay between Endorsement</label>
+                                                                    <div class="col-xl-8 col-lg-8">
+                                                                        <span class="m-form__control-static">{{delay_between_endorse}} mins</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group m-form__group m-form__group--sm row">
+                                                                    <label class="col-xl-4 col-lg-4 col-form-label">Maximum Skills to Endorse</label>
+                                                                    <div class="col-xl-8 col-lg-8">
+                                                                        <span class="m-form__control-static">{{max_skills_endorse}} skills</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group m-form__group m-form__group--sm row">
+                                                                    <label class="col-xl-4 col-lg-4 col-form-label">Schedule</label>
+                                                                    <div class="col-xl-8 col-lg-8">
+                                                                        <span class="m-form__control-static">{{schedulename}}</span>
+                                                                    </div>
+                                                                </div>
+                                                            </ng-container>
+                                                            <ng-template #second>
+                                                                <ng-container *ngIf="campaignType == '4'; else third">
+                                                                    <div class="form-group m-form__group m-form__group--sm row">
+                                                                        <label class="col-xl-4 col-lg-4 col-form-label">Daily Follow Limit</label>
+                                                                        <div class="col-xl-8 col-lg-8">
+                                                                            <span class="m-form__control-static">{{daily_follow_limit}}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group m-form__group m-form__group--sm row">
+                                                                        <label class="col-xl-4 col-lg-4 col-form-label">Delay between each Follow</label>
+                                                                        <div class="col-xl-8 col-lg-8">
+                                                                            <span class="m-form__control-static">{{delay_between_follow}} mins</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group m-form__group m-form__group--sm row">
+                                                                        <label class="col-xl-4 col-lg-4 col-form-label">Schedule</label>
+                                                                        <div class="col-xl-8 col-lg-8">
+                                                                            <span class="m-form__control-static">{{schedulename}}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </ng-container>
+                                                            </ng-template>
+                                                            <ng-template #third>
+                                                                <ng-container *ngIf="campaignType == '5'; else normal">
+                                                                    <div class="form-group m-form__group m-form__group--sm row">
+                                                                        <label class="col-xl-4 col-lg-4 col-form-label">Daily Visit Profile Limit</label>
+                                                                        <div class="col-xl-8 col-lg-8">
+                                                                            <span class="m-form__control-static">{{daily_visit_profile_limit}}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group m-form__group m-form__group--sm row">
+                                                                        <label class="col-xl-4 col-lg-4 col-form-label">Delay between each Profile Visit</label>
+                                                                        <div class="col-xl-8 col-lg-8">
+                                                                            <span class="m-form__control-static">{{delay_between_visit_profile}} mins</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group m-form__group m-form__group--sm row">
+                                                                        <label class="col-xl-4 col-lg-4 col-form-label">Schedule</label>
+                                                                        <div class="col-xl-8 col-lg-8">
+                                                                            <span class="m-form__control-static">{{schedulename}}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </ng-container>
+                                                            </ng-template>
+                                                            <ng-template #normal>
+                                                                <div class="form-group m-form__group m-form__group--sm row">
+                                                                    <label class="col-xl-4 col-lg-4 col-form-label">Daily Connection Limit</label>
+                                                                    <div class="col-xl-8 col-lg-8">
+                                                                        <span class="m-form__control-static">{{daily_connection_limit}}</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group m-form__group m-form__group--sm row">
+                                                                    <label class="col-xl-4 col-lg-4 col-form-label">Daily Followup Message Limit</label>
+                                                                    <div class="col-xl-8 col-lg-8">
+                                                                        <span class="m-form__control-static">{{daily_follow_message}}</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group m-form__group m-form__group--sm row">
+                                                                    <label class="col-xl-4 col-lg-4 col-form-label">Delay between connections</label>
+                                                                    <div class="col-xl-8 col-lg-8">
+                                                                        <span class="m-form__control-static">{{delay_between_connections}} mins</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group m-form__group m-form__group--sm row">
+                                                                    <label class="col-xl-4 col-lg-4 col-form-label">Delay between Messages</label>
+                                                                    <div class="col-xl-8 col-lg-8">
+                                                                        <span class="m-form__control-static">{{delay_between_messages}} mins</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group m-form__group m-form__group--sm row">
+                                                                    <label class="col-xl-4 col-lg-4 col-form-label">Schedule</label>
+                                                                    <div class="col-xl-8 col-lg-8">
+                                                                        <span class="m-form__control-static">{{schedulename}}</span>
+                                                                    </div>
+                                                                </div>
+                                                            </ng-template>
+                                                        </div>
+                                                    </div>
+                                                    <!--end::Content-->
+                                                </div>
+                                            </div>
+                                            <!--end::Item-->
+                                        </div>
+                                        <!--end::Section-->
+
+                                        <!--end::Section-->
+                                        <div class="m-separator m-separator--dashed m-separator--lg"></div>
+                                        <div class="form-group m-form__group m-form__group--sm row">
+                                            <div class="col-xl-12">
+                                                <div class="m-checkbox-inline" style="margin-left: 36px;">
+                                                    Ready to launch! Quickly review to see if everything is in place.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end: Form Wizard Step 4-->
+                                </div>
+                                <!--end: Form Body -->
+                                <!--begin: Form Actions -->
+                                <div class="m-portlet__foot m-portlet__foot--fit m--margin-top-40">
+                                    <div class="m-form__actions">
+                                        <div class="row">
+                                            <div class="col-lg-6 m--align-left">
+                                                <a href="#" class="btn btn-secondary m-btn m-btn--custom m-btn--icon prev-wizard-btn" data-wizard-action="prev" (click)="moveToPrevWizard()" style="display: none;">
+                                                    <span>
+                                                        <i class="la la-arrow-left"></i>&nbsp;&nbsp;
+                                                        <span>Back</span>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="col-lg-6 m--align-right">
+                                                <a href="#" class="btn btn-primary m-btn m-btn--custom m-btn--icon" data-wizard-action="submit">
+                                                    <span>
+                                                        <i class="la la-check"></i>&nbsp;&nbsp;
+                                                        <span>Submit</span>
+                                                    </span>
+                                                </a>
+                                                <a href="#" class="btn btn-success m-btn m-btn--custom m-btn--icon next-wizard-btn" data-wizard-action="next" (click)="moveToNextWizard()">
+                                                    <span>
+                                                        <span>Save & Continue</span>&nbsp;&nbsp;
+                                                        <i class="la la-arrow-right"></i>
+                                                    </span>
+                                                </a>
+                                                <a href="" class="btn btn-success m-btn m-btn--custom m-btn--icon" data-wizard-action="next" id="send_campaign" data-toggle="modal" data-target="#send_campaign_now" style="display: none;">
+                                                    <span>
+                                                        <span>Send Campaign</span>&nbsp;&nbsp;
+                                                        <i class="la la-paper-plane"></i>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end: Form Actions -->
+                            </form>
+                        </div>
+                       <!--end: Form Wizard Form-->
+                    </div>
+                </div>
+            </div>
+            <!--end: Form Wizard-->
+        </div>
+       <!--end: Portlet Body-->
+    </div>
+</div>
+
+<!--begin::Modal-->
+<div class="modal fade" id="new_template" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">New Template</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form (ngSubmit)="f.form.valid && addNewtemplate()" #f="ngForm" action="">
+                <div class="modal-body">
+                    <div class="form-group m-form__group">
+                        <label for="new-template-name" class="">Template Name</label>
+                        <input type="text" class="form-control m-input" id="new_template_name" name="new_template_name">
+                    </div>
+                    <div class="form-group m-form__group">
+                        <label for="new-template-message-text" class="">Message:</label>
+                        <textarea class="form-control m-input" id="new_template_message" name="new_template_message"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" [disabled]="loading" [ngClass]="{'m-loader m-loader--right m-loader--light': loading}" class="btn btn-primary add-new-template-btn">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--end::Modal-->
+
+<!-- schedule modal -->
+<div class="modal fade show" id="add_schedule" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="padding-right: 17px;">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <form class="m-form m-form--label-align-right" (ngSubmit)="f.form.valid && saveSchedule()" #f="ngForm" action="">
+                <div class="modal-body">
+                    <h5>Schedule</h5>
+                    <div class="form-group m-form__group row">
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control m-input" [ngModel]="schedulename" name="schedule_name" placeholder="Schedule Name" style="margin-top: 25px;">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="">All Schedules</label>
+                            <select class="form-control m-input" id="exampleSelect1" [(ngModel)]="selectedschedule" name="schedule_list" (change)="selectSchedule($event.target.value)">
+                                <option value="0" >Default</option>
+                                <option *ngFor="let schedule of schedules" [value]="schedule.id">{{schedule.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group m-form__group row">
+                        <div class="col-lg-12">
+                            <select class="form-control m-input" [(ngModel)]="selectedtimezone" name="timezone_list">
+                                <option *ngFor="let timezone of timezones" [value]="timezone.value">{{timezone.text}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group m-form__group row">
+                        <div class="col-lg-12">
+                            <label class="">Schedule Days</label>
+                            <span class="m-form__help"> (please click on the days to select or unselect)</span>
+                        </div>
+                        <div class="col-lg-10 offset-lg-1">
+                            <ul class="schedule-days" id="schedule_days">
+                                <li *ngFor="let day of days" class="schedule-date">
+                                    <button type="button" class="btn btn-secondary {{day.state}}">{{day.day}}</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-group m-form__group row">
+                        <div class="col-lg-12">
+                            <label class="">Schedule Time</label>
+                        </div>
+                    </div>
+                    <div class="form-group m-form__group row">
+                        <div class="col-lg-6">
+                            <div class="col-sm-8 offset-sm-3">
+                                <div class="input-group">
+                                    <input type="text" class="form-control m-input" [ngModel]="selectedStartAt" placeholder="9:30:00 AM" aria-describedby="basic-addon2" id="start_time_picker" name="start_at">
+                                    <div class="input-group-append"><span class="input-group-text" id="basic-addon2"><i class="la la-clock-o"></i></span></div>
+                                </div>
+                                <span class="m-form__help">Starts at</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="col-sm-8 offset-sm-1">
+                                <div class="input-group">
+                                    <input type="text" class="form-control m-input" [ngModel]="selectedEndAt" placeholder="5:30:00 PM" aria-describedby="basic-addon2" id="end_time_picker" name="end_at">
+                                    <div class="input-group-append"><span class="input-group-text" id="basic-addon2"><i class="la la-clock-o"></i></span></div>
+                                </div>
+                                <span class="m-form__help">Ends at</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary mr-auto add-new-schedule-btn" (click)="TriggerModal">Add New</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" [disabled]="schedule_loading" [ngClass]="{'m-loader m-loader--right m-loader--light': schedule_loading}" class="btn btn-primary schedule-save-btn">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Schedule modal end! -->
+
+<!-- Add new schedule modal -->
+<div class="modal fade show" id="add_new_schedule" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="padding-right: 17px;">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <form class="m-form m-form--label-align-right" (ngSubmit)="f.form.valid && addNewSchedule()" #f="ngForm" action="">
+                <div class="modal-body">
+                    <h5>New Schedule</h5>
+                    <div class="form-group m-form__group row">
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control m-input" name="add_schedule_name" placeholder="Schedule Name" style="margin-top: 25px;">
+                        </div>
+                    </div>
+                    <div class="form-group m-form__group row">
+                        <div class="col-lg-12">
+                            <select class="form-control m-input" [(ngModel)]="selectedtimezone" name="timezone_list">
+                                <option *ngFor="let timezone of timezones" [value]="timezone.value">{{timezone.text}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group m-form__group row">
+                        <div class="col-lg-12">
+                            <label class="">Schedule Days</label>
+                            <span class="m-form__help"> (please click on the days to select or unselect)</span>
+                        </div>
+                        <div class="col-lg-10 offset-lg-1">
+                            <ul class="schedule-days" id="schedule_days">
+                                <li *ngFor="let day of defaultdays" class="schedule-date">
+                                    <button type="button" class="btn btn-secondary {{day.state}}">{{day.day}}</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-group m-form__group row">
+                        <div class="col-lg-12">
+                            <label class="">Schedule Time</label>
+                        </div>
+                    </div>
+                    <div class="form-group m-form__group row">
+                        <div class="col-lg-6">
+                            <div class="col-sm-8 offset-sm-3">
+                                <div class="input-group">
+                                    <input type="text" class="form-control m-input" [ngModel]="defaultStartAt" placeholder="9:30:00 AM" aria-describedby="basic-addon2" id="start_time_picker" name="start_at">
+                                    <div class="input-group-append"><span class="input-group-text" id="basic-addon2"><i class="la la-clock-o"></i></span></div>
+                                </div>
+                                <span class="m-form__help">Starts at</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="col-sm-8 offset-sm-1">
+                                <div class="input-group">
+                                    <input type="text" class="form-control m-input" [ngModel]="defaultEndAt" placeholder="5:30:00 PM" aria-describedby="basic-addon2" id="end_time_picker" name="end_at">
+                                    <div class="input-group-append"><span class="input-group-text" id="basic-addon2"><i class="la la-clock-o"></i></span></div>
+                                </div>
+                                <span class="m-form__help">Ends at</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" [disabled]="new_loading" [ngClass]="{'m-loader m-loader--right m-loader--light': new_loading}" class="btn btn-primary add-schedule-save-btn">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade show" id="send_campaign_now" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="padding-right: 17px;">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="border-bottom: none;">
+                <h5 class="modal-title" id="exampleModalLabel">Launch my Campaign</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <form class="m-form m-form--label-align-right" (ngSubmit)="sendCampaign()" #f="ngForm" action="">
+                <div class="modal-body update-profile-body">
+
+                    <div class="m-checkbox-inline textcenter">
+                        You are about to launch a campaign
+                        <br> Are you ready?
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" [disabled]="send_campaign_loading" [ngClass]="{'m-loader m-loader--right m-loader--light': send_campaign_loading}" class="btn btn-primary btn-sm m-btn m-btn--custom" style="width: 100%">Send it</button>
+                    <!-- <a type="submit" href="/outreach/campaigns" class="btn btn-primary btn-sm m-btn m-btn--custom" style="width: 100%">Send it</a> -->
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

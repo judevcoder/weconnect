@@ -82,25 +82,15 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr *ngFor="let search of savedsearch">
                                         <td>
-                                            1
+                                            {{search.id}}
                                         </td>
-                                        <td>CFO NY</td>
-                                        <td>CFO, NY, Computer Software</td>
-                                        <td>08/08/2018</td>
-                                        <td>1020</td>
-                                        <td nowrap></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            2
-                                        </td>
-                                        <td>Marketing Managers</td>
-                                        <td>Marketing Manager, London, Manufacturing</td>
-                                        <td>08/06/2018</td>
-                                        <td>810</td>
-                                        <td nowrap></td>
+                                        <td>{{search.search_name}}</td>
+                                        <td>{{search.search_criteria}}</td>
+                                        <td>{{search.date}}</td>
+                                        <td>{{search.contact}}</td>
+                                        <td class="action" attr.data-id={{search.id}} nowrap></td>
                                     </tr>
                                 </tbody>
                             </table>

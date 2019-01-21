@@ -5,6 +5,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { ConnectionComponent } from "./connection.component";
 import { LayoutModule } from "../../../layouts/layout.module";
 import { DashboardComponent } from "../dashboard.component";
+import { SendFormDataService } from "../../../../_services/send-form-data.service";
 
 const routes: Routes = [
     {
@@ -26,6 +27,7 @@ const routes: Routes = [
         FormsModule
     ],
     exports: [RouterModule],
-    declarations: [ConnectionComponent]
+    declarations: [ConnectionComponent],
+    providers: [SendFormDataService]
 })
 export class ConnectionModule { }

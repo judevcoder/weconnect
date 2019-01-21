@@ -7,6 +7,7 @@ import {
 import { Helpers } from "../../../../helpers";
 import { ScriptLoaderService } from "../../../../_services/script-loader.service";
 import { DataService } from "../../../../_services/data.service";
+import { SendFormDataService } from "../../../../_services/send-form-data.service";
 
 @Component({
     selector: "app-pending-requests",
@@ -18,10 +19,26 @@ export class PendingRequestsComponent implements OnInit, AfterViewInit {
 
     private profile: object = {
         name: "Anna Strong",
-        job: "Chief Financial Officer",
+        job: "Chief Financial Officer, Google Inc",
         img: "assets/app/media/img/users/user1.jpg",
-        university: "Harvard University",
-        city: "New York"
+        university: "Stanford University",
+        city: "New York",
+        connections: "300+ Connections",
+        title: "Chief Financial Officer",
+        present_comp_img: "assets/app/media/img/client-logos/logo9.png",
+        present_company: "Google Inc",
+        dates_employed: "Jul 2015 - present",
+        present_span: "3 yrs, 2 mos",
+        previous_comp_img: "assets/app/media/img/client-logos/logo6.png",
+        previous_company: "Oracle Corporation",
+        previous_title: "Finance Controller",
+        previous_dates_employed: "Jun 2012 - Jun 2015",
+        previous_span: "3 yrs",
+        previous_comp_img2: "assets/app/media/img/client-logos/logo8.png",
+        previous_company2: "Adobe Inc",
+        previous_title2: "Finance Manager",
+        previous_dates_employed2: "Jun 2010 - May 2012",
+        previous_span2: "2 yrs"
     };
 
     private pageSelection: string = 'page';
@@ -29,7 +46,8 @@ export class PendingRequestsComponent implements OnInit, AfterViewInit {
 
     constructor(
         private _script: ScriptLoaderService,
-        private dataService: DataService
+        private dataService: DataService,
+        private sendformdataService: SendFormDataService
     ) { }
 
     ngOnInit() {
@@ -49,12 +67,23 @@ export class PendingRequestsComponent implements OnInit, AfterViewInit {
                 },
                 pageSize: 10
             },
+            // toolbar
+            toolbar: {
+                // toolbar items
+                items: {
+                    // pagination
+                    pagination: {
+                        pageSizeSelect: [10, 20, 30],
+                    }
+                }
+            },
 
             // layout definition
             layout: {
                 theme: "default", // datatable theme
                 class: "we_connect_table", // custom wrapper class
-                scroll: false, // enable/disable datatable scroll both horizontal and vertical when needed.
+                height: 680,
+                scroll: true, // enable/disable datatable scroll both horizontal and vertical when needed.
                 footer: false // display/hide footer
             },
 
@@ -114,7 +143,7 @@ export class PendingRequestsComponent implements OnInit, AfterViewInit {
                     overflow: "visible",
                     sortable: false,
                     template: function(row) {
-                        return '<a href="javascript:;" class="btn btn-outline-danger btn-sm     m-btn m-btn--icon">\
+                        return '<a href="javascript:;" class="btn btn-outline-danger btn-sm m-btn m-btn--icon withdraw-btn" data-id="' + row.id + '">\
                                     <span>\
                                         <i class="la la-remove"></i>\
                                         <span>Withdraw</span>\
@@ -134,6 +163,22 @@ export class PendingRequestsComponent implements OnInit, AfterViewInit {
                 let id = $(this).find('.profile-img').attr("data-id");
                 that.profile = that.data.find(x => x.id == id);
             });
+        jQuery(document).ready(function() {
+            $(".m-datatable__table tr:last").find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
+            $(".m-datatable__table tr:last").prev().find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
+        });
+
+        jQuery(document).on('click', function() {
+            $(".m-datatable__table tr:last").find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
+            $(".m-datatable__table tr:last").prev().find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
+        });
+
+        jQuery(document)
+            .off('click', '.withdraw-btn')
+            .on('click', '.withdraw-btn', function() {
+            var id = $(this).attr('data-id');
+            that.withDraw(String(id));
+        })
     }
 
     ngAfterViewInit() {
@@ -143,7 +188,37 @@ export class PendingRequestsComponent implements OnInit, AfterViewInit {
     }
 
     private selectRow() {
-        console.log(this.isRowSelected);
-        console.log(this.pageSelection);
+        var isChecked = $('#table_row_select_control').prop('checked');
+        $('.we_connect_table').children('table').children('tbody').find('tr:visible').find('input[type="checkbox"]').prop('checked', isChecked);
+    }
+
+    withDraw(id: string) {
+        this.sendformdataService.sendId(id).subscribe(
+            data => {
+                console.log(data);
+            },
+            error => {
+                console.log(error);
+            });
+    }
+
+    withdrawInvite() {
+        this.sendformdataService.sendData().subscribe(
+            data => {
+                console.log(data);
+            },
+            error => {
+                console.log(error);
+            });
+    }
+
+    export() {
+        this.sendformdataService.sendData().subscribe(
+            data => {
+                console.log(data);
+            },
+            error => {
+                console.log(error);
+            });
     }
 }

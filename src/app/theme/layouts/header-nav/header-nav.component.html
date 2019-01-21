@@ -70,7 +70,7 @@
 									<div class="m-dropdown__inner">
 										<div class="m-dropdown__header m--align-center">
 											<span class="m-dropdown__header-title">
-												9 New
+												{{notifications.length}} New
 											</span>
 											<span class="m-dropdown__header-subtitle">
 												Notifications
@@ -83,88 +83,40 @@
 														<div class="m-scrollable" data-scrollable="true" data-max-height="250" data-mobile-max-height="200">
 															<div class="m-list-timeline m-list-timeline--skin-light">
 																<div class="m-list-timeline__items">
-																	<div class="m-list-timeline__item">
-																		<span class="m-list-timeline__badge -m-list-timeline__badge--state-success"></span>
-																		<span class="m-list-timeline__text">
-																			12 new users registered
-																		</span>
-																		<span class="m-list-timeline__time">
-																			Just now
-																		</span>
-																	</div>
-																	<div class="m-list-timeline__item">
-																		<span class="m-list-timeline__badge"></span>
-																		<span class="m-list-timeline__text">
-																			System shutdown
-																			<span class="m-badge m-badge--success m-badge--wide">
-																				pending
+																	<ng-container *ngFor="let notification of notifications">
+																		<div *ngIf="notification.read == true; else other_notification" class="m-list-timeline__item m-list-timeline__item--read">
+																			<span class="m-list-timeline__badge"></span>
+																			<span href="" class="m-list-timeline__text">
+																				{{notification.content}}
+																				<span *ngIf="notification.status != ''" class="m-badge m-badge--{{notification.status}} m-badge--wide">
+																					{{notification.status_title}}
+																				</span>
 																			</span>
-																		</span>
-																		<span class="m-list-timeline__time">
-																			14 mins
-																		</span>
-																	</div>
-																	<div class="m-list-timeline__item">
-																		<span class="m-list-timeline__badge"></span>
-																		<span class="m-list-timeline__text">
-																			New invoice received
-																		</span>
-																		<span class="m-list-timeline__time">
-																			20 mins
-																		</span>
-																	</div>
-																	<div class="m-list-timeline__item">
-																		<span class="m-list-timeline__badge"></span>
-																		<span class="m-list-timeline__text">
-																			DB overloaded 80%
-																			<span class="m-badge m-badge--info m-badge--wide">
-																				settled
+																			<span class="m-list-timeline__time">
+																				{{notification.time}}
 																			</span>
-																		</span>
-																		<span class="m-list-timeline__time">
-																			1 hr
-																		</span>
-																	</div>
+																		</div>
+																		<ng-template #other_notification>
+																			<div class="m-list-timeline__item">
+																				<span class="m-list-timeline__badge"></span>
+																				<span href="" class="m-list-timeline__text">
+																					{{notification.content}}
+																					<span *ngIf="notification.status != ''" class="m-badge m-badge--{{notification.status}} m-badge--wide">
+																						{{notification.status_title}}
+																					</span>
+																				</span>
+																				<span class="m-list-timeline__time">
+																					{{notification.time}}
+																				</span>
+																			</div>
+																		</ng-template>
+																	</ng-container>
 																	<div class="m-list-timeline__item">
 																		<span class="m-list-timeline__badge"></span>
 																		<span class="m-list-timeline__text">
-																			System error -
-																			<a href="#" class="m-link">
-																				Check
+																		<a href="/notification" class="m-link" style="float: right;">
+																				All Notifications
 																			</a>
-																		</span>
-																		<span class="m-list-timeline__time">
-																			2 hrs
-																		</span>
-																	</div>
-																	<div class="m-list-timeline__item m-list-timeline__item--read">
-																		<span class="m-list-timeline__badge"></span>
-																		<span href="" class="m-list-timeline__text">
-																			New order received
-																			<span class="m-badge m-badge--danger m-badge--wide">
-																				urgent
-																			</span>
-																		</span>
-																		<span class="m-list-timeline__time">
-																			7 hrs
-																		</span>
-																	</div>
-																	<div class="m-list-timeline__item m-list-timeline__item--read">
-																		<span class="m-list-timeline__badge"></span>
-																		<span class="m-list-timeline__text">
-																			Production server down
-																		</span>
-																		<span class="m-list-timeline__time">
-																			3 hrs
-																		</span>
-																	</div>
-																	<div class="m-list-timeline__item">
-																		<span class="m-list-timeline__badge"></span>
-																		<span class="m-list-timeline__text">
-																			Production server up
-																		</span>
-																		<span class="m-list-timeline__time">
-																			5 hrs
 																		</span>
 																	</div>
 																</div>
@@ -197,15 +149,18 @@
 										<div class="m-dropdown__header m--align-center">
 											<div class="m-card-user m-card-user--skin-light">
 												<div class="m-card-user__pic">
-													<img src="./assets/app/media/img/users/user4.jpg" class="m--img-rounded m--marginless" alt=""/>
+													<img src="./{{profile.img}}" class="m--img-rounded m--marginless" alt=""/>
 												</div>
 												<div class="m-card-user__details">
 													<span class="m-card-user__name m--font-weight-500">
-														Mark Andre
+														{{profile.First_Name}} {{profile.Last_Name}}
 													</span>
-													<a href="" class="m-card-user__email m--font-weight-300 m-link">
-														mark.andre@gmail.com
-													</a>
+													<ng-container *ngFor="let email of profile.Email_Address">
+														<a *ngIf="email.Confirmed == true && email.Primary == true; else other_email" href="javascript:;" class="m-card-user__email m--font-weight-300 m-link">
+															{{email.email}}
+														</a>
+													</ng-container>
+													
 												</div>
 											</div>
 										</div>
@@ -216,17 +171,18 @@
 													    <span class="m-nav__section-text">Section</span>
 													</li>
 													<li class="m-nav__item">
-													    <a routerLink="/settings" class="m-nav__link">
+													    <a [routerLink]="['/settings']" [queryParams]="{ param: 'profile' }" class="m-nav__link">
 													        <i class="m-nav__link-icon flaticon-profile-1"></i>
 													        <span class="m-nav__link-title">
-													                                <span class="m-nav__link-wrap">
-													                                  <span class="m-nav__link-text">My Account</span>
-													        </span>
+								                                <span class="m-nav__link-wrap">
+																	<span class="m-nav__link-text">My Account</span>
+													        	</span>
 													        </span>
 													    </a>
 													</li>
 													<li class="m-nav__item">
-													    <a routerLink="/settings" class="m-nav__link">
+													    <!-- <a routerLink="/settings" class="m-nav__link"> -->
+												    	<a [routerLink]="['/settings']" [queryParams]="{ param: 'billing' }" class="m-nav__link">
 													        <i class="m-nav__link-icon la la-credit-card"></i>
 													        <span class="m-nav__link-text">Billing</span>
 													    </a>

@@ -1,0 +1,940 @@
+<div class="col-lg-12 col-sm-12 col-md-12 campaign-detail-section">
+    <!--Begin::Main Portlet-->
+    <div class="m-portlet">
+        <!--begin: Portlet Head-->
+        <div class="m-portlet__head">
+            <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                    <h3 class="m-portlet__head-text">
+              Campaign Name
+              <small>Active</small>
+            </h3>
+                </div>
+            </div>
+            <div class="m-portlet__head-tools">
+                <ul class="m-portlet__nav">
+                    <li class="m-portlet__nav-item">
+                        <a href="" data-toggle="m-tooltip" class="m-portlet__nav-link m-portlet__nav-link--icon" data-direction="left" data-width="auto" title="Get help with filling up this form">
+                            <i class="flaticon-info m--icon-font-size-lg3"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--end: Portlet Head-->
+
+        <!--begin: Form Wizard-->
+        <div class="m-wizard m-wizard--5 m-wizard--success" id="m_wizard">
+
+            <!--begin: Message container -->
+            <div class="m-portlet__padding-x">
+                <!-- Here you can put a message or alert -->
+            </div>
+            <!--end: Message container -->
+
+            <!--begin: Form Wizard Head -->
+            <div class="m-wizard__head m-portlet__padding-x">
+                <div class="row">
+                    <div class="col-xl-10 offset-xl-1">
+                        <!--begin: Form Wizard Nav -->
+                        <div class="m-wizard__nav">
+                            <div class="m-wizard__steps">
+                                <div class="m-wizard__step m-wizard__step--current" m-wizard-target="m_wizard_form_step_1">
+                                    <div class="m-wizard__step-info">
+                                        <a href="javascript:;" class="m-wizard__step-number">
+                                            <span class="m-wizard__step-label">
+                                                Overview
+                                            </span>
+                                            <span class="m-wizard__step-icon"><i class="la la-check"></i></span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="m-wizard__step" m-wizard-target="m_wizard_form_step_2">
+                                    <div class="m-wizard__step-info">
+                                        <a href="javascript:;" class="m-wizard__step-number">
+                                            <span class="m-wizard__step-label">
+                                                Contacts
+                                            </span>
+                                            <span class="m-wizard__step-icon"><i class="la la-check"></i></span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="m-wizard__step" m-wizard-target="m_wizard_form_step_3">
+                                    <div class="m-wizard__step-info">
+                                        <a href="javascript:;" class="m-wizard__step-number">
+                                            <span class="m-wizard__step-label">
+                                                Sequences
+                                            </span>
+                                            <span class="m-wizard__step-icon"><i class="la la-check"></i></span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="m-wizard__step" m-wizard-target="m_wizard_form_step_4">
+                                    <div class="m-wizard__step-info">
+                                        <a href="javascript:;" class="m-wizard__step-number">
+                                            <span class="m-wizard__step-label">
+                                                Settings
+                                            </span>
+                                            <span class="m-wizard__step-icon"><i class="la la-check"></i></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end: Form Wizard Nav -->
+                    </div>
+                </div>
+            </div>
+            <!--end: Form Wizard Head -->
+
+            <!--begin: Form Wizard Form-->
+            <div class="m-wizard__form">
+                <!--
+                1) Use m-form--label-align-left class to alight the form input lables to the right
+                2) Use m-form--state class to highlight input control borders on form validation
+            -->
+                <form class="m-form m-form--label-align-left- m-form--state-" id="m_form">
+                    <!--begin: Form Body -->
+                    <div class="m-portlet__body">
+
+                        <!--begin: Form Wizard Step 1-->
+                        <div class="m-wizard__form-step m-wizard__form-step--current" id="m_wizard_form_step_1">
+                            <div class="col-xl-10 offset-xl-1">
+                                <div class="m-subheader m-campaign-detail">
+                                    <div class="d-flex align-items-center">
+                                        <div class="mr-auto">
+                                        </div>
+                                        <div>
+                                            <span class="m-subheader__daterange m-campaign-detail-daterangepicker" id="m_dashboard_daterangepicker">
+                                                <span class="m-subheader__daterange-label">
+                                                    <span class="m-subheader__daterange-title">Today:</span>
+                                                    <span class="m-subheader__daterange-date m--font-brand">Aug 16</span>
+                                                </span>
+                                                <a href="" class="btn btn-sm btn-brand m-btn m-btn--icon m-btn--icon-only m-btn--custom m-btn--pill">
+                                                    <i class="la la-angle-down"></i>
+                                                </a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1">
+                                    <div class="tab-content active  m--padding-30">
+                                        <div class="m-form__section m-form__section--first">
+                                            <div class="form-group m-form__group m-form__group--sm row">
+                                                <div class="col-xl-4 col-lg-4">
+                                                    <label class="col-form-label col-xl-12 col-lg-12 offset-lg-3 offset-xl-3">Campaign Name:</label>
+                                                </div>
+                                                <div class="col-xl-8 col-lg-8">
+                                                    <span class="m-form__control-static col-xl-12 col-lg-12 offset-lg-6 offset-xl-6">{{outreachcampaign.campaign_name}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group m-form__group--sm row">
+                                                <div class="col-xl-4 col-lg-4">
+                                                    <label class="col-form-label col-xl-12 col-lg-12 offset-lg-3 offset-xl-3">Campaign Type:</label>
+                                                </div>
+                                                <div class="col-xl-8 col-lg-8">
+                                                    <span class="m-form__control-static col-xl-12 col-lg-12 offset-lg-6 offset-xl-6">{{outreachcampaign.type}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group m-form__group--sm row">
+                                                <div class="col-xl-4 col-lg-4">
+                                                    <label class="col-form-label col-xl-12 col-lg-12 offset-lg-3 offset-xl-3">Campaign Status:</label>
+                                                </div>
+                                                <div class="col-xl-8 col-lg-8">
+                                                    <span class="m-form__control-static col-xl-12 col-lg-12 offset-lg-6 offset-xl-6">{{outreachcampaign.status}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group m-form__group--sm row">
+                                                <div class="col-xl-4 col-lg-4">
+                                                    <label class="col-form-label col-xl-12 col-lg-12 offset-lg-3 offset-xl-3">Contacts</label>
+                                                </div>
+                                                <div class="col-xl-8 col-lg-8">
+                                                    <span class="m-form__control-static col-xl-12 col-lg-12 offset-lg-6 offset-xl-6 m--font-brand" style="font-size: 17px; color: #716aca !important; font-weight: 500;">{{outreachcampaign.contacts}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row campaign-overview-widget">
+                                <div class="col-xl-6">
+                                    <div class="campaign-overview-stats">
+                                        <div class="m-portlet">
+                                            <div class="m-portlet__head">
+                                                <div class="m-portlet__head-caption">
+                                                    <div class="m-portlet__head-title">
+                                                        <h3 class="m-portlet__head-text">
+                                                            Stats
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="m-portlet__body">
+                                                <!--begin::Widget5-->
+                                                <div class="m-widget4 m-widget4--chart-bottom" style="min-height: 325px">
+                                                    <div class="m-widget4__item">
+                                                        <div class="m-widget4__info">
+                                                            <span class="m-widget4__title">
+                                                                Connection Requests
+                                                            </span>
+                                                        </div>
+                                                        <span class="m-widget4__ext">
+                                                            <span class="m-widget4__number m--font-brand">{{stats.Connection_Requests}}</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="m-widget4__item">
+                                                        <div class="m-widget4__info">
+                                                            <span class="m-widget4__title">
+                                                                Connected
+                                                            </span>
+                                                        </div>
+                                                        <span class="m-widget4__ext">
+                                                            <span class="m-widget4__number m--font-brand">{{stats.Connected}}</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="m-widget4__item">
+                                                        <div class="m-widget4__info">
+                                                            <span class="m-widget4__title">
+                                                                Replied to Connection
+                                                            </span>
+                                                        </div>
+                                                        <span class="m-widget4__ext">
+                                                            <span class="m-widget4__number m--font-brand">{{stats.Replied_to_Connection}}</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="m-widget4__item">
+                                                        <div class="m-widget4__info">
+                                                            <span class="m-widget4__title">
+                                                                Replied to Messages
+                                                            </span>
+                                                        </div>
+                                                        <span class="m-widget4__ext">
+                                                            <span class="m-widget4__number m--font-brand">{{stats.Replied_to_Messages}}</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <!--end::Widget 5-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="campaign-overview-stats">
+                                        <div class="m-portlet m-portlet--bordered-semi m-portlet--half-height m-portlet--fit " style="min-height: 210px">
+                                            <div class="m-widget20">
+                                                <div class="m-widget20__number m--font-success">670</div>
+                                                <div class="m-widget20__chart" style="height:160px;">
+                                                    <canvas id="m_chart_bandwidth1"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="m--space-30"></div>
+                                        <div class="m-portlet m-portlet--bordered-semi m-portlet--half-height m-portlet--fit " style="min-height: 210px">
+                                            <div class="m-portlet__body">
+                                                <div class="m-widget20">
+                                                    <div class="m-widget20__number m--font-warning">340</div>
+                                                    <div class="m-widget20__chart" style="height:160px;">
+                                                        <canvas id="m_chart_bandwidth2"></canvas>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end: Form Wizard Step 1-->
+
+                        <!--begin: Form Wizard Step 2-->
+                        <div class="m-wizard__form-step" id="m_wizard_form_step_2">
+                            <div class="row campaign-overview-widget">
+                                <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 connection-lists">
+                                    <div class="m-portlet m-portlet--full-height" style="margin-top: 13px;">
+                                        <div class="m-portlet__head">
+                                            <div class="m-portlet__head-caption">
+                                                <div class="m-portlet__head-title">
+                                                    <h3 class="m-portlet__head-text">Contacts</h3>
+                                                </div>
+                                            </div>
+                                            <div class="m-portlet__head-tools">
+                                                <ul class="m-portlet__nav">
+                                                    <li class="m-portlet__nav-item m-portlet__nav-item--last">
+                                                        <div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" m-dropdown-toggle="hover" aria-expanded="true">
+                                                            <a href="" class="refres-btn m-portlet__nav-link btn btn-lg btn-secondary  m-btn m-btn--icon m-btn--icon-only m-btn--pill  m-dropdown__toggle">
+                                                                <i class="flaticon-refresh"></i>
+                                                            </a>
+                                                            <div class="m-dropdown__wrapper"></div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="m-portlet__body search-result-list">
+                                            <div class="table-row-select">
+
+                                            </div>
+                                            <div class="m_datatable" id="campaign_contact_json_data"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 connection-inbox">
+                                    <div class="m-portlet  m-portlet--full-height" style="margin-top: 13px;">
+                                        <div class="m-portlet__body">
+                                            <div class="m-scrollable mCustomScrollbar _mCS_5 mCS-autoHide" data-scrollbar-shown="true" data-scrollable="true" data-max-height="820" style="overflow: visible; height: 820px; max-height: 820px; position: relative;">
+                                                <div>
+                                                    <div class="m-card-profile">
+                                                        <div class="m-card-profile__title m--hide">
+                                                            Your Profile
+                                                        </div>
+                                                        <div class="m-card-profile__pic">
+                                                            <div class="m-card-profile__pic-wrapper">
+                                                                <img src="{{profile.img}}" alt="" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="m-card-profile__details">
+                                                            <span class="m-card-profile__name">{{profile.name}}</span>
+                                                            <a href="" class="m-card-profile__email m-link">{{profile.job}}</a>
+                                                            <ul class="contact-info m-nav m-nav--hover-bg m-portlet-fit--sides" style="    margin-right: -4rem;">
+                                                                <li>
+                                                                    <a href="" class="m-nav__link m-dropdown__toggle">
+                                                                        <span class="m-nav__link-icon">
+                                                                  <i class="m-nav__link-icon la la-linkedin-square contact-info-la"></i>
+                                                                </span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="" class="m-nav__link m-dropdown__toggle">
+                                                                        <span class="m-nav__link-icon">
+                                                                  <i class="m-nav__link-icon la la-twitter-square contact-info-la"></i>
+                                                                </span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="" class="m-nav__link m-dropdown__toggle">
+                                                                        <span class="m-nav__link-icon">
+                                                                  <i class="m-nav__link-icon la flaticon-chat-1 contact-info-la"></i>
+                                                                </span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <ul class="m-nav m-nav--hover-bg m-portlet-fit--sides profile-detail-info">
+                                                    <li class="m-nav__separator m-nav__separator--fit"></li>
+                                                    <li class="m-nav__section m--hide">
+                                                        <span class="m-nav__section-text">Section</span>
+                                                    </li>
+                                                    <li class="m-nav__item">
+                                                        <a href="header/profile&amp;demo=default.html" class="m-nav__link">
+                                                        <i class="m-nav__link-icon flaticon-placeholder"></i>
+                                                            <span class="m-nav__link-title">
+                                                            <span class="m-nav__link-wrap">
+                                                              <span class="m-nav__link-text">{{profile.city}}</span>
+                                                            </span>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="m-nav__item">
+                                                        <a href="header/profile&amp;demo=default.html" class="m-nav__link">
+                                                            <i class="m-nav__link-icon la la-university"></i>
+                                                            <span class="m-nav__link-text">{{profile.university}}</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="m-nav__item">
+                                                        <a href="header/profile&amp;demo=default.html" class="m-nav__link">
+                                                            <i class="m-nav__link-icon la la-users"></i>
+                                                            <span class="m-nav__link-text">{{profile.connections}}</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+
+                                                <div class="m-portlet__body-separator"></div>
+
+                                                <div class="m-widget4">
+                                                    <div class="m-widget4__item">
+                                                        <div class="m-widget4__img m-widget4__img--logo">
+                                                            <img src="{{profile.present_comp_img}}" alt="">
+                                                        </div>
+                                                        <div class="m-widget4__info">
+                                                            <span class="m-widget4__title">
+                                                                {{profile.title}}
+                                                            </span>
+                                                            <br>
+                                                            <span class="m-widget4__sub">
+                                                                {{profile.present_company}}
+                                                            </span>
+                                                            <br>
+                                                            <span class="m-widget4__sub">
+                                                                {{profile.dates_employed}}
+                                                            </span>
+                                                            <br>
+                                                            <span class="m-widget4__sub">
+                                                                {{profile.present_span}}
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="m-widget4__item">
+                                                        <div class="m-widget4__img m-widget4__img--logo">
+                                                            <img src="{{profile.previous_comp_img}}" alt="">
+                                                        </div>
+                                                        <div class="m-widget4__info">
+                                                            <span class="m-widget4__title">
+                                                              {{profile.previous_title}}
+                                                              </span>
+                                                            <br>
+                                                            <span class="m-widget4__sub">
+                                                              {{profile.previous_company}}
+                                                              </span>
+                                                            <br>
+                                                            <span class="m-widget4__sub">
+                                                              {{profile.previous_dates_employed}}
+                                                              </span>
+                                                            <br>
+                                                            <span class="m-widget4__sub">
+                                                              {{profile.previous_span}}
+                                                              </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="m-widget4__item">
+                                                        <div class="m-widget4__img m-widget4__img--logo">
+                                                            <img src="{{profile.previous_comp_img2}}" alt="">
+                                                        </div>
+                                                        <div class="m-widget4__info">
+                                                            <span class="m-widget4__title">
+                                                              {{profile.previous_title2}}
+                                                              </span>
+                                                            <br>
+                                                            <span class="m-widget4__sub">
+                                                              {{profile.previous_company2}}
+                                                              </span>
+                                                            <br>
+                                                            <span class="m-widget4__sub">
+                                                              {{profile.previous_dates_employed2}}
+                                                              </span>
+                                                            <br>
+                                                            <span class="m-widget4__sub">
+                                                              {{profile.previous_span2}}
+                                                              </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end: Form Wizard Step 2-->
+
+                        <!--begin: Form Wizard Step 3-->
+                        <div class="m-wizard__form-step" id="m_wizard_form_step_3">
+                            <div class="row m-accordion m-accordion--default">
+                                <div class="col-xl-10 offset-xl-1">
+                                    <div class="tab-content m--padding-30 m-accordion m-accordion--toggle-arrow">
+                                        <div class="row sequences-accodion">
+                                            <a href="javascript:;" class="save-edit-campaign-sequences edit-message">
+                                                <span><i class="la la-edit"></i></span>
+                                            </a>
+                                            <a href="javascript:;" class="save-edit-campaign-sequences save-message" style="display: none;">
+                                                <span><i class="la la-save"></i></span>
+                                            </a>
+                                            <div class="m-accordion__item">
+                                                <div class="m-accordion__item-head collapsed" role="tab" id="m_accordion_2_item_1_head" data-toggle="collapse" href="#m_accordion_2_item_1_body" aria-expanded="false">
+                                                    <span class="m-accordion__item-icon"><i class="fa  flaticon-chat-1"></i></span>
+                                                    <span class="m-accordion__item-title sub-accordion-title" style="color: #000;">Connection Message</span>
+                                                    <span class="m-accordion__item-mode"></span>
+                                                </div>
+                                                <div class="m-accordion__item-body collapse" id="m_accordion_2_item_1_body" role="tabpanel" aria-labelledby="m_accordion_2_item_1_head" data-parent="#m_accordion_2_item_1_head">
+                                                    <div class="tab-content saved-content m--padding-30">
+                                                        Hi Nick, I am John and I was wondering if there are any synergies between our companies. I would be delighted to connect with you and take this conversion forward.
+                                                    </div>
+                                                    <div class="tab-content editable-content m--padding-20" style="margin: 0; display: none;">
+                                                        <textarea class="campaign-message-input" placeholder="Enter the message."></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row sequences-accodion"  *ngFor="let box of boxes; let i = index">
+                                            <a href="javascript:;" (click)="removeSection()" class="remove-campaign-sequences">
+                                                <span *ngIf="i >= 1"><i class="flaticon-delete-1"></i></span>
+                                            </a>
+                                            <div class="m-accordion__item">
+                                                <div class="m-accordion__item-head collapsed" role="tab" id="m_accordion_{{i}}_item_{{i}}_head" data-toggle="collapse" attr.href="#m_accordion_{{i}}_item_{{i}}_body" aria-expanded="false">
+                                                    <span class="m-accordion__item-icon"><i class="fa  flaticon-chat-1"></i></span>
+                                                    <span *ngIf="i >= 1; else other_span" class="m-accordion__item-title sub-accordion-title" style="color: #000;">Message If No Reply</span>
+                                                    <ng-template #other_span>
+                                                        <span class="m-accordion__item-title sub-accordion-title" style="color: #000;">Message After Connection If No Reply</span>
+                                                    </ng-template>
+                                                    <span>
+                                                    </span>
+                                                    <span class="m-accordion__item-mode"></span>
+                                                </div>
+                                                <div class="m-accordion__item-body collapse" id="m_accordion_{{i}}_item_{{i}}_body" role="tabpanel" attr.aria-labelledby="m_accordion_{{i}}_item_{{i}}_head" attr.data-parent="#m_accordion_{{i}}_item_{{i}}_head">
+                                                    <div *ngIf="i >= 1; else other_template" class="tab-content  m--padding-20">
+                                                        <div  class="row" style="margin: 0;">
+                                                            <div class="col-lg-12" style="padding: 0;">
+                                                                <select name="country" class="form-control m-input">
+                                                                    <option value="YE">Select Days</option>
+                                                                    <option value="YE">1 Day After Connection</option>
+                                                                    <option value="ZM">2 Days After Connection</option>
+                                                                    <option value="ZW">3 Days After Connection</option>
+                                                                    <option value="ZW">4 Days After Connection</option>
+                                                                    <option value="ZW">5 Days After Connection</option>
+                                                                    <option value="ZW">6 Days After Connection</option>
+                                                                    <option value="ZW">7 Days After Connection</option>
+                                                                    <option value="ZW">8 Days After Connection</option>
+                                                                    <option value="ZW">9 Days After Connection</option>
+                                                                    <option value="ZW">10 Days After Connection</option>
+                                                                    <option value="ZW">11 Days After Connection</option>
+                                                                    <option value="ZW">12 Days After Connection</option>
+                                                                    <option value="ZW">13 Days After Connection</option>
+                                                                    <option value="ZW">14 Days After Connection</option>
+                                                                    <option value="ZW">15 Days After Connection</option>
+                                                                    <option value="ZW">16 Days After Connection</option>
+                                                                    <option value="ZW">17 Days After Connection</option>
+                                                                    <option value="ZW">18 Days After Connection</option>
+                                                                    <option value="ZW">19 Days After Connection</option>
+                                                                    <option value="ZW">20 Days After Connection</option>
+                                                                    <option value="ZW">21 Days After Connection</option>
+                                                                    <option value="ZW">22 Days After Connection</option>
+                                                                    <option value="ZW">23 Days After Connection</option>
+                                                                    <option value="ZW">24 Days After Connection</option>
+                                                                    <option value="ZW">25 Days After Connection</option>
+                                                                    <option value="ZW">26 Days After Connection</option>
+                                                                    <option value="ZW">27 Days After Connection</option>
+                                                                    <option value="ZW">28 Days After Connection</option>
+                                                                    <option value="ZW">29 Days After Connection</option>
+                                                                    <option value="ZW">30 Days After Connection</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row" style="margin: 0;">
+                                                            <textarea class="campaign-message-input" placeholder="Enter the message after connection."></textarea>
+                                                        </div>
+                                                        <div class="m-portlet__body-separator campaign-message-separator"></div>
+                                                        <div class="row" style="margin: 0;">
+                                                            <span class="m-form__help" style="float: left;">
+                                                                <div class="btn-group dropup mr10">
+                                                                    <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top: 5px; padding-bottom: 5px;"><i class="flaticon-layers"></i>
+                                                                    </button>
+                                                                    <div class="dropdown-menu template-dropdown">
+                                                                        <div class="m-scrollable" data-scrollable="true" style="height: 120px">
+                                                                            <ng-container *ngFor="let template of templates">
+                                                                                <a attr.data-id="{{template.id}}" class="dropdown-item template-item" href="javascript:;" (click)="insertTemplate()">{{template.template_name}}</a>
+                                                                            </ng-container>
+                                                                        </div>
+                                                                        <div class="dropdown-divider"></div>
+                                                                        <a class="dropdown-item" href="" data-toggle="modal" data-target="#new_template">+ Add New</a>
+                                                                    </div>
+                                                                </div>
+                                                            </span>
+                                                            <span class="m-form__help">
+                                                                <div class="btn-group dropup">
+                                                                    <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top: 5px; padding-bottom: 5px;"><i class="la la-code"></i>
+                                                                    </button>
+                                                                    <div class="dropdown-menu">
+                                                                        <a *ngFor="let insertvar of insertvars" attr.data-id="{{insertvar.id}}" class="dropdown-item" href="javascript:;" (click)="insertVar()">{{insertvar.label}}</a>
+                                                                    </div>
+                                                                </div>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <ng-template #other_template>
+                                                        <div class="tab-content  m--padding-20">
+                                                            <div class="row" style="margin: 0;">
+                                                                <div class="col-lg-6" style="padding: 0;">
+                                                                    <select name="country" class="form-control m-input">
+                                                                        <option value="YE">Select Hours</option>
+                                                                        <option value="YE">1 Hour After Connection</option>
+                                                                        <option value="ZM">2 Hours After Connection</option>
+                                                                        <option value="ZW">3 Hours After Connection</option>
+                                                                        <option value="ZW">4 Hours After Connection</option>
+                                                                        <option value="ZW">5 Hours After Connection</option>
+                                                                        <option value="ZW">6 Hours After Connection</option>
+                                                                        <option value="ZW">7 Hours After Connection</option>
+                                                                        <option value="ZW">8 Hours After Connection</option>
+                                                                        <option value="ZW">9 Hours After Connection</option>
+                                                                        <option value="ZW">10 Hours After Connection</option>
+                                                                        <option value="ZW">11 Hours After Connection</option>
+                                                                        <option value="ZW">12 Hours After Connection</option>
+                                                                        <option value="ZW">13 Hours After Connection</option>
+                                                                        <option value="ZW">14 Hours After Connection</option>
+                                                                        <option value="ZW">15 Hours After Connection</option>
+                                                                        <option value="ZW">16 Hours After Connection</option>
+                                                                        <option value="ZW">17 Hours After Connection</option>
+                                                                        <option value="ZW">18 Hours After Connection</option>
+                                                                        <option value="ZW">19 Hours After Connection</option>
+                                                                        <option value="ZW">20 Hours After Connection</option>
+                                                                        <option value="ZW">21 Hours After Connection</option>
+                                                                        <option value="ZW">22 Hours After Connection</option>
+                                                                        <option value="ZW">23 Hours After Connection</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-lg-6" style="padding: 0;">
+                                                                    <select name="country" class="form-control m-input">
+                                                                        <option value="YE">Select Days</option>
+                                                                        <option value="YE">1 Day After Connection</option>
+                                                                        <option value="ZM">2 Days After Connection</option>
+                                                                        <option value="ZW">3 Days After Connection</option>
+                                                                        <option value="ZW">4 Days After Connection</option>
+                                                                        <option value="ZW">5 Days After Connection</option>
+                                                                        <option value="ZW">6 Days After Connection</option>
+                                                                        <option value="ZW">7 Days After Connection</option>
+                                                                        <option value="ZW">8 Days After Connection</option>
+                                                                        <option value="ZW">9 Days After Connection</option>
+                                                                        <option value="ZW">10 Days After Connection</option>
+                                                                        <option value="ZW">11 Days After Connection</option>
+                                                                        <option value="ZW">12 Days After Connection</option>
+                                                                        <option value="ZW">13 Days After Connection</option>
+                                                                        <option value="ZW">14 Days After Connection</option>
+                                                                        <option value="ZW">15 Days After Connection</option>
+                                                                        <option value="ZW">16 Days After Connection</option>
+                                                                        <option value="ZW">17 Days After Connection</option>
+                                                                        <option value="ZW">18 Days After Connection</option>
+                                                                        <option value="ZW">19 Days After Connection</option>
+                                                                        <option value="ZW">20 Days After Connection</option>
+                                                                        <option value="ZW">21 Days After Connection</option>
+                                                                        <option value="ZW">22 Days After Connection</option>
+                                                                        <option value="ZW">23 Days After Connection</option>
+                                                                        <option value="ZW">24 Days After Connection</option>
+                                                                        <option value="ZW">25 Days After Connection</option>
+                                                                        <option value="ZW">26 Days After Connection</option>
+                                                                        <option value="ZW">27 Days After Connection</option>
+                                                                        <option value="ZW">28 Days After Connection</option>
+                                                                        <option value="ZW">29 Days After Connection</option>
+                                                                        <option value="ZW">30 Days After Connection</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row" style="margin: 0;">
+                                                                <textarea class="campaign-message-input" placeholder="Enter the message after connection."></textarea>
+                                                            </div>
+                                                            <div class="m-portlet__body-separator campaign-message-separator"></div>
+                                                            <div class="row" style="margin: 0;">
+                                                                <span class="m-form__help" style="float: left;">
+                                                                    <div class="btn-group dropup mr10">
+                                                                        <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top: 5px; padding-bottom: 5px;"><i class="flaticon-layers"></i>
+                                                                        </button>
+                                                                        <div class="dropdown-menu template-dropdown">
+                                                                            <div class="m-scrollable" data-scrollable="true" style="height: 120px">
+                                                                                <ng-container *ngFor="let template of templates">
+                                                                                    <a  attr.data-id="{{template.id}}" class="dropdown-item template-item" href="javascript:;" (click)="insertTemplate()">{{template.template_name}}</a>
+                                                                                </ng-container>
+                                                                            </div>
+                                                                            <div class="dropdown-divider"></div>
+                                                                            <a class="dropdown-item" href="" data-toggle="modal" data-target="#new_template">+ Add New</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </span>
+                                                                <span class="m-form__help">
+                                                                    <div class="btn-group dropup">
+                                                                        <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top: 5px; padding-bottom: 5px;"><i class="la la-code"></i>
+                                                                        </button>
+                                                                        <div class="dropdown-menu">
+                                                                            <a *ngFor="let insertvar of insertvars" attr.data-id="{{insertvar.id}}" class="dropdown-item" href="javascript:;" (click)="insertVar()">{{insertvar.label}}</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </ng-template>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row sequences-accodion">
+                                            <a href="javascript:;" class="btn btn-outline-success btn-sm m-btn m-btn--custom add-step-btn" (click)="addStep()">
+                                                <span>
+                                                    <i class="la la-plus"></i>
+                                                    <span>Add Step</span>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end: Form Wizard Step 3-->
+
+                        <!--begin: Form Wizard Step 4-->
+                        <div class="m-wizard__form-step" id="m_wizard_form_step_4">
+                            <div class="row">
+                                <div class="col-xl-10 offset-xl-1">
+                                    <div class="form-group m-form__group">
+                                        <div class="col-lg-6 offset-lg-3">
+                                            <div class="input-group m-input-group ">
+                                                <div class="input-group-prepend mw75"><span class="input-group-text safe-input">Daily Connection Limit</span></div>
+                                                <input type="text" class="form-control m-input mw25" placeholder="100" aria-describedby="basic-addon1">
+                                            </div>
+                                            <span class="m-form__help ml310">Safe 100</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group m-form__group">
+                                        <div class="col-lg-6 offset-lg-3">
+                                            <div class="input-group m-input-group ">
+                                                <div class="input-group-prepend mw75"><span class="input-group-text safe-input">Daily Followup Message Limit</span></div>
+                                                <input type="text" class="form-control m-input mw25" placeholder="100" aria-describedby="basic-addon1">
+                                            </div>
+                                            <span class="m-form__help ml310">Safe 100</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group m-form__group">
+                                        <div class="col-lg-6 offset-lg-3">
+                                            <div class="input-group m-input-group ">
+                                                <div class="input-group-prepend mw75"><span class="input-group-text safe-input">Delay between connections</span></div>
+                                                <input type="text" class="form-control m-input mw25" placeholder="5 mins" aria-describedby="basic-addon1">
+                                            </div>
+                                            <span class="m-form__help ml310">Safe 5 mins</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group m-form__group">
+                                        <div class="col-lg-6 offset-lg-3">
+                                            <div class="input-group m-input-group ">
+                                                <div class="input-group-prepend mw75"><span class="input-group-text safe-input">Delay between Messages</span></div>
+                                                <input type="text" class="form-control m-input mw25" placeholder="5 mins" aria-describedby="basic-addon1">
+                                            </div>
+                                            <span class="m-form__help ml310">Safe 5 mins</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group m-form__group">
+                                        <div class="col-lg-6 offset-lg-3">
+                                            <label>Schedule Time</label>
+                                            <div class="m-input-icon m-input-icon--left m-input-icon--right">
+                                                <input type="text" class="form-control m-input m-input--solid" name="schedulename" [ngModel]="schedulename" placeholder="Default">
+                                                <span class="m-input-icon__icon m-input-icon__icon--left schedule-time">
+                                                    <a href="" data-toggle="modal" data-target="#add_schedule">
+                                                        <span><i class="la  la-plus m--margin-top-10"></i></span>
+                                                    </a>
+                                                </span>
+                                                <span class="m-input-icon__icon m-input-icon__icon--right schedule-time"><span><i class="la la-clock-o"></i></span></span>
+                                            </div>
+                                            <span class="m-form__help">Default is set M-F 8AM-5PM EST</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end: Form Wizard Step 4-->
+
+                    </div>
+                    <!--end: Form Body -->
+
+                    <!--begin: Form Actions -->
+                    <div class="m-portlet__foot--fit">
+                        <div class="m-form__actions campaign-detail-action">
+                            <div class="row">
+                                <div class="col-lg-1"></div>
+                                <div class="col-lg-4 m--align-left">
+                                    <a href="" class="btn btn-secondary m-btn m-btn--custom m-btn--icon" data-wizard-action="prev">
+                                        <span>
+                                            <i class="la la-arrow-left"></i>&nbsp;&nbsp;
+                                            <span>Back</span>
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="col-lg-6 m--align-right" style="margin-left: 53px;">
+                                    <a href="" class="btn btn-primary m-btn m-btn--custom m-btn--icon" data-wizard-action="submit">
+                                        <span>
+                                            <i class="la la-check"></i>&nbsp;&nbsp;
+                                            <span>Submit</span>
+                                        </span>
+                                    </a>
+                                    <a href="/outreach/campaigns" class="btn btn-info m-btn m-btn--custom m-btn--icon mr25" data-wizard-action="next">
+                                        <span>
+                                            <i class="la la-times-circle"></i>
+                                            <span>Close</span>&nbsp;&nbsp;
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="col-lg-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end: Form Actions -->
+                </form>
+            </div>
+            <!--end: Form Wizard Form-->
+        </div>
+        <!--end: Form Wizard-->
+    </div>
+    <!--End::Main Portlet-->
+</div>
+
+<!-- schedule modal -->
+<div class="modal fade show" id="add_schedule" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="padding-right: 17px;">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <form class="m-form m-form--label-align-right" (ngSubmit)="f.form.valid && saveSchedule()" #f="ngForm" action="">
+                <div class="modal-body">
+                    <h5>Schedule</h5>
+                    <div class="form-group m-form__group row">
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control m-input" [ngModel]="schedulename" name="schedule_name" placeholder="Schedule Name" style="margin-top: 25px;">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="">All Schedules</label>
+                            <select class="form-control m-input" id="exampleSelect1" [(ngModel)]="selectedschedule" name="schedule_list" (change)="selectSchedule($event.target.value)">
+                                <option value="0" >Default</option>
+                                <option *ngFor="let schedule of schedules" [value]="schedule.id">{{schedule.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group m-form__group row">
+                        <div class="col-lg-12">
+                            <select class="form-control m-input" [(ngModel)]="selectedtimezone" name="timezone_list">
+                                <option *ngFor="let timezone of timezones" [value]="timezone.value">{{timezone.text}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group m-form__group row">
+                        <div class="col-lg-12">
+                            <label class="">Schedule Days</label>
+                            <span class="m-form__help"> (please click on the days to select or unselect)</span>
+                        </div>
+                        <div class="col-lg-10 offset-lg-1">
+                            <ul class="schedule-days" id="schedule_days">
+                                <li *ngFor="let day of days" class="schedule-date">
+                                    <button type="button" class="btn btn-secondary {{day.state}}">{{day.day}}</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-group m-form__group row">
+                        <div class="col-lg-12">
+                            <label class="">Schedule Time</label>
+                        </div>
+                    </div>
+                    <div class="form-group m-form__group row">
+                        <div class="col-lg-6">
+                            <div class="col-sm-8 offset-sm-3">
+                                <div class="input-group">
+                                    <input type="text" class="form-control m-input" [ngModel]="selectedStartAt" placeholder="9:30:00 AM" aria-describedby="basic-addon2" id="start_time_picker" name="start_at">
+                                    <div class="input-group-append"><span class="input-group-text" id="basic-addon2"><i class="la la-clock-o"></i></span></div>
+                                </div>
+                                <span class="m-form__help">Starts at</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="col-sm-8 offset-sm-1">
+                                <div class="input-group">
+                                    <input type="text" class="form-control m-input" [ngModel]="selectedEndAt" placeholder="5:30:00 PM" aria-describedby="basic-addon2" id="end_time_picker" name="end_at">
+                                    <div class="input-group-append"><span class="input-group-text" id="basic-addon2"><i class="la la-clock-o"></i></span></div>
+                                </div>
+                                <span class="m-form__help">Ends at</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary mr-auto add-new-schedule-btn" (click)="TriggerModal">Add New</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" [disabled]="schedule_loading" [ngClass]="{'m-loader m-loader--right m-loader--light': schedule_loading}" class="btn btn-primary schedule-save-btn">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Schedule modal end! -->
+
+<!-- Add new schedule modal -->
+<div class="modal fade show" id="add_new_schedule" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="padding-right: 17px;">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <form class="m-form m-form--label-align-right" (ngSubmit)="f.form.valid && addNewSchedule()" #f="ngForm" action="">
+                <div class="modal-body">
+                    <h5>New Schedule</h5>
+                    <div class="form-group m-form__group row">
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control m-input" name="add_schedule_name" placeholder="Schedule Name" style="margin-top: 25px;">
+                        </div>
+                    </div>
+                    <div class="form-group m-form__group row">
+                        <div class="col-lg-12">
+                            <select class="form-control m-input" [(ngModel)]="defaulttimezone" name="timezone_list">
+                                <option *ngFor="let timezone of timezones" [value]="timezone.value">{{timezone.text}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group m-form__group row">
+                        <div class="col-lg-12">
+                            <label class="">Schedule Days</label>
+                            <span class="m-form__help"> (please click on the days to select or unselect)</span>
+                        </div>
+                        <div class="col-lg-10 offset-lg-1">
+                            <ul class="schedule-days" id="schedule_days">
+                                <li *ngFor="let day of defaultdays" class="schedule-date">
+                                    <button type="button" class="btn btn-secondary {{day.state}}">{{day.day}}</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-group m-form__group row">
+                        <div class="col-lg-12">
+                            <label class="">Schedule Time</label>
+                        </div>
+                    </div>
+                    <div class="form-group m-form__group row">
+                        <div class="col-lg-6">
+                            <div class="col-sm-8 offset-sm-3">
+                                <div class="input-group">
+                                    <input type="text" class="form-control m-input" [ngModel]="defaultStartAt" placeholder="9:30:00 AM" aria-describedby="basic-addon2" id="start_time_picker" name="start_at">
+                                    <div class="input-group-append"><span class="input-group-text" id="basic-addon2"><i class="la la-clock-o"></i></span></div>
+                                </div>
+                                <span class="m-form__help">Starts at</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="col-sm-8 offset-sm-1">
+                                <div class="input-group">
+                                    <input type="text" class="form-control m-input" [ngModel]="defaultEndAt" placeholder="5:30:00 PM" aria-describedby="basic-addon2" id="end_time_picker" name="end_at">
+                                    <div class="input-group-append"><span class="input-group-text" id="basic-addon2"><i class="la la-clock-o"></i></span></div>
+                                </div>
+                                <span class="m-form__help">Ends at</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" [disabled]="new_loading" [ngClass]="{'m-loader m-loader--right m-loader--light': new_loading}" class="btn btn-primary add-schedule-save-btn">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--begin::Modal-->
+<div class="modal fade" id="new_template" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">New Template</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form (ngSubmit)="f.form.valid && addNewtemplate()" #f="ngForm" action="">
+                <div class="modal-body">
+                    <div class="form-group m-form__group">
+                        <label for="new-template-name" class="">Template Name</label>
+                        <input type="text" class="form-control m-input" id="new_template_name" name="new_template_name">
+                    </div>
+                    <div class="form-group m-form__group">
+                        <label for="new-template-message-text" class="">Message:</label>
+                        <textarea class="form-control m-input" id="new_template_message" name="new_template_message"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" [disabled]="loading" [ngClass]="{'m-loader m-loader--right m-loader--light': loading}" class="btn btn-primary add-new-template-btn">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--end::Modal-->

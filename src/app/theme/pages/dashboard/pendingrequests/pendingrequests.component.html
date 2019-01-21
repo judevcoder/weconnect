@@ -40,17 +40,17 @@
                                         <form class="m-header-search__form">
                                             <div class="m-header-search__wrapper">
                                                 <span class="m-header-search__icon-search" id="m_quicksearch_search">
-                                          <i class="flaticon-search"></i>
-                                        </span>
+                                                    <i class="flaticon-search"></i>
+                                                </span>
                                                 <span class="m-header-search__input-wrapper">
-                                          <input autocomplete="off" type="text" name="q" class="m-header-search__input" value="" placeholder="Search..." id="m_quicksearch_input">
-                                        </span>
+                                                    <input autocomplete="off" type="text" name="q" class="m-header-search__input" value="" placeholder="Search..." id="m_quicksearch_input">
+                                                </span>
                                                 <span class="m-header-search__icon-close" id="m_quicksearch_close">
-                                          <i class="la la-remove"></i>
-                                        </span>
+                                                    <i class="la la-remove"></i>
+                                                </span>
                                                 <span class="m-header-search__icon-cancel" id="m_quicksearch_cancel">
-                                          <i class="la la-remove"></i>
-                                        </span>
+                                                    <i class="la la-remove"></i>
+                                                </span>
                                             </div>
                                         </form>
                                     </div>
@@ -67,13 +67,13 @@
                                                     <div class="m-dropdown__content">
                                                         <ul class="m-nav">
                                                             <li class="m-nav__item">
-                                                                <a href="" class="m-nav__link">
+                                                                <a href="" class="m-nav__link" (click)="withdrawInvite()">
                                                                 <i class="m-nav__link-icon la la-remove"></i>
                                                                 <span class="m-nav__link-text">Withdraw Invite</span>
                                                                 </a>
                                                             </li>
                                                             <li class="m-nav__item">
-                                                                <a href="" class="m-nav__link">
+                                                                <a href="" class="m-nav__link" (click)="export()">
                                                                 <i class="m-nav__link-icon la la-download"></i>
                                                                 <span class="m-nav__link-text">Export</span>
                                                                 </a>
@@ -162,99 +162,99 @@
                                 <span class="m-nav__section-text">Section</span>
                             </li>
                             <li class="m-nav__item">
-                                <a href="header/profile&amp;demo=default.html" class="m-nav__link">
-                                    <i class="m-nav__link-icon flaticon-time-3"></i>
-                                    <span class="m-nav__link-title">
-                            <span class="m-nav__link-wrap">
-                              <span class="m-nav__link-text">{{profile.city}}</span>
+                            <a href="javascript:;" class="m-nav__link">
+                                <i class="m-nav__link-icon flaticon-placeholder"></i>
+                                <span class="m-nav__link-title">
+                                    <span class="m-nav__link-wrap">
+                                        <span class="m-nav__link-text">{{profile.city}}</span>
                                     </span>
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="m-nav__item">
-                                <a href="header/profile&amp;demo=default.html" class="m-nav__link">
-                                    <i class="m-nav__link-icon flaticon-profile-1"></i>
-                                    <span class="m-nav__link-text">{{profile.university}}</span>
-                                </a>
-                            </li>
-                            <li class="m-nav__item">
-                                <a href="header/profile&amp;demo=default.html" class="m-nav__link">
-                                    <i class="m-nav__link-icon flaticon-share"></i>
-                                    <span class="m-nav__link-text">500+ Connections</span>
-                                </a>
-                            </li>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="m-nav__item">
+                            <a href="javascript:;" class="m-nav__link">
+                                <i class="m-nav__link-icon la la-university"></i>
+                                <span class="m-nav__link-text">{{profile.university}}</span>
+                            </a>
+                        </li>
+                        <li class="m-nav__item">
+                            <a href="javascript:;" class="m-nav__link">
+                                <i class="m-nav__link-icon la la-users"></i>
+                                <span class="m-nav__link-text">{{profile.connections}}</span>
+                            </a>
+                        </li>
                         </ul>
 
                         <div class="m-portlet__body-separator"></div>
 
                         <div class="m-widget4">
-                            <div class="m-widget4__item">
-                                <div class="m-widget4__img m-widget4__img--logo">
-                                    <img src="assets/app/media/img/client-logos/logo4.png" alt="">
-                                </div>
-                                <div class="m-widget4__info">
-                                    <span class="m-widget4__title">
-                          Chief Financial Officer
-                          </span>
-                                    <br>
-                                    <span class="m-widget4__sub">
-                          Google Corp
-                          </span>
-                                    <br>
-                                    <span class="m-widget4__sub">
-                          Jul 2015 - present
-                          </span>
-                                    <br>
-                                    <span class="m-widget4__sub">
-                          (3 yrs 2 mos)
-                          </span>
-                                </div>
+                        <div class="m-widget4__item">
+                            <div class="m-widget4__img m-widget4__img--logo">
+                                <img src="{{profile.present_comp_img}}" alt="">
                             </div>
-                            <div class="m-widget4__item">
-                                <div class="m-widget4__img m-widget4__img--logo">
-                                    <img src="assets/app/media/img/client-logos/logo2.png" alt="">
-                                </div>
-                                <div class="m-widget4__info">
-                                    <span class="m-widget4__title">
-                          Finance Controller
-                          </span>
-                                    <br>
-                                    <span class="m-widget4__sub">
-                          Oracle Corporation
-                          </span>
-                                    <br>
-                                    <span class="m-widget4__sub">
-                          Jun 2012 - Jun 2015
-                          </span>
-                                    <br>
-                                    <span class="m-widget4__sub">
-                          (3 yrs)
-                          </span>
-                                </div>
-                            </div>
-                            <div class="m-widget4__item">
-                                <div class="m-widget4__img m-widget4__img--logo">
-                                    <img src="assets/app/media/img/client-logos/logo1.png" alt="">
-                                </div>
-                                <div class="m-widget4__info">
-                                    <span class="m-widget4__title">
-                          Chief Financial Officer
-                          </span>
-                                    <br>
-                                    <span class="m-widget4__sub">
-                          Google Corp
-                          </span>
-                                    <br>
-                                    <span class="m-widget4__sub">
-                          Jul 2015 - present
-                          </span>
-                                    <br>
-                                    <span class="m-widget4__sub">
-                          (3 yrs 2 mos)
-                          </span>
-                                </div>
+                            <div class="m-widget4__info">
+                                <span class="m-widget4__title">
+                                    {{profile.title}}
+                                </span>
+                                <br>
+                                <span class="m-widget4__sub">
+                                    {{profile.present_company}}
+                                </span>
+                                <br>
+                                <span class="m-widget4__sub">
+                                    {{profile.dates_employed}}
+                                </span>
+                                <br>
+                                <span class="m-widget4__sub">
+                                    {{profile.present_span}}
+                                </span>
                             </div>
                         </div>
+                        <div class="m-widget4__item">
+                            <div class="m-widget4__img m-widget4__img--logo">
+                                <img src="{{profile.previous_comp_img}}" alt="">
+                            </div>
+                            <div class="m-widget4__info">
+                                <span class="m-widget4__title">
+                                  {{profile.previous_title}}
+                                  </span>
+                                <br>
+                                <span class="m-widget4__sub">
+                                  {{profile.previous_company}}
+                                  </span>
+                                <br>
+                                <span class="m-widget4__sub">
+                                  {{profile.previous_dates_employed}}
+                                  </span>
+                                <br>
+                                <span class="m-widget4__sub">
+                                  {{profile.previous_span}}
+                                  </span>
+                            </div>
+                        </div>
+                        <div class="m-widget4__item">
+                            <div class="m-widget4__img m-widget4__img--logo">
+                                <img src="{{profile.previous_comp_img2}}" alt="">
+                            </div>
+                            <div class="m-widget4__info">
+                                <span class="m-widget4__title">
+                                  {{profile.previous_title2}}
+                                  </span>
+                                <br>
+                                <span class="m-widget4__sub">
+                                  {{profile.previous_company2}}
+                                  </span>
+                                <br>
+                                <span class="m-widget4__sub">
+                                  {{profile.previous_dates_employed2}}
+                                  </span>
+                                <br>
+                                <span class="m-widget4__sub">
+                                  {{profile.previous_span2}}
+                                  </span>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>

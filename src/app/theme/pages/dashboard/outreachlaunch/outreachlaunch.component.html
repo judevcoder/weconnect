@@ -48,60 +48,105 @@
 
                             <!--begin: Form Wizard Nav -->
                             <div class="m-wizard__nav">
-                                <div class="m-wizard__steps">
-                                    <div class="m-wizard__step m-wizard__step--done" m-wizard-target="m_wizard_form_step_1">
-                                        <div class="m-wizard__step-info">
-                                            <a href="" class="m-wizard__step-number">
-                                                <span><span>1</span></span>
-                                            </a>
-                                            <div class="m-wizard__step-line">
-                                                <span></span>
+                                <ng-container *ngIf="campaigntype == 'Endorse Contacts' || campaigntype == 'Auto Follow' || campaigntype == 'Visit Profiles'; else other_m_wizar_nav">
+                                    <div  class="m-wizard__steps">
+                                        <div class="m-wizard__step m-wizard__step--done" m-wizard-target="m_wizard_form_step_1">
+                                            <div class="m-wizard__step-info">
+                                                <a href="javascipt:;" class="m-wizard__step-number">
+                                                    <span><span>1</span></span>
+                                                </a>
+                                                <div class="m-wizard__step-line">
+                                                    <span></span>
+                                                </div>
+                                                <div class="m-wizard__step-label">
+                                                    Setup
+                                                </div>
                                             </div>
-                                            <div class="m-wizard__step-label">
-                                                Setup
+                                        </div>
+                                        <div class="m-wizard__step m-wizard__step--done" m-wizard-target="m_wizard_form_step_2">
+                                            <div class="m-wizard__step-info">
+                                                <a href="javascipt:;" class="m-wizard__step-number">
+                                                    <span><span>2</span></span>
+                                                </a>
+                                                <div class="m-wizard__step-line">
+                                                    <span></span>
+                                                </div>
+                                                <div class="m-wizard__step-label">
+                                                    Settings
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="m-wizard__step m-wizard__step m-wizard__step--current" m-wizard-target="m_wizard_form_step_3">
+                                            <div class="m-wizard__step-info">
+                                                <a href="javascipt:;" class="m-wizard__step-number">
+                                                    <span><span>3</span></span>
+                                                </a>
+                                                <div class="m-wizard__step-line">
+                                                    <span></span>
+                                                </div>
+                                                <div class="m-wizard__step-label">
+                                                    Launch
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="m-wizard__step m-wizard__step--done" m-wizard-target="m_wizard_form_step_2">
-                                        <div class="m-wizard__step-info">
-                                            <a href="" class="m-wizard__step-number">
-                                                <span><span>2</span></span>
-                                            </a>
-                                            <div class="m-wizard__step-line">
-                                                <span></span>
+                                </ng-container>
+                                <ng-template #other_m_wizar_nav>
+                                    <div class="m-wizard__steps">
+                                        <div class="m-wizard__step m-wizard__step--done" m-wizard-target="m_wizard_form_step_1">
+                                            <div class="m-wizard__step-info">
+                                                <a href="javascipt:;" class="m-wizard__step-number">
+                                                    <span><span>1</span></span>
+                                                </a>
+                                                <div class="m-wizard__step-line">
+                                                    <span></span>
+                                                </div>
+                                                <div class="m-wizard__step-label">
+                                                    Setup
+                                                </div>
                                             </div>
-                                            <div class="m-wizard__step-label">
-                                                Sequences
+                                        </div>
+                                        <div class="m-wizard__step m-wizard__step--done" m-wizard-target="m_wizard_form_step_2">
+                                            <div class="m-wizard__step-info">
+                                                <a href="javascipt:;" class="m-wizard__step-number">
+                                                    <span><span>2</span></span>
+                                                </a>
+                                                <div class="m-wizard__step-line">
+                                                    <span></span>
+                                                </div>
+                                                <div class="m-wizard__step-label">
+                                                    Sequences
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="m-wizard__step m-wizard__step--done" m-wizard-target="m_wizard_form_step_3">
+                                            <div class="m-wizard__step-info">
+                                                <a href="javascipt:;" class="m-wizard__step-number">
+                                                    <span><span>3</span></span>
+                                                </a>
+                                                <div class="m-wizard__step-line">
+                                                    <span></span>
+                                                </div>
+                                                <div class="m-wizard__step-label">
+                                                    Settings
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="m-wizard__step m-wizard__step m-wizard__step--current" m-wizard-target="m_wizard_form_step_4">
+                                            <div class="m-wizard__step-info">
+                                                <a href="javascipt:;" class="m-wizard__step-number">
+                                                    <span><span>4</span></span>
+                                                </a>
+                                                <div class="m-wizard__step-line">
+                                                    <span></span>
+                                                </div>
+                                                <div class="m-wizard__step-label">
+                                                    Launch
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="m-wizard__step m-wizard__step--done" m-wizard-target="m_wizard_form_step_3">
-                                        <div class="m-wizard__step-info">
-                                            <a href="" class="m-wizard__step-number">
-                                                <span><span>3</span></span>
-                                            </a>
-                                            <div class="m-wizard__step-line">
-                                                <span></span>
-                                            </div>
-                                            <div class="m-wizard__step-label">
-                                                Settings
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="m-wizard__step m-wizard__step--current" m-wizard-target="m_wizard_form_step_4">
-                                        <div class="m-wizard__step-info">
-                                            <a href="" class="m-wizard__step-number">
-                                                <span><span>4</span></span>
-                                            </a>
-                                            <div class="m-wizard__step-line">
-                                                <span></span>
-                                            </div>
-                                            <div class="m-wizard__step-label">
-                                                Launch
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                </ng-template>
                             </div>
                             <!--end: Form Wizard Nav -->
                         </div>
@@ -136,19 +181,19 @@
                                                             <div class="form-group m-form__group m-form__group--sm row">
                                                                 <label class="col-xl-4 col-lg-4 col-form-label">Campaign Name:</label>
                                                                 <div class="col-xl-8 col-lg-8">
-                                                                    <span class="m-form__control-static">Campaign Name</span>
+                                                                    <span class="m-form__control-static">{{campaignName}}</span>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group m-form__group m-form__group--sm row">
                                                                 <label class="col-xl-4 col-lg-4 col-form-label">Campaign Type:</label>
                                                                 <div class="col-xl-8 col-lg-8">
-                                                                    <span class="m-form__control-static">Linkedin New Connection</span>
+                                                                    <span class="m-form__control-static">{{campaigntype}}</span>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group m-form__group m-form__group--sm row">
                                                                 <label class="col-xl-4 col-lg-4 col-form-label">Prospects</label>
                                                                 <div class="col-xl-8 col-lg-8">
-                                                                    <span class="m-form__control-static">Marketing Directors - New Jersey</span>
+                                                                    <span class="m-form__control-static">{{campaignprospect}}</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -176,7 +221,7 @@
                                                                 </div>
                                                                 <div class="m-accordion__item-body collapse" id="m_accordion_2_item_1_body" class="collapse" role="tabpanel" aria-labelledby="m_accordion_2_item_1_head" data-parent="#m_accordion_2_item_1_head">
                                                                     <div class="tab-content  m--padding-30">
-                                                                        Hi Nick, I am John and I was wondering if there are any synergies between our companies. I would be delighted to connect with you and take this conversion forward.
+                                                                        {{InsertVar}}
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -209,36 +254,108 @@
                                                     <!--begin::Content-->
                                                     <div class="tab-content  m--padding-30">
                                                         <div class="m-form__section">
-                                                            <div class="form-group m-form__group m-form__group--sm row">
-                                                                <label class="col-xl-4 col-lg-4 col-form-label">Daily Connection Limits</label>
-                                                                <div class="col-xl-8 col-lg-8">
-                                                                    <span class="m-form__control-static">100</span>
+                                                            <ng-container *ngIf="campaigntype == 'Endorse Contacts'; else second">
+                                                                <div class="form-group m-form__group m-form__group--sm row">
+                                                                    <label class="col-xl-4 col-lg-4 col-form-label">Daily Endorsement Limit</label>
+                                                                    <div class="col-xl-8 col-lg-8">
+                                                                        <span class="m-form__control-static">{{daily_endorse_limit}}</span>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="form-group m-form__group m-form__group--sm row">
-                                                                <label class="col-xl-4 col-lg-4 col-form-label">Daily Followup Message Limits</label>
-                                                                <div class="col-xl-8 col-lg-8">
-                                                                    <span class="m-form__control-static">100</span>
+                                                                <div class="form-group m-form__group m-form__group--sm row">
+                                                                    <label class="col-xl-4 col-lg-4 col-form-label">Delay between Endorsement</label>
+                                                                    <div class="col-xl-8 col-lg-8">
+                                                                        <span class="m-form__control-static">{{delay_between_endorse}} mins</span>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="form-group m-form__group m-form__group--sm row">
-                                                                <label class="col-xl-4 col-lg-4 col-form-label">Delay Between Connections</label>
-                                                                <div class="col-xl-8 col-lg-8">
-                                                                    <span class="m-form__control-static">5 mins</span>
+                                                                <div class="form-group m-form__group m-form__group--sm row">
+                                                                    <label class="col-xl-4 col-lg-4 col-form-label">Maximum Skills to Endorse</label>
+                                                                    <div class="col-xl-8 col-lg-8">
+                                                                        <span class="m-form__control-static">{{max_skills_endorse}} skills</span>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="form-group m-form__group m-form__group--sm row">
-                                                                <label class="col-xl-4 col-lg-4 col-form-label">Delay Between Messages</label>
-                                                                <div class="col-xl-8 col-lg-8">
-                                                                    <span class="m-form__control-static">5 mins</span>
+                                                                <div class="form-group m-form__group m-form__group--sm row">
+                                                                    <label class="col-xl-4 col-lg-4 col-form-label">Schedule</label>
+                                                                    <div class="col-xl-8 col-lg-8">
+                                                                        <span class="m-form__control-static">{{schedulename}}</span>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="form-group m-form__group m-form__group--sm row">
-                                                                <label class="col-xl-4 col-lg-4 col-form-label">Schedule</label>
-                                                                <div class="col-xl-8 col-lg-8">
-                                                                    <span class="m-form__control-static">Default</span>
+                                                            </ng-container>
+                                                            <ng-template #second>
+                                                                <ng-container *ngIf="campaigntype == 'Auto Follow'; else third">
+                                                                    <div class="form-group m-form__group m-form__group--sm row">
+                                                                        <label class="col-xl-4 col-lg-4 col-form-label">Daily Follow Limit</label>
+                                                                        <div class="col-xl-8 col-lg-8">
+                                                                            <span class="m-form__control-static">{{daily_follow_limit}}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group m-form__group m-form__group--sm row">
+                                                                        <label class="col-xl-4 col-lg-4 col-form-label">Delay between each Follow</label>
+                                                                        <div class="col-xl-8 col-lg-8">
+                                                                            <span class="m-form__control-static">{{delay_between_follow}} mins</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group m-form__group m-form__group--sm row">
+                                                                        <label class="col-xl-4 col-lg-4 col-form-label">Schedule</label>
+                                                                        <div class="col-xl-8 col-lg-8">
+                                                                            <span class="m-form__control-static">{{schedulename}}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </ng-container>
+                                                            </ng-template>
+                                                            <ng-template #third>
+                                                                <ng-container *ngIf="campaigntype == 'Visit Profiles'; else normal">
+                                                                    <div class="form-group m-form__group m-form__group--sm row">
+                                                                        <label class="col-xl-4 col-lg-4 col-form-label">Daily Visit Profile Limit</label>
+                                                                        <div class="col-xl-8 col-lg-8">
+                                                                            <span class="m-form__control-static">{{daily_visit_profile_limit}}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group m-form__group m-form__group--sm row">
+                                                                        <label class="col-xl-4 col-lg-4 col-form-label">Delay between each Profile Visit</label>
+                                                                        <div class="col-xl-8 col-lg-8">
+                                                                            <span class="m-form__control-static">{{delay_between_visit_profile}} mins</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group m-form__group m-form__group--sm row">
+                                                                        <label class="col-xl-4 col-lg-4 col-form-label">Schedule</label>
+                                                                        <div class="col-xl-8 col-lg-8">
+                                                                            <span class="m-form__control-static">{{schedulename}}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </ng-container>
+                                                            </ng-template>
+                                                            <ng-template #normal>
+                                                                <div class="form-group m-form__group m-form__group--sm row">
+                                                                    <label class="col-xl-4 col-lg-4 col-form-label">Daily Connection Limit</label>
+                                                                    <div class="col-xl-8 col-lg-8">
+                                                                        <span class="m-form__control-static">{{daily_connection_limit}}</span>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
+                                                                <div class="form-group m-form__group m-form__group--sm row">
+                                                                    <label class="col-xl-4 col-lg-4 col-form-label">Daily Followup Message Limit</label>
+                                                                    <div class="col-xl-8 col-lg-8">
+                                                                        <span class="m-form__control-static">{{daily_follow_message}}</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group m-form__group m-form__group--sm row">
+                                                                    <label class="col-xl-4 col-lg-4 col-form-label">Delay between connections</label>
+                                                                    <div class="col-xl-8 col-lg-8">
+                                                                        <span class="m-form__control-static">{{delay_between_connections}} mins</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group m-form__group m-form__group--sm row">
+                                                                    <label class="col-xl-4 col-lg-4 col-form-label">Delay between Messages</label>
+                                                                    <div class="col-xl-8 col-lg-8">
+                                                                        <span class="m-form__control-static">{{delay_between_messages}} mins</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group m-form__group m-form__group--sm row">
+                                                                    <label class="col-xl-4 col-lg-4 col-form-label">Schedule</label>
+                                                                    <div class="col-xl-8 col-lg-8">
+                                                                        <span class="m-form__control-static">{{schedulename}}</span>
+                                                                    </div>
+                                                                </div>
+                                                            </ng-template>
                                                         </div>
                                                     </div>
                                                     <!--end::Content-->
@@ -266,24 +383,24 @@
                                     <div class="m-form__actions">
                                         <div class="row">
                                             <div class="col-lg-6 m--align-left">
-                                                <a href="/outreach/settings" class="btn btn-secondary m-btn m-btn--custom m-btn--icon compaign-prev-btn" data-wizard-action="prev">
+                                                <a href="javascipt:;" class="btn btn-secondary m-btn m-btn--custom m-btn--icon compaign-prev-btn" (click)="goBack()" data-wizard-action="prev">
                                                     <span>
-                            <i class="la la-arrow-left"></i>&nbsp;&nbsp;
-                            <span>Back</span>
+                                                        <i class="la la-arrow-left"></i>&nbsp;&nbsp;
+                                                        <span>Back</span>
                                                     </span>
                                                 </a>
                                             </div>
                                             <div class="col-lg-6 m--align-right">
                                                 <a href="" class="btn btn-primary m-btn m-btn--custom m-btn--icon" data-wizard-action="submit">
                                                     <span>
-                            <i class="la la-check"></i>&nbsp;&nbsp;
-                            <span>Submit</span>
+                                                        <i class="la la-check"></i>&nbsp;&nbsp;
+                                                        <span>Submit</span>
                                                     </span>
                                                 </a>
                                                 <a href="" class="btn btn-success m-btn m-btn--custom m-btn--icon" data-wizard-action="next" id="send_campaign" data-toggle="modal" data-target="#send_campaign_now">
                                                     <span>
-                            <span>Send Campaign</span>&nbsp;&nbsp;
-                                                    <i class="la la-paper-plane"></i>
+                                                        <span>Send Campaign</span>&nbsp;&nbsp;
+                                                        <i class="la la-paper-plane"></i>
                                                     </span>
                                                 </a>
                                             </div>
@@ -315,7 +432,7 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <form>
+            <form class="m-form m-form--label-align-right" (ngSubmit)="sendCampaign()" #f="ngForm" action="">
                 <div class="modal-body update-profile-body">
 
                     <div class="m-checkbox-inline textcenter">
@@ -324,7 +441,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a href="/outreach/campaigns" class="btn btn-primary btn-sm m-btn m-btn--custom" style="width: 100%">Send it</a>
+                    <button type="submit" [disabled]="loading" [ngClass]="{'m-loader m-loader--right m-loader--light': loading}" class="btn btn-primary btn-sm m-btn m-btn--custom" style="width: 100%">Send it</button>
+                    <!-- <a type="submit" href="/outreach/campaigns" class="btn btn-primary btn-sm m-btn m-btn--custom" style="width: 100%">Send it</a> -->
                 </div>
             </form>
         </div>

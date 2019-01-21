@@ -1,12 +1,20 @@
+<!-- <p-growl [(value)]="msgs"></p-growl> -->
+<p-messages [(value)]="msgs"></p-messages>
+
 <div class="col-lg-12 col-sm-12 col-md-12 campaign-section">
     <div class="m-portlet m-portlet--full-height">
         <!--begin: Portlet Head-->
         <div class="m-portlet__head">
             <div class="m-portlet__head-caption">
                 <div class="m-portlet__head-title">
-                    <h3 class="m-portlet__head-text">
-                {{campaignName}} 
-              </h3>
+                    <h3 *ngIf="!showcampaignName; else other_campaign_name" class="m-portlet__head-text">
+                        {{campaignName}}
+                    </h3>
+                    <ng-template #other_campaign_name>
+                        <h3 class="m-portlet__head-text">
+                        {{showcampaignName}}
+                    </h3>
+                    </ng-template>
                 </div>
             </div>
             <div class="m-portlet__head-tools">
@@ -126,20 +134,18 @@
                                             <div class="form-group m-form__group row">
                                                 <label class="col-xl-3 col-lg-3 col-form-label">* Campaign Name:</label>
                                                 <div class="col-xl-9 col-lg-9">
-                                                    <input type="text" name="name" class="form-control m-input" placeholder="" value="Campaign Name" (input)="changeCampaignName($event.target.value)">
+                                                    <input *ngIf="!showcampaignName; else other_input_name" type="text" name="name" class="form-control m-input" placeholder="" value="{{campaignName}}" (input)="changeCampaignName($event.target.value)">
+                                                    <ng-template #other_input_name>
+                                                        <input type="text" name="name" class="form-control m-input" placeholder="" value="{{showcampaignName}}" (input)="changeCampaignName($event.target.value)">
+                                                    </ng-template>
                                                     <span class="m-form__help">Please enter the campaign name</span>
                                                 </div>
                                             </div>
                                             <div class="form-group m-form__group row">
                                                 <label class="col-xl-3 col-lg-3 col-form-label">* Campaign Type:</label>
                                                 <div class="col-xl-9 col-lg-9">
-                                                    <select name="country" class="form-control m-input">
-                                                        <option value="">Select Campaign</option>
-                                                        <option value="YE">Add Connections</option>
-                                                        <option value="ZM">Send Messages</option>
-                                                        <option value="ZW">Endorse Contacts</option>
-                                                        <option value="ZW">Auto Follow</option>
-                                                        <option value="ZW">Visit Profiles</option>
+                                                    <select name="campaignntype" class="form-control m-input campaign-type" [(ngModel)]="selectedValue" (change)="selectCampaignType()">
+                                                        <option *ngFor="let type of CampaignType" [ngValue]="type.id" >{{type.content}}</option>
                                                     </select>
                                                     <span class="m-form__help">Select the campaign type from dropdown</span>
                                                 </div>
@@ -147,12 +153,8 @@
                                             <div class="form-group m-form__group row">
                                                 <label class="col-xl-3 col-lg-3 col-form-label">* Select Prospects:</label>
                                                 <div class="col-xl-9 col-lg-9">
-                                                    <select name="country" class="form-control m-input">
-                                                        <option value="">Select Prospects</option>
-                                                        <option value="YE">Marketing Directors - New Jersey</option>
-                                                        <option value="ZM">Marketing Directors - New York</option>
-                                                        <option value="ZW">Marketing Directors - San Francisco</option>
-                                                        <option value="ZW">Marketing Directors - Nashville</option>
+                                                    <select name="campaignprospect" class="form-control m-input campaign-prospects" [(ngModel)]="prospselectedValue" (change)="selectCampaignProspects()">
+                                                        <option *ngFor="let prospect of CampaignProspects" [ngValue]="prospect.id" >{{prospect.content}}</option>
                                                     </select>
                                                     <span class="m-form__help">select prospects list from saved search</span>
                                                 </div>

@@ -1,0 +1,62 @@
+[
+    {
+        "id": 0,
+        "template_name": "Opportunity",
+        "message": "It seems we do have a common business interest"
+    },
+    {
+        "id": 1,
+        "template_name": "Introduction",
+        "message": "Hi Anna, I happened to visit your profile and"
+    },
+    {
+        "id": 2,
+        "template_name": "Indonesia",
+        "message": "Messerschmidt Point"
+    },
+    {
+        "id": 3,
+        "template_name": "Zhangcun",
+        "message": "3 Goodland Terrace"
+    },
+    {
+        "id": 4,
+        "template_name": "Vinica",
+        "message": "0 Elka Street"
+    },
+    {
+        "id": 5,
+        "template_name": "main_window",
+        "message": "Sample Konfabulator Widget"
+    },
+    {
+        "id": 6,
+        "template_name": "cofaxCDS",
+        "message": "It seems we do have a common business interest"
+    },
+    {
+        "id": 7,
+        "template_name": "dataStoreTestQuery",
+        "message": "Hi Anna, I happened to visit your profile and"
+    },
+    {
+        "id": 8,
+        "template_name": "Date",
+        "message": "Hey there"
+    },
+    {
+        "id": 9,
+        "template_name": "This is a test",
+        "message": "Dear Jason"
+    },
+    {
+        "id": 10,
+        "template_name": "quoted-section",
+        "message": "Something worth quoting"
+    },
+    {
+        "id": 11,
+        "template_name": "greeting",
+        "message": "that I have embedded in some text"
+    }
+]

@@ -43,53 +43,17 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr *ngFor="let campaign of outreachcampaigns">
                                         <td>
-                                            1
+                                            {{campaign.id}}
                                         </td>
-                                        <td><a href="/campaign/overview">CFO New York</a></td>
-                                        <td>1245</td>
-                                        <td>512</td>
-                                        <td>116</td>
-                                        <td>Active</td>
-                                        <td>Connection</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            2
-                                        </td>
-                                        <td><a href="/campaign/overview">CIO San Francisco</a></td>
-                                        <td>2800</td>
-                                        <td>1025</td>
-                                        <td>225</td>
-                                        <td>Completed</td>
-                                        <td>Messaging</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            3
-                                        </td>
-                                        <td><a href="/campaign/overview">CMO Nashville</a></td>
-                                        <td>850</td>
-                                        <td>247</td>
-                                        <td>97</td>
-                                        <td>Pending</td>
-                                        <td>Endorse</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            4
-                                        </td>
-                                        <td><a href="/campaign/overview">CTO London</a></td>
-                                        <td>1245</td>
-                                        <td>512</td>
-                                        <td>116</td>
-                                        <td>Paused</td>
-                                        <td>Follow</td>
-                                        <td></td>
+                                        <td><a href="/campaign-overview">{{ campaign.campaign_name }}</a></td>
+                                        <td>{{ campaign.contacts }}</td>
+                                        <td>{{ campaign.connected }}</td>
+                                        <td>{{ campaign.replied }}</td>
+                                        <td>{{ campaign.status }}</td>
+                                        <td>{{ campaign.type }}</td>
+                                        <td class="action" attr.data-id="{{campaign.id}}"></td>
                                     </tr>
                                 </tbody>
                             </table>

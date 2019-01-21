@@ -5,6 +5,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { SearchCompanyResultsComponent } from "./searchcompanyresults.component";
 import { LayoutModule } from "../../../layouts/layout.module";
 import { DashboardComponent } from "../dashboard.component";
+import { SendFormDataService } from "../../../../_services/send-form-data.service";
 
 const routes: Routes = [
     {
@@ -21,6 +22,7 @@ const routes: Routes = [
 @NgModule({
     imports: [CommonModule, RouterModule.forChild(routes), LayoutModule, FormsModule],
     exports: [RouterModule],
-    declarations: [SearchCompanyResultsComponent]
+    declarations: [SearchCompanyResultsComponent],
+    providers: [SendFormDataService]
 })
 export class SearchCompanyResultsModule { }

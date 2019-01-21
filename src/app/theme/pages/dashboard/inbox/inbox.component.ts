@@ -7,6 +7,7 @@ import {
 import { Helpers } from "../../../../helpers";
 import { ScriptLoaderService } from "../../../../_services/script-loader.service";
 import { DataService } from "../../../../_services/data.service";
+import { SendFormDataService } from "../../../../_services/send-form-data.service";
 
 @Component({
     selector: "app-inbox",
@@ -27,7 +28,8 @@ export class InboxComponent implements OnInit, AfterViewInit {
 
     constructor(
         private _script: ScriptLoaderService,
-        private dataService: DataService
+        private dataService: DataService,
+        private sendformdataService: SendFormDataService
     ) { }
 
     ngOnInit() {
@@ -46,7 +48,7 @@ export class InboxComponent implements OnInit, AfterViewInit {
             error => { }
         );
 
-        var datatable = (<any>$("#inbox_json_data")).mDatatable({
+        var datatable = (<any>$("#json_data")).mDatatable({
             // datasource definition
             data: {
                 type: "remote",
@@ -59,7 +61,7 @@ export class InboxComponent implements OnInit, AfterViewInit {
                 pageSize: 10
             },
 
-            // toolbar            
+            // toolbar
             toolbar: {
                 // toolbar items
                 items: {
@@ -115,7 +117,7 @@ export class InboxComponent implements OnInit, AfterViewInit {
                             '<span class="m-widget3__username">' +
                             row.name +
                             '</span><br>\
-									<span class="m-widget3__time">' +
+                                    <span class="m-widget3__time">' +
                             row.job +
                             "</span>"
                         );
@@ -140,13 +142,13 @@ export class InboxComponent implements OnInit, AfterViewInit {
                                             <div class="m-dropdown__content">\
                                                 <ul class="m-nav">\
                                                     <li class="m-nav__item" style="margin-bottom: 20px;">\
-                                                        <a href="javascript:;" class="m-nav__link">\
+                                                        <a href="javascript:;" class="m-nav__link drop-link-important" data-id="' + row.id + '">\
                                                             <i class="m-nav__link-icon la la-star"></i>\
                                                             <span class="m-nav__link-text">Mark as Important</span>\
                                                         </a>\
                                                     </li>\
                                                     <li class="m-nav__item">\
-                                                        <a href="javascript:;" class="m-nav__link">\
+                                                        <a href="javascript:;" class="m-nav__link drop-link-unread" data-id="' + row.id + '">\
                                                             <i class="m-nav__link-icon la la-envelope"></i>\
                                                             <span class="m-nav__link-text">Mark as Unread</span>\
                                                         </a>\
@@ -201,7 +203,7 @@ export class InboxComponent implements OnInit, AfterViewInit {
 
         // jQuery(document)
         //     .off("click", ".emoji-picker-icon")
-        //     .on("click", ".emoji-picker-icon", function(e) { 
+        //     .on("click", ".emoji-picker-icon", function(e) {
         //         e.preventDefault();
         //         var display = $(".emoji-menu").css("display");
         //         console.log(display);
@@ -211,7 +213,6 @@ export class InboxComponent implements OnInit, AfterViewInit {
         //             $(this).addClass("active");
         //         }
         //     });
-
         jQuery(document).ready(function() {
             $(".m-datatable__table tr:last").find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
             $(".m-datatable__table tr:last").prev().find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
@@ -221,6 +222,20 @@ export class InboxComponent implements OnInit, AfterViewInit {
             $(".m-datatable__table tr:last").find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
             $(".m-datatable__table tr:last").prev().find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
         });
+
+        jQuery(document)
+            .off('click', '.drop-link-important')
+            .on('click', '.drop-link-important', function() {
+            var id = $(this).attr('data-id');
+            that.markasImportant(String(id));
+        })
+
+        jQuery(document)
+            .off('click', '.drop-link-unread')
+            .on('click', '.drop-link-unread', function() {
+            var id = $(this).attr('data-id');
+            that.markasUnread(String(id));
+        })
 
     }
 
@@ -242,5 +257,45 @@ export class InboxComponent implements OnInit, AfterViewInit {
         this._script.loadScripts("app-inbox", ["json/js/jquery.emojiarea.js"]);
         this._script.loadScripts("app-inbox", ["json/js/emoji-picker.js"]);
         this._script.loadScripts("app-inbox", ["json/js/emoji.js"]);
+    }
+
+    importantMessage() {
+        this.sendformdataService.sendData().subscribe(
+            data => {
+                console.log(data);
+            },
+            error => {
+                console.log(error);
+            });
+    }
+
+    unreadMessage() {
+        this.sendformdataService.sendData().subscribe(
+            data => {
+                console.log(data);
+            },
+            error => {
+                console.log(error);
+            });
+    }
+
+    markasImportant(id: string) {
+        this.sendformdataService.sendId(id).subscribe(
+            data => {
+                console.log(data);
+            },
+            error => {
+                console.log(error);
+            });
+    }
+
+    markasUnread(id: string) {
+        this.sendformdataService.sendId(id).subscribe(
+            data => {
+                console.log(data);
+            },
+            error => {
+                console.log(error);
+            });
     }
 }

@@ -1,0 +1,4 @@
+{
+	"month": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October"],
+	"connect_request": [10, 14, 12, 16, 9, 11, 13, 9, 13, 15]
+}

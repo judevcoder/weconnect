@@ -7,6 +7,7 @@ import {
 import { Helpers } from "../../../../helpers";
 import { ScriptLoaderService } from "../../../../_services/script-loader.service";
 import { DataService } from "../../../../_services/data.service";
+import { SendFormDataService } from "../../../../_services/send-form-data.service";
 
 @Component({
     selector: "app-search-company-results",
@@ -15,6 +16,8 @@ import { DataService } from "../../../../_services/data.service";
 })
 export class SearchCompanyResultsComponent implements OnInit, AfterViewInit {
     data: any;
+    loading = false;
+    save_loading = false;
 
     private company: object = {
         name: "CDK Global",
@@ -29,13 +32,28 @@ export class SearchCompanyResultsComponent implements OnInit, AfterViewInit {
 
     constructor(
         private _script: ScriptLoaderService,
-        private dataService: DataService
+        private dataService: DataService,
+        private sendformdataService: SendFormDataService
     ) { }
 
     ngOnInit() {
         this.dataService.getCompany().subscribe(data => {
             this.data = data;
         }, error => { });
+
+        this._script.loadScripts('body', [
+            'assets/vendors/base/vendors.bundle.js',
+            'assets/demo/demo7/base/scripts.bundle.js'], true).then(() => {
+                Helpers.setLoading(false);
+                this.handleAdvancedSearchFormSubmit();
+            });
+
+        this._script.loadScripts('body', [
+            'assets/vendors/base/vendors.bundle.js',
+            'assets/demo/demo7/base/scripts.bundle.js'], true).then(() => {
+                Helpers.setLoading(false);
+                this.handleSaveSearchFormSubmit();
+            });
 
         var datatable = (<any>$("#search_company_json_data")).mDatatable({
             // datasource definition
@@ -50,7 +68,7 @@ export class SearchCompanyResultsComponent implements OnInit, AfterViewInit {
                 pageSize: 10
             },
 
-            // toolbar            
+            // toolbar
             toolbar: {
                 // toolbar items
                 items: {
@@ -114,7 +132,7 @@ export class SearchCompanyResultsComponent implements OnInit, AfterViewInit {
                             '<span class="m-widget3__username">' +
                             row.name +
                             '</span><br>\
-									<span class="m-widget3__time">' +
+                                    <span class="m-widget3__time">' +
                             row.job +
                             "</span>"
                         );
@@ -138,7 +156,7 @@ export class SearchCompanyResultsComponent implements OnInit, AfterViewInit {
                                             <div class="m-dropdown__content">\
                                                 <ul class="m-nav">\
                                                     <li class="m-nav__item">\
-                                                        <a href="javascript:;" class="m-nav__link">\
+                                                        <a href="javascript:;" class="m-nav__link drop-link-remove" data-id="' + row.id + '">\
                                                             <i class="m-nav__link-icon la la-remove"></i>\
                                                             <span class="m-nav__link-text">Remove</span>\
                                                         </a>\
@@ -173,10 +191,17 @@ export class SearchCompanyResultsComponent implements OnInit, AfterViewInit {
         jQuery(document).on('click', function() {
             $(".m-datatable__table tr:last").find("td:last").find(".m-portlet__nav-item").addClass("m-dropdown--up");
         });
+
+        jQuery(document)
+            .off('click', '.drop-link-remove')
+            .on('click', '.drop-link-remove', function() {
+            var id = $(this).attr('data-id');
+            that.selectRemove(String(id));
+        })
     }
 
     ngAfterViewInit() {
-        this._script.loadScripts("app-connection", [
+        this._script.loadScripts("app-search-company-results", [
             "assets/app/js/dashboard.js"
         ]);
         this._script.loadScripts("app-search-company-results", [
@@ -187,5 +212,110 @@ export class SearchCompanyResultsComponent implements OnInit, AfterViewInit {
     private selectRow() {
         var isChecked = $('#table_row_select_control').prop('checked');
         $('.we_connect_table').children('table').children('tbody').find('tr:visible').find('input[type="checkbox"]').prop('checked', isChecked);
+    }
+
+    advancedSearch() {
+        this.loading = true;
+        setTimeout(() => {
+            (<any>$('#advanced_filter')).modal('hide');
+            this.loading = false;
+        }, 500);
+    }
+
+    handleAdvancedSearchFormSubmit() {
+        $('.advancd-search-btn').click((e) => {
+            let form = $(e.target).closest('form');
+            form.validate({
+                rules: {
+                    first_name: {
+                        required: true,
+                    },
+                    last_name: {
+                        required: true,
+                    },
+                    job_title: {
+                        required: true,
+                    },
+                    comapny_name: {
+                        required: true,
+                    },
+                    industry: {
+                        required: true,
+                    },
+                    location: {
+                        required: true,
+                    }
+                },
+            });
+            if (!form.valid()) {
+                e.preventDefault();
+                return;
+            }
+        });
+    }
+
+    saveSearch() {
+        this.save_loading = true;
+        setTimeout(() => {
+            (<any>$('#save_search')).modal('hide');
+            this.save_loading = false;
+        }, 500);
+    }
+
+    handleSaveSearchFormSubmit() {
+        $('.save-search-btn').click((e) => {
+            let form = $(e.target).closest('form');
+            form.validate({
+                rules: {
+                    search_name: {
+                        required: true,
+                    }
+                },
+            });
+            if (!form.valid()) {
+                e.preventDefault();
+                return;
+            }
+        });
+    }
+
+    sendData() {
+        this.sendformdataService.sendData().subscribe(
+            data => {
+                console.log(data);
+            },
+            error => {
+                console.log(error);
+            });
+    }
+
+    removeData() {
+        this.sendformdataService.sendData().subscribe(
+            data => {
+                console.log(data);
+            },
+            error => {
+                console.log(error);
+            });
+    }
+
+    refresh() {
+        this.sendformdataService.sendData().subscribe(
+            data => {
+                console.log(data);
+            },
+            error => {
+                console.log(error);
+            });
+    }
+
+    selectRemove(id: string) {
+        this.sendformdataService.sendId(id).subscribe(
+            data => {
+                console.log(data);
+            },
+            error => {
+                console.log(error);
+            });
     }
 }

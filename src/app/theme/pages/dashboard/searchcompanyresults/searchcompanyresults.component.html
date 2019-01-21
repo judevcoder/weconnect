@@ -16,7 +16,7 @@
                                 <ul class="m-nav">
                                     <li class="m-nav__item">
                                         <a href="/outreach/setup" class="m-nav__link">
-                                            <i class="m-nav__link-icon flaticon-mail"></i>
+                                            <i class="m-nav__link-icon flaticon-mail-1"></i>
                                             <span class="m-nav__link-text">Create Campaign</span>
                                         </a>
                                     </li>
@@ -48,7 +48,7 @@
                         <ul class="m-portlet__nav">
                             <li class="m-portlet__nav-item m-portlet__nav-item--last">
                                 <div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" m-dropdown-toggle="hover" aria-expanded="true">
-                                    <a href="" class="refres-btn m-portlet__nav-link btn btn-lg btn-secondary  m-btn m-btn--icon m-btn--icon-only m-btn--pill  m-dropdown__toggle">
+                                    <a href="" class="refres-btn m-portlet__nav-link btn btn-lg btn-secondary  m-btn m-btn--icon m-btn--icon-only m-btn--pill  m-dropdown__toggle" (click)="refresh()">
                                         <i class="flaticon-refresh"></i>
                                     </a>
                                     <div class="m-dropdown__wrapper"></div>
@@ -72,21 +72,21 @@
                                                             </a>
                                                         </li>
                                                         <li class="m-nav__item">
-                                                            <a href="" class="m-nav__link" data-toggle="modal" data-target="#advanced_filter">
-                                                                <i class="m-nav__link-icon la la-remove"></i>
-                                                                <span class="m-nav__link-text">Remove</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="m-nav__item">
                                                             <a href="" class="m-nav__link" data-toggle="modal" data-target="#save_search">
                                                                 <i class="m-nav__link-icon la la-save"></i>
                                                                 <span class="m-nav__link-text">Save As</span>
                                                             </a>
                                                         </li>
                                                         <li class="m-nav__item">
-                                                            <a href="" class="m-nav__link">
+                                                            <a href="" class="m-nav__link" (click)="sendData()">
                                                                 <i class="m-nav__link-icon la la-download"></i>
                                                                 <span class="m-nav__link-text">Export</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="m-nav__item">
+                                                            <a href="" class="m-nav__link" (click)="removeData()">
+                                                                <i class="m-nav__link-icon flaticon-delete-1"></i>
+                                                                <span class="m-nav__link-text">Remove</span>
                                                             </a>
                                                         </li>
                                                     </ul>
@@ -220,82 +220,84 @@
 </div>
 
 <!-- begin Advanced search modal -->
-<div class="modal fade show" id="advanced_filter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <form class="m-form m-form--fit m-form--label-align-right">
-                    <div class="form-group m-form__group row m--margin-top-25">
-                        <div class="col-lg-12">
-                            <h5>Advanced Search</h5>
+    <div class="modal fade show" id="advanced_filter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <form class="m-form m-form--fit m-form--label-align-right" (ngSubmit)="f.form.valid && advancedSearch()" #f="ngForm" action="">
+                   <div class="modal-body">
+                        <div class="form-group m-form__group row m--margin-top-25">
+                            <div class="col-lg-12">
+                                <h5>Advanced Search</h5>
+                            </div>
+                        </div>
+                        <div class="form-group m-form__group row">
+                            <div class="col-lg-6 m-form__group-sub">
+                                <input type="text" class="form-control m-input" name="first_name" placeholder="First Name">
+                            </div>
+                            <div class="col-lg-6 m-form__group-sub">
+                                <input type="text" class="form-control m-input" name="last_name" placeholder="Last Name">
+                            </div>
+                        </div>
+                        <div class="form-group m-form__group row">
+                            <div class="col-lg-6 m-form__group-sub">
+                                <input type="text" class="form-control m-input" name="job_title" placeholder="Enter Job Title">
+                            </div>
+                            <div class="col-lg-6 m-form__group-sub">
+                                <input type="text" class="form-control m-input" name="comapny_name" placeholder="Enter Company Name">
+                            </div>
+                        </div>
+                        <div class="form-group m-form__group row">
+                            <div class="col-lg-6 m-form__group-sub">
+                                <input type="text" class="form-control m-input" name="industry" placeholder="Enter Industry">
+                            </div>
+                            <div class="col-lg-6 m-form__group-sub">
+                                <input type="text" class="form-control m-input" name="location" placeholder="Enter Location">
+                            </div>
+                        </div>
+                        <div class="form-group m-form__group row">
+                            <div class="col-lg-12">
+                                <label>Exclude Companies</label>
+                                <select class="form-control m-select2" id="m_select2_3" name="param" multiple="multiple">
+                                        <option value="AK">Oracle</option>
+                                        <option value="HI">SalesForce</option>
+                                        <option value="CA">IBM</option>
+                                        <option value="NV">Microsoft</option>
+                                        <option value="OR">Facebook</option>
+                                        <option value="WA">Tesla</option>
+                                        <option value="AZ">Amazon</option>
+                                        <option value="CO">SAP</option>
+                                        <option value="ID">GetProfiles</option>
+                                        <option value="MT">WeConnect</option>
+                                        <option value="NE">Sales Inside Inc</option>
+                                        <option value="NM">Adobe</option>
+                                        <option value="ND">Netflix</option>
+                                        <option value="UT">GSK</option>
+                                        <option value="WY">Infosys</option>
+                                        <option value="AL">247 Customer</option>
+                                        <option value="AR">Hyperion</option>
+                                        <option value="IL">TCS</option>
+                                        <option value="IA">Hitachi</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group m-form__group row">
-                        <div class="col-lg-6">
-                            <input type="text" class="form-control m-input" placeholder="First Name">
-                        </div>
-                        <div class="col-lg-6">
-                            <input type="text" class="form-control m-input" placeholder="Last Name">
-                        </div>
-                    </div>
-                    <div class="form-group m-form__group row">
-                        <div class="col-lg-6">
-                            <input type="text" class="form-control m-input" placeholder="Enter Job Title">
-                        </div>
-                        <div class="col-lg-6">
-                            <input type="text" class="form-control m-input" placeholder="Enter Company Name">
-                        </div>
-                    </div>
-                    <div class="form-group m-form__group row">
-                        <div class="col-lg-6">
-                            <input type="text" class="form-control m-input" placeholder="Enter Industry">
-                        </div>
-                        <div class="col-lg-6">
-                            <input type="text" class="form-control m-input" placeholder="Enter Location">
-                        </div>
-                    </div>
-                    <div class="form-group m-form__group row">
-                        <div class="col-lg-12">
-                            <select class="form-control m-select2" id="m_select2_3" name="param" multiple="multiple">
-                                    <option value="AK" selected>Oracle</option>
-                                    <option value="HI">SalesForce</option>
-                                    <option value="CA">IBM</option>
-                                    <option value="NV" selected>Microsoft</option>
-                                    <option value="OR">Facebook</option>
-                                    <option value="WA">Tesla</option>
-                                    <option value="AZ">Amazon</option>
-                                    <option value="CO">SAP</option>
-                                    <option value="ID">GetProfiles</option>
-                                    <option value="MT" selected>WeConnect</option>
-                                    <option value="NE">Sales Inside Inc</option>
-                                    <option value="NM">Adobe</option>
-                                    <option value="ND">Netflix</option>
-                                    <option value="UT">GSK</option>
-                                    <option value="WY">Infosys</option>
-                                    <option value="AL">247 Customer</option>
-                                    <option value="AR">Hyperion</option>
-                                    <option value="IL">TCS</option>
-                                    <option value="IA">Hitachi</option>
-                            </select>
-                        </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" [disabled]="loading" [ngClass]="{'m-loader m-loader--right m-loader--light': loading}" class="btn btn-primary advancd-search-btn">Search</button>
+                        <!-- <button type="button" class="btn btn-primary">Search</button> -->
                     </div>
                 </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Search</button>
-            </div>
         </div>
     </div>
-</div>
-<!-- End modal -->
+    <!-- End modal -->
 
 <!-- begin Save search modal -->
 <div class="modal fade show" id="save_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
         <div class="modal-content">
-            <div class="modal-body">
-                <form class="m-form m-form--label-align-right">
+            <form class="m-form m-form--label-align-right" (ngSubmit)="f.form.valid && saveSearch()" #f="ngForm" action="">
+                <div class="modal-body">
                     <div class="form-group m-form__group row">
                         <div class="col-lg-12">
                             <h5>Save Search</h5>
@@ -304,16 +306,16 @@
                     <span class="m-form__help">Save your time by viewing frequently accessed searches throuhg File Manager</span>
                     <div class="form-group m-form__group row m--margin-top-15">
                         <div class="col-lg-12">
-                            <label>Search Name</label>
-                            <input type="text" class="form-control m-input" placeholder="">
+                            <label class="form-control-label">* Search Name</label>
+                            <input type="text" class="form-control m-input" name="search_name" placeholder="">
                         </div>
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save</button>
-            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" [disabled]="save_loading" [ngClass]="{'m-loader m-loader--right m-loader--light': save_loading}" class="btn btn-primary save-search-btn">Save</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

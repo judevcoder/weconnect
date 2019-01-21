@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "campaign_name": "CTO London",
+        "contacts": 1845,
+        "connected": 712,
+        "replied": 316,
+        "status": "Paused",
+        "type": "Follow",
+        "date": "08/06/2018"
+    },
+    {
+        "id": 2,
+        "campaign_name": "CMO Nashville",
+        "contacts": 850,
+        "connected": 247,
+        "replied": 97,
+        "status": "Pending",
+        "type": "Endorse",
+        "date": "08/08/2018"
+    },
+    {
+        "id": 3,
+        "campaign_name": "CIO San Francisco",
+        "contacts": 2800,
+        "connected": 1025,
+        "replied": 225,
+        "status": "Completed",
+        "type": "Messaging",
+        "date": "08/09/2018"
+    },
+    {
+        "id": 4,
+        "campaign_name": "CFO New York",
+        "contacts": 1245,
+        "connected": 512,
+        "replied": 116,
+        "status": "Active",
+        "type": "Connection",
+        "date": "08/10/2018"
+    }
+]

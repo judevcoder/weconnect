@@ -7,58 +7,38 @@
                         <div class="m-portlet__head-tools font9">
                             <ul class="nav nav-tabs m-` m-tabs-line   m-tabs-line--left m-tabs-line--primary font9" role="tablist">
                                 <li class="nav-item m-tabs__item">
-                                    <a class="nav-link m-tabs__link active" data-toggle="tab" href="#m_user_profile_tab_1" role="tab">
+                                    <a class="nav-link m-tabs__link active" data-toggle="tab" id="settings_profile_link" href="#settings_profile" role="tab">
                                         <i class="flaticon-share m--hide"></i> Profile
                                     </a>
                                 </li>
                                 <li class="nav-item m-tabs__item">
-                                    <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_user_profile_tab_2" role="tab">
+                                    <a class="nav-link m-tabs__link" data-toggle="tab" id="settings_plan_link" href="#settings_plan" role="tab">
                                         Plans
                                     </a>
                                 </li>
-                                <li class="nav-item m-tabs__item">
-                                    <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_user_profile_tab_3" role="tab">
+                                <!-- <li class="nav-item m-tabs__item">
+                                    <a class="nav-link m-tabs__link" data-toggle="tab" href="#settings_billing" role="tab">
                                         Billing
                                     </a>
-                                </li>
+                                </li> -->
                                 <li class="nav-item m-tabs__item">
-                                    <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_user_profile_tab_5" role="tab">
+                                    <a class="nav-link m-tabs__link" data-toggle="tab" id="settings_user_management_link" href="#settings_user_management" role="tab">
                                         User Management
                                   </a>
                                 </li>
-                                <li class="nav-item m-tabs__item">
-                                    <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_user_profile_tab_4" role="tab">
+                                <!-- <li class="nav-item m-tabs__item">
+                                    <a class="nav-link m-tabs__link" data-toggle="tab" href="#settings_invite" role="tab">
                                         Invite
                                     </a>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                     </div>
                     <div class="tab-content">
-                        <div class="tab-pane active" id="m_user_profile_tab_1">
+                        <div class="tab-pane active" id="settings_profile">
                             <div class="row">
                                 <div class="col-xl-4 col-lg-8 offset-xl-4 offset-lg-2">
                                     <div class="m-portlet m-portlet--full-height">
-                                        <div class="m-portlet__head" style="border-bottom: none !important;">
-                                            <div class="m-portlet__head-tools">
-                                                <ul class="nav nav-tabs m-tabs m-tabs-line   m-tabs-line--left m-tabs-line--primary" role="tablist">
-                                                    <li class="nav-item m-tabs__item">
-                                                        <a class="nav-link m-tabs__link active" data-toggle="tab" href="#m_user_profile_tab_1" role="tab">
-                                                            <i class="flaticon-share m--hide"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li class="nav-item m-tabs__item">
-                                                        <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_user_profile_tab_2" role="tab">
-                                                        </a>
-                                                    </li>
-                                                    <li class="nav-item m-tabs__item">
-                                                        <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_user_profile_tab_3" role="tab">
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
                                         <div class="m-portlet__body">
                                             <div class="m-card-profile">
                                                 <div class="m-card-profile__title m--hide">
@@ -66,12 +46,16 @@
                                                 </div>
                                                 <div class="m-card-profile__pic">
                                                     <div class="m-card-profile__pic-wrapper">
-                                                        <img src="assets/app/media/img/users/user4.jpg" alt="">
+                                                        <img src="{{profile.img}}" alt="">
                                                     </div>
                                                 </div>
                                                 <div class="m-card-profile__details">
-                                                    <span class="m-card-profile__name">Mark Andre</span>
-                                                    <a href="" class="m-card-profile__email m-link">mark.andre@gmail.com</a>
+                                                    <span class="m-card-profile__name">{{profile.First_Name}} {{profile.Last_Name}}</span>
+                                                    <ng-container *ngFor="let email of profile.Email_Address">
+                                                        <a *ngIf="email.Confirmed == true && email.Primary == true" href="javascript:;" class="m-card-profile__email m-link">
+                                                            {{email.email}}
+                                                        </a>
+                                                    </ng-container>
                                                 </div>
                                             </div>
                                             <ul class="m-nav m-nav--hover-bg m-portlet-fit--sides">
@@ -83,7 +67,7 @@
                                                     <div class="row m-row--no-padding align-items-center">
                                                         <div class="col">
                                                             <span class="m-widget1__desc">Joined</span>
-                                                            <h3 class="m-widget1__title">8th Aug 2018</h3>
+                                                            <h3 class="m-widget1__title">{{profile.joined_date}}</h3>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -91,7 +75,7 @@
                                                     <div class="row m-row--no-padding align-items-center">
                                                         <div class="col">
                                                             <span class="m-widget1__desc">License Plan</span>
-                                                            <h3 class="m-widget1__title">Rainmaker</h3>
+                                                            <h3 class="m-widget1__title">{{profile.license_plan}}</h3>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -109,7 +93,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane " id="m_user_profile_tab_2">
+                        <div class="tab-pane" id="settings_plan">
                             <!--begin::Portlet-->
                             <div class="m-portlet">
                                 <div class="m-portlet__body m-portlet__body--no-padding">
@@ -140,11 +124,12 @@
 
                                                                 <div class="m-pricing-table-2__features mt200">
                                                                     <select class="form-control m-input cent plan-pricing" id="exampleSelect1" style="width: 80%;">
-                                                                        <option value="29">1 USER</option>
-                                                                        <option value="50">2 USERS</option>
-                                                                        <option value="75">3 USERS</option>
-                                                                        <option value="100">4 USERS</option>
-                                                                        <option value="125">5 USERS</option>
+                                                                        <ng-container *ngFor="let plan of Mplans; let i = index">
+                                                                            <option *ngIf="i <= 0; else other_option" id="{{plan.id}}" value="{{ plan.amount }}">{{i + 1}} User</option>
+                                                                            <ng-template #other_option>
+                                                                                <option id="{{plan.id}}" value="{{ plan.amount }}">{{i + 1}} Users</option>
+                                                                            </ng-template>
+                                                                        </ng-container>
                                                                     </select>
                                                                     <span class="font6">more than 5 users? <a href="mailto:enquiry@we-connect.io">contact us</a></span>
                                                                     <br>
@@ -163,10 +148,10 @@
                                                                     <span>Navigator & Recruiter Editions Supported</span>
                                                                     <span>* LinkedIn usage limits apply.</span>
                                                                 </div>
-                                                                <span class="m-pricing-table-2__price plan-pricing-1">29</span>
+                                                                <span class="m-pricing-table-2__price plan-pricing-1">{{initMprice}}</span>
                                                                 <span class="m-pricing-table-2__label">$</span>
                                                                 <div class="m-pricing-table-2__btn">
-                                                                    <a href="" class="btn m-btn--pill  btn-brand m-btn--wide m-btn--uppercase m-btn--bolder m-btn--sm" id="buy_now" data-toggle="modal" data-target="#buy_now_modal">Buy Now</a>
+                                                                    <a href="" class="btn m-btn--pill  btn-brand m-btn--wide m-btn--uppercase m-btn--bolder m-btn--sm" id="buy_now_monthly" data-toggle="modal" data-target="#buy_now_stripe">Buy Now</a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -185,11 +170,12 @@
                                                                 </div>
                                                                 <div class="m-pricing-table-2__features mt200">
                                                                     <select class="form-control m-input cent plan-pricing" id="exampleSelect2" style="width: 80%;">
-                                                                        <option value="290">1 USER</option>
-                                                                        <option value="500">2 USERS</option>
-                                                                        <option value="750">3 USERS</option>
-                                                                        <option value="1000">4 USERS</option>
-                                                                        <option value="1250">5 USERS</option>
+                                                                        <ng-container *ngFor="let plan of Aplans; let i = index">
+                                                                            <option *ngIf="i <= 0; else other_option" id="{{plan.id}}" value="{{ plan.amount }}">{{i + 1}} User</option>
+                                                                            <ng-template #other_option>
+                                                                                <option id="{{plan.id}}" value="{{ plan.amount }}">{{i + 1}} Users</option>
+                                                                            </ng-template>
+                                                                        </ng-container>
                                                                     </select>
                                                                     <span class="font6">more than 5 users? contact us</span>
                                                                     <br>
@@ -208,10 +194,10 @@
                                                                     <span>Navigator & Recruiter Editions Supported</span>
                                                                     <span>* LinkedIn usage limits apply.</span>
                                                                 </div>
-                                                                <span class="m-pricing-table-2__price plan-pricing-2">290</span>
+                                                                <span class="m-pricing-table-2__price plan-pricing-2">{{initAprice}}</span>
                                                                 <span class="m-pricing-table-2__label">$</span>
                                                                 <div class="m-pricing-table-2__btn">
-                                                                    <a href="" class="btn m-btn--pill  btn-brand m-btn--wide m-btn--uppercase m-btn--bolder m-btn--sm" id="buy_now" data-toggle="modal" data-target="#buy_now_modal">Buy Now</a>
+                                                                    <a href="" class="btn m-btn--pill  btn-brand m-btn--wide m-btn--uppercase m-btn--bolder m-btn--sm" id="buy_now_annual" data-toggle="modal" data-target="#buy_now_stripe">Buy Now</a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -225,25 +211,25 @@
                             </div>
                             <!--end::Portlet-->
                         </div>
-                        <div class="tab-pane " id="m_user_profile_tab_3">
+                        <div class="tab-pane " id="settings_billing">
                             <div class="col-lg-10 offset-lg-1">
                                 <div class="m-portlet m-portlet--head-sm" m-portlet="true" id="m_portlet_tools_3">
                                     <div class="m-portlet__head">
                                         <div class="m-portlet__head-caption">
                                             <div class="m-portlet__head-title">
                                                 <span class="m-portlet__head-icon">
-                              <i class="la la-credit-card"></i>
-                            </span>
+                                                    <i class="la la-credit-card"></i>
+                                                </span>
                                                 <h3 class="m-portlet__head-text">
-                              Credit/Debit Cards
-                            </h3>
+                                                    Credit/Debit Cards
+                                                </h3>
                                             </div>
                                         </div>
                                         <div class="m-portlet__head-tools">
                                             <a href="" class="btn btn-outline-primary m-btn m-btn--icon m-btn--outline-2x" id="add_new_credit_card" data-toggle="modal" data-target="#add_credit_modal">
                                                 <span>
-                              <i class="la la-credit-card"></i>
-                              <span>Add New Card</span>
+                                                    <i class="la la-credit-card"></i>
+                                                    <span>Add New Card</span>
                                                 </span>
                                             </a>
                                         </div>
@@ -398,8 +384,71 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- <div class="stripe-subscribe">
+                                <section class="container-lg">
+                                    <div class="cell example example1">
+                                        <form>
+                                            <fieldset>
+                                                <div class="row">
+                                                    <label for="example1-name" data-tid="elements_examples.form.name_label">Name</label>
+                                                    <input id="example1-name" data-tid="elements_examples.form.name_placeholder" type="text" placeholder="Jane Doe" required="" autocomplete="name">
+                                                </div>
+                                                <div class="row">
+                                                    <label for="example1-email" data-tid="elements_examples.form.email_label">Email</label>
+                                                    <input id="example1-email" data-tid="elements_examples.form.email_placeholder" type="email" placeholder="janedoe@gmail.com" required="" autocomplete="email">
+                                                </div>
+                                                <div class="row">
+                                                    <label for="example1-phone" data-tid="elements_examples.form.phone_label">Phone</label>
+                                                    <input id="example1-phone" data-tid="elements_examples.form.phone_placeholder" type="tel" placeholder="(941) 555-0123" required="" autocomplete="tel">
+                                                </div>
+                                            </fieldset>
+                                            <fieldset>
+                                                <div class="row">
+                                                    <div id="example1-card"></div>
+                                                </div>
+                                            </fieldset>
+                                            <button type="submit" data-tid="elements_examples.form.pay_button">Pay $25</button>
+                                            <div class="error" role="alert">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
+                                                    <path class="base" fill="#000" d="M8.5,17 C3.80557963,17 0,13.1944204 0,8.5 C0,3.80557963 3.80557963,0 8.5,0 C13.1944204,0 17,3.80557963 17,8.5 C17,13.1944204 13.1944204,17 8.5,17 Z"></path>
+                                                    <path class="glyph" fill="#FFF" d="M8.5,7.29791847 L6.12604076,4.92395924 C5.79409512,4.59201359 5.25590488,4.59201359 4.92395924,4.92395924 C4.59201359,5.25590488 4.59201359,5.79409512 4.92395924,6.12604076 L7.29791847,8.5 L4.92395924,10.8739592 C4.59201359,11.2059049 4.59201359,11.7440951 4.92395924,12.0760408 C5.25590488,12.4079864 5.79409512,12.4079864 6.12604076,12.0760408 L8.5,9.70208153 L10.8739592,12.0760408 C11.2059049,12.4079864 11.7440951,12.4079864 12.0760408,12.0760408 C12.4079864,11.7440951 12.4079864,11.2059049 12.0760408,10.8739592 L9.70208153,8.5 L12.0760408,6.12604076 C12.4079864,5.79409512 12.4079864,5.25590488 12.0760408,4.92395924 C11.7440951,4.59201359 11.2059049,4.59201359 10.8739592,4.92395924 L8.5,7.29791847 L8.5,7.29791847 Z"></path>
+                                                </svg>
+                                                <span class="message"></span></div>
+                                        </form>
+                                        <div class="success">
+                                            <div class="icon">
+                                                <svg width="84px" height="84px" viewBox="0 0 84 84" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                    <circle class="border" cx="42" cy="42" r="40" stroke-linecap="round" stroke-width="4" stroke="#000" fill="none"></circle>
+                                                    <path class="checkmark" stroke-linecap="round" stroke-linejoin="round" d="M23.375 42.5488281 36.8840688 56.0578969 64.891932 28.0500338" stroke-width="4" stroke="#000" fill="none"></path>
+                                                </svg>
+                                            </div>
+                                            <h3 class="title" data-tid="elements_examples.success.title">Payment successful</h3>
+                                            <p class="message"><span data-tid="elements_examples.success.message">Thanks for trying Stripe Elements. No money was charged, but we generated a token: </span><span class="token">tok_189gMN2eZvKYlo2CwTBv9KKh</span></p>
+                                            <a class="reset" href="#">
+                                                <svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                    <path fill="#000000" d="M15,7.05492878 C10.5000495,7.55237307 7,11.3674463 7,16 C7,20.9705627 11.0294373,25 16,25 C20.9705627,25 25,20.9705627 25,16 C25,15.3627484 24.4834055,14.8461538 23.8461538,14.8461538 C23.2089022,14.8461538 22.6923077,15.3627484 22.6923077,16 C22.6923077,19.6960595 19.6960595,22.6923077 16,22.6923077 C12.3039405,22.6923077 9.30769231,19.6960595 9.30769231,16 C9.30769231,12.3039405 12.3039405,9.30769231 16,9.30769231 L16,12.0841673 C16,12.1800431 16.0275652,12.2738974 16.0794108,12.354546 C16.2287368,12.5868311 16.5380938,12.6540826 16.7703788,12.5047565 L22.3457501,8.92058924 L22.3457501,8.92058924 C22.4060014,8.88185624 22.4572275,8.83063012 22.4959605,8.7703788 C22.6452866,8.53809377 22.5780351,8.22873685 22.3457501,8.07941076 L22.3457501,8.07941076 L16.7703788,4.49524351 C16.6897301,4.44339794 16.5958758,4.41583275 16.5,4.41583275 C16.2238576,4.41583275 16,4.63969037 16,4.91583275 L16,7 L15,7 L15,7.05492878 Z M16,32 C7.163444,32 0,24.836556 0,16 C0,7.163444 7.163444,0 16,0 C24.836556,0 32,7.163444 32,16 C32,24.836556 24.836556,32 16,32 Z"></path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div> -->
                         </div>
-                        <div class="tab-pane " id="m_user_profile_tab_5">
+                        <div class="tab-pane " id="settings_invite">
+                            <div class="col-xl-6 offset-xl-3">
+                                <div class="form-group m-form__group">
+                                    <label>Invite Friends or Colleagues</label>
+                                    <div class="input-group">
+                                        <input type="email" class="form-control" placeholder="Enter Email">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-secondary" type="button">Invite</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane " id="settings_user_management">
                             <div class="col-lg-12 col-sm-12 col-md-12 outreach-table-section">
                                 <div class="m-portlet">
                                     <div class="m-portlet m-portlet--mobile">
@@ -457,19 +506,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane " id="m_user_profile_tab_4">
-                            <div class="col-xl-6 offset-xl-3">
-                                <div class="form-group m-form__group">
-                                    <label>Invite Friends or Colleagues</label>
-                                    <div class="input-group">
-                                        <input type="email" class="form-control" placeholder="Enter Email">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-secondary" type="button">Invite</button>
                                         </div>
                                     </div>
                                 </div>
@@ -1240,3 +1276,74 @@
 </div>
 
 <!-- Confirm Delete modal end! -->
+
+<div class="modal fade show" id="buy_now_stripe" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="padding-right: 17px;">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="border-bottom: none;">
+                <h5 class="modal-title" id="exampleModalLabel">Buy now</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body update-profile-body">
+
+                <div class="stripe-subscribe">
+                    <section class="container-lg">
+                        <!--Example 1-->
+                        <div class="cell example example1">
+                            <form action="/charge" method="POST">
+                                <fieldset>
+                                    <div class="row">
+                                        <label for="example1-name" data-tid="elements_examples.form.name_label">Name</label>
+                                        <input id="example1-name" data-tid="elements_examples.form.name_placeholder" type="text" placeholder="Jane Doe" required="" autocomplete="name">
+                                    </div>
+                                    <div class="row">
+                                        <label for="example1-email" data-tid="elements_examples.form.email_label">Email</label>
+                                        <input id="example1-email" data-tid="elements_examples.form.email_placeholder" type="email" placeholder="janedoe@gmail.com" required="" autocomplete="email">
+                                    </div>
+                                    <div class="row">
+                                        <label for="example1-phone" data-tid="elements_examples.form.phone_label">Phone</label>
+                                        <input id="example1-phone" data-tid="elements_examples.form.phone_placeholder" type="tel" placeholder="(941) 555-0123" required="" autocomplete="tel">
+                                    </div>
+                                </fieldset>
+                                <fieldset>
+                                    <div class="row">
+                                        <div id="example1-card"></div>
+                                    </div>
+                                </fieldset>
+                                <button type="submit" data-tid="elements_examples.form.pay_button" id="pay_btn">Pay $25</button>
+                                <div class="error" role="alert">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
+                                        <path class="base" fill="#000" d="M8.5,17 C3.80557963,17 0,13.1944204 0,8.5 C0,3.80557963 3.80557963,0 8.5,0 C13.1944204,0 17,3.80557963 17,8.5 C17,13.1944204 13.1944204,17 8.5,17 Z"></path>
+                                        <path class="glyph" fill="#FFF" d="M8.5,7.29791847 L6.12604076,4.92395924 C5.79409512,4.59201359 5.25590488,4.59201359 4.92395924,4.92395924 C4.59201359,5.25590488 4.59201359,5.79409512 4.92395924,6.12604076 L7.29791847,8.5 L4.92395924,10.8739592 C4.59201359,11.2059049 4.59201359,11.7440951 4.92395924,12.0760408 C5.25590488,12.4079864 5.79409512,12.4079864 6.12604076,12.0760408 L8.5,9.70208153 L10.8739592,12.0760408 C11.2059049,12.4079864 11.7440951,12.4079864 12.0760408,12.0760408 C12.4079864,11.7440951 12.4079864,11.2059049 12.0760408,10.8739592 L9.70208153,8.5 L12.0760408,6.12604076 C12.4079864,5.79409512 12.4079864,5.25590488 12.0760408,4.92395924 C11.7440951,4.59201359 11.2059049,4.59201359 10.8739592,4.92395924 L8.5,7.29791847 L8.5,7.29791847 Z"></path>
+                                    </svg>
+                                    <span class="message"></span></div>
+                            </form>
+                            <div class="success">
+                                <div class="icon">
+                                    <svg width="84px" height="84px" viewBox="0 0 84 84" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <circle class="border" cx="42" cy="42" r="40" stroke-linecap="round" stroke-width="4" stroke="#000" fill="none"></circle>
+                                        <path class="checkmark" stroke-linecap="round" stroke-linejoin="round" d="M23.375 42.5488281 36.8840688 56.0578969 64.891932 28.0500338" stroke-width="4" stroke="#000" fill="none"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="title" data-tid="elements_examples.success.title">Payment successful</h3>
+                                <!-- <p class="message"><span data-tid="elements_examples.success.message">Thanks for trying Stripe Elements. No money was charged, but we generated a token: </span><span class="token">tok_189gMN2eZvKYlo2CwTBv9KKh</span></p> -->
+                                <p class="message">
+                                    <span data-tid="elements_examples.success.message">Thanks for trying Stripe Elements. $</span>
+                                    <span class="amount"></span>
+                                    <span> was charged</span>
+                                </p>
+                                <a class="reset" href="#">
+                                    <svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <path fill="#000000" d="M15,7.05492878 C10.5000495,7.55237307 7,11.3674463 7,16 C7,20.9705627 11.0294373,25 16,25 C20.9705627,25 25,20.9705627 25,16 C25,15.3627484 24.4834055,14.8461538 23.8461538,14.8461538 C23.2089022,14.8461538 22.6923077,15.3627484 22.6923077,16 C22.6923077,19.6960595 19.6960595,22.6923077 16,22.6923077 C12.3039405,22.6923077 9.30769231,19.6960595 9.30769231,16 C9.30769231,12.3039405 12.3039405,9.30769231 16,9.30769231 L16,12.0841673 C16,12.1800431 16.0275652,12.2738974 16.0794108,12.354546 C16.2287368,12.5868311 16.5380938,12.6540826 16.7703788,12.5047565 L22.3457501,8.92058924 L22.3457501,8.92058924 C22.4060014,8.88185624 22.4572275,8.83063012 22.4959605,8.7703788 C22.6452866,8.53809377 22.5780351,8.22873685 22.3457501,8.07941076 L22.3457501,8.07941076 L16.7703788,4.49524351 C16.6897301,4.44339794 16.5958758,4.41583275 16.5,4.41583275 C16.2238576,4.41583275 16,4.63969037 16,4.91583275 L16,7 L15,7 L15,7.05492878 Z M16,32 C7.163444,32 0,24.836556 0,16 C0,7.163444 7.163444,0 16,0 C24.836556,0 32,7.163444 32,16 C32,24.836556 24.836556,32 16,32 Z"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

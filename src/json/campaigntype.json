@@ -1,0 +1,32 @@
+[
+    {
+        "id": 0,
+        "content": "Select Campaign",
+        "value": ""
+    },
+    {
+        "id": 1,
+        "content": "Add Connections",
+        "value": "YE"
+    },
+    {
+        "id": 2,
+        "content": "Send Messages",
+        "value": "ZM"
+    },
+    {
+        "id": 3,
+        "content": "Endorse Contacts",
+        "value": "ZW"
+    },
+    {
+        "id": 4,
+        "content": "Auto Follow",
+        "value": "ZW"
+    },
+    {
+        "id": 5,
+        "content": "Visit Profiles",
+        "value": "ZW"
+    }
+]

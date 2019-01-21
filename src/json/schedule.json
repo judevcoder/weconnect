@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "name": "Central Pacific Standard Time",
+        "timezone": "(UTC+11:00) Solomon Is., New Caledonia",
+        "days": [
+            {"day": "Mon", "state": "active"},
+            {"day": "Tue", "state": "active"},
+            {"day": "Wed", "state": "active"},
+            {"day": "Thu", "state": ""},
+            {"day": "Fri", "state": "active"},
+            {"day": "Sat", "state": "active"},
+            {"day": "Sun", "state": ""}
+        ],
+        "start_at": "8:00 AM",
+        "end_at": "9:00 PM"
+    },
+    {
+        "id": 2,
+        "name": "Eastern Standard Time",
+        "timezone": "(UTC-05:00) Eastern Time (US & Canada)",
+        "days": [
+            {"day": "Mon", "state": "active"},
+            {"day": "Tue", "state": ""},
+            {"day": "Wed", "state": ""},
+            {"day": "Thu", "state": "active"},
+            {"day": "Fri", "state": "active"},
+            {"day": "Sat", "state": ""},
+            {"day": "Sun", "state": "active"}
+        ],
+        "start_at": "9:00 AM",
+        "end_at": "5:00 PM"
+    },
+    {
+        "id": 3,
+        "name": "Central European Standard Time",
+        "timezone": "(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb",
+        "days": [
+            {"day": "Mon", "state": ""},
+            {"day": "Tue", "state": "active"},
+            {"day": "Wed", "state": ""},
+            {"day": "Thu", "state": "active"},
+            {"day": "Fri", "state": "active"},
+            {"day": "Sat", "state": ""},
+            {"day": "Sun", "state": "active"}
+        ],
+        "start_at": "6:00 AM",
+        "end_at": "10:00 PM"
+    },
+    {
+        "id": 4,
+        "name": "West Asia Standard Time",
+        "timezone": "(UTC+05:00) Ashgabat, Tashkent",
+        "days": [
+            {"day": "Mon", "state": "active"},
+            {"day": "Tue", "state": "active"},
+            {"day": "Wed", "state": "active"},
+            {"day": "Thu", "state": "active"},
+            {"day": "Fri", "state": ""},
+            {"day": "Sat", "state": "active"},
+            {"day": "Sun", "state": "active"}
+        ],
+        "start_at": "10:00 AM",
+        "end_at": "6:00 PM"
+    }
+]

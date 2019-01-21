@@ -42,8 +42,8 @@
                                         <div class="m-wizard__step-info">
                                             <a href="/campaign/overview" class="m-wizard__step-number">
                                                 <span class="m-wizard__step-label">
-                              Overview
-                            </span>
+                                                    Overview
+                                                </span>
                                                 <span class="m-wizard__step-icon"><i class="la la-check"></i></span>
                                             </a>
                                         </div>
@@ -53,8 +53,8 @@
                                         <div class="m-wizard__step-info">
                                             <a href="/campaign/contacts" class="m-wizard__step-number">
                                                 <span class="m-wizard__step-label">
-                              Contacts
-                            </span>
+                                                    Contacts
+                                                </span>
                                                 <span class="m-wizard__step-icon"><i class="la la-check"></i></span>
                                             </a>
                                         </div>
@@ -64,8 +64,8 @@
                                         <div class="m-wizard__step-info">
                                             <a href="/campaign/sequences" class="m-wizard__step-number">
                                                 <span class="m-wizard__step-label">
-                              Sequences
-                            </span>
+                                                    Sequences
+                                                </span>
                                                 <span class="m-wizard__step-icon"><i class="la la-check"></i></span>
                                             </a>
                                         </div>
@@ -75,8 +75,8 @@
                                         <div class="m-wizard__step-info">
                                             <a href="/campaign/settings" class="m-wizard__step-number">
                                                 <span class="m-wizard__step-label">
-                              Settings
-                            </span>
+                                                    Settings
+                                                </span>
                                                 <span class="m-wizard__step-icon"><i class="la la-check"></i></span>
                                             </a>
                                         </div>
@@ -181,10 +181,12 @@
                                                                     <div class="btn-group dropup mr10">
                                                                         <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top: 5px; padding-bottom: 5px;"><i class="flaticon-layers"></i>
                                                                         </button>
-                                                                        <div class="dropdown-menu">
-                                                                            <a class="dropdown-item" href="">Introduction</a>
-                                                                            <a class="dropdown-item" href="">Snippet 1</a>
-                                                                            <a class="dropdown-item" href="">Snippet 1</a>
+                                                                        <div class="dropdown-menu template-dropdown">
+                                                                            <div class="m-scrollable" data-scrollable="true" style="height: 120px">
+                                                                                <ng-container *ngFor="let template of templates">
+                                                                                    <a  attr.data-id="{{template.id}}" class="dropdown-item template-item" href="javascript:;" (click)="insertTemplate()">{{template.template_name}}</a>
+                                                                                </ng-container>
+                                                                            </div>
                                                                             <div class="dropdown-divider"></div>
                                                                             <a class="dropdown-item" href="" data-toggle="modal" data-target="#new_template">+ Add New</a>
                                                                         </div>
@@ -195,10 +197,7 @@
                                                                         <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top: 5px; padding-bottom: 5px;"><i class="la la-code"></i>
                                                                         </button>
                                                                         <div class="dropdown-menu">
-                                                                            <a class="dropdown-item" href="">First Name</a>
-                                                                            <a class="dropdown-item" href="">Last Name</a>
-                                                                            <a class="dropdown-item" href="">Company Name</a>
-                                                                            <a class="dropdown-item" style="padding-bottom: 25px;" href="">Job Title</a>
+                                                                            <a *ngFor="let insertvar of insertvars" attr.data-id="{{insertvar.id}}" class="dropdown-item" href="javascript:;" (click)="insertVar()">{{insertvar.label}}</a>
                                                                         </div>
                                                                     </div>
                                                                 </span>
@@ -280,10 +279,12 @@
                                                                         <div class="btn-group dropup mr10">
                                                                             <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top: 5px; padding-bottom: 5px;"><i class="flaticon-layers"></i>
                                                                             </button>
-                                                                            <div class="dropdown-menu">
-                                                                                <a class="dropdown-item" href="">Introduction</a>
-                                                                                <a class="dropdown-item" href="">Snippet 1</a>
-                                                                                <a class="dropdown-item" href="">Snippet 1</a>
+                                                                            <div class="dropdown-menu template-dropdown">
+                                                                                <div class="m-scrollable" data-scrollable="true" style="height: 120px">
+                                                                                    <ng-container *ngFor="let template of templates">
+                                                                                        <a  attr.data-id="{{template.id}}" class="dropdown-item template-item" href="javascript:;" (click)="insertTemplate()">{{template.template_name}}</a>
+                                                                                    </ng-container>
+                                                                                </div>
                                                                                 <div class="dropdown-divider"></div>
                                                                                 <a class="dropdown-item" href="" data-toggle="modal" data-target="#new_template">+ Add New</a>
                                                                             </div>
@@ -294,10 +295,7 @@
                                                                             <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top: 5px; padding-bottom: 5px;"><i class="la la-code"></i>
                                                                             </button>
                                                                             <div class="dropdown-menu">
-                                                                                <a class="dropdown-item" href="">First Name</a>
-                                                                                <a class="dropdown-item" href="">Last Name</a>
-                                                                                <a class="dropdown-item" href="">Company Name</a>
-                                                                                <a class="dropdown-item" style="padding-bottom: 25px;" href="">Job Title</a>
+                                                                                <a *ngFor="let insertvar of insertvars" attr.data-id="{{insertvar.id}}" class="dropdown-item" href="javascript:;" (click)="insertVar()">{{insertvar.label}}</a>
                                                                             </div>
                                                                         </div>
                                                                     </span>

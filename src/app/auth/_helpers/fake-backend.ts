@@ -174,6 +174,61 @@ export function mockBackEndFactory(backend: MockBackend, options: BaseRequestOpt
                 return;
             }
 
+            // connect
+            // get user by id
+            if (connection.request.url.match(/\/api\/connect\/\d+$/) && connection.request.method === RequestMethod.Get) {
+                // check for fake auth token in header and return user if valid, this security is implemented server side in a real application
+                
+                // find user by id in users array
+                let urlParts = connection.request.url.split('/');
+                let id = parseInt(urlParts[urlParts.length - 1]);
+
+                // respond 200 OK with user
+                connection.mockRespond(new Response(new ResponseOptions({ status: 200, body: {'success': 'success', 'id': id} })));
+
+                return;
+            }
+
+            // message
+            if (connection.request.url.match(/\/api\/message\/\d+$/) && connection.request.method === RequestMethod.Get) {
+                // check for fake auth token in header and return user if valid, this security is implemented server side in a real application
+                
+                // find user by id in users array
+                let urlParts = connection.request.url.split('/');
+                let id = parseInt(urlParts[urlParts.length - 1]);
+
+                // respond 200 OK with user
+                connection.mockRespond(new Response(new ResponseOptions({ status: 200, body: {'success': 'success', 'id': id} })));
+
+                return;
+            }
+
+            if (connection.request.url.match(/\/api\/sendid\/\d+$/) && connection.request.method === RequestMethod.Get) {
+                // check for fake auth token in header and return user if valid, this security is implemented server side in a real application
+                
+                // find user by id in users array
+                let urlParts = connection.request.url.split('/');
+                let id = parseInt(urlParts[urlParts.length - 1]);
+
+                // respond 200 OK with user
+                connection.mockRespond(new Response(new ResponseOptions({ status: 200, body: {'success': 'success', 'id': id} })));
+
+                return;
+            }
+
+            if (connection.request.url.match('/api/senddata') && connection.request.method === RequestMethod.Get) {
+                // check for fake auth token in header and return user if valid, this security is implemented server side in a real application
+                
+                // find user by id in users array
+                let urlParts = connection.request.url.split('/');
+                let id = parseInt(urlParts[urlParts.length - 1]);
+
+                // respond 200 OK with user
+                connection.mockRespond(new Response(new ResponseOptions({ status: 200, body: {'success': 'success'} })));
+
+                return;
+            }
+
             // pass through any requests not handled above
             let realHttp = new Http(realBackend, options);
             let requestOptions = new RequestOptions({

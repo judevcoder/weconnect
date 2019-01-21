@@ -59,21 +59,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr *ngFor="let template of templates">
                                         <td>
-                                            1
+                                            {{template.id}}
                                         </td>
-                                        <td>Introduction</td>
-                                        <td>Hi Anna, I happened to visit your profile and</td>
-                                        <td nowrap></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            2
-                                        </td>
-                                        <td>Opportunity</td>
-                                        <td>It seems we do have a common business interest</td>
-                                        <td nowrap></td>
+                                        <td>{{template.template_name}}</td>
+                                        <td>{{template.message}}</td>
+                                        <td class="action" attr.data-id={{template.id}} nowrap></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -86,7 +78,7 @@
 </div>
 
 <!--begin::Modal-->
-<div class="modal fade" id="new_template" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade new_template" id="new_template" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -106,7 +98,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save</button>
+                <button [disabled]="loading" type="button" [ngClass]="{'m-loader m-loader--right m-loader--light': loading}" class="btn btn-primary" (click)="saveEditTemplate()" (click)="saveNewTemplate()">Save</button>
             </div>
         </div>
     </div>
@@ -114,27 +106,27 @@
 <!--end::Modal-->
 
 <!--begin::Modal-->
-<div class="modal fade edit_template" id="edit_template" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade edit_template" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Edit Template</h5>
+                <h5 class="modal-title">Edit Template</h5>
             </div>
             <div class="modal-body">
                 <form>
                     <div class="form-group">
                         <label for="recipient-name" class="form-control-label">Template Name</label>
-                        <input type="text" class="form-control" id="recipient-name">
+                        <input type="text" class="form-control edit-recipient-name">
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="form-control-label">Message:</label>
-                        <textarea class="form-control" id="message-text"></textarea>
+                        <textarea class="form-control edit-message-text"></textarea>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save</button>
+                <button [disabled]="loading" type="button" [ngClass]="{'m-loader m-loader--right m-loader--light': loading}" class="btn btn-primary" (click)="saveEditTemplate()">Save</button>
             </div>
         </div>
     </div>
